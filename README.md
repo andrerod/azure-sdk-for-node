@@ -1,3 +1,6 @@
+Some new text here
+
+
 # Windows Azure SDK for Node.js
 
 This project provides a set of Node.js packages that make it easy to access
