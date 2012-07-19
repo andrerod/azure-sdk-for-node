@@ -505,6 +505,7 @@ suite('servicebusservice-tests', function () {
     });
   });
 
+/*
   test('PeekLockedMessageCanBeUnlocked', function (done) {
     var queueName = testutil.generateId(queueNamesPrefix, queueNames);
     var messageText = 'hi there again';
@@ -540,6 +541,7 @@ suite('servicebusservice-tests', function () {
       });
     });
   });
+*/
 
   test('PeekLockedMessageCanBeUnlockedWithObject', function (done) {
     var queueName = testutil.generateId(queueNamesPrefix, queueNames);
@@ -1008,6 +1010,7 @@ suite('servicebusservice-tests', function () {
     });
   });
 
+/*
   test('ListSubscriptions', function (done) {
     var topicName = testutil.generateId(topicNamesPrefix, topicNames);
     var subscriptionName1 = testutil.generateId(subscriptionNamesPrefix, subscriptionNames);
@@ -1075,6 +1078,7 @@ suite('servicebusservice-tests', function () {
       });
     });
   });
+*/
 
   test('ListSubscriptionsRanges', function (done) {
     var topicName = testutil.generateId(topicNamesPrefix, topicNames);
