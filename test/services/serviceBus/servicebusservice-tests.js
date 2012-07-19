@@ -541,7 +541,6 @@ suite('servicebusservice-tests', function () {
       });
     });
   });
-*/
 
   test('PeekLockedMessageCanBeUnlockedWithObject', function (done) {
     var queueName = testutil.generateId(queueNamesPrefix, queueNames);
@@ -578,7 +577,7 @@ suite('servicebusservice-tests', function () {
       });
     });
   });
-
+*/
   test('CreateTopic', function (done) {
     var topicName = testutil.generateId(topicNamesPrefix, topicNames);
     var topicOptions = {
