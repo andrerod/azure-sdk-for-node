@@ -505,7 +505,6 @@ suite('servicebusservice-tests', function () {
     });
   });
 
-/*
   test('PeekLockedMessageCanBeUnlocked', function (done) {
     var queueName = testutil.generateId(queueNamesPrefix, queueNames);
     var messageText = 'hi there again';
