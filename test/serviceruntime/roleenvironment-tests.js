@@ -1178,9 +1178,17 @@ suite('roleenvironment-tests', function () {
     azure.RoleEnvironment.on(ServiceRuntimeConstants.CHANGING, function (changes) {
       changes.cancel();
 
-      clearInterval(serverGoalStateInterval);
+      serverVersions.on('close', function () {
+        serverGoalState.on('close', function () {
+          done();
+        });
 
-      done();
+        serverGoalStateStream.end();
+        serverGoalState.close();
+      });
+
+      serverVersionsStream.end();
+      serverVersions.close();
     });
 
     azure.RoleEnvironment.on(ServiceRuntimeConstants.CHANGED, function (changes) {
