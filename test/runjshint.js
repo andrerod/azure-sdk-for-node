@@ -1,5 +1,5 @@
 ﻿/**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
 */
 
 var fs = require('fs');
-var path = require('path');
 
 var walk = function (dir, done) {
   var results = [];
@@ -42,8 +41,12 @@ var walk = function (dir, done) {
 
 var jshint = require('../node_modules/jshint/packages/jshint/jshint');
 
+if  (!fs.existsSync) {
+  fs.existsSync = require('path').existsSync;
+}
+
 var libDir = '../lib';
-if (!path.existsSync(libDir + '/azure.js')) {
+if (!fs.existsSync(libDir + '/azure.js')) {
   libDir = './lib';
 }
 

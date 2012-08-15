@@ -1,5 +1,5 @@
 ﻿/**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -28,8 +28,13 @@
 *
 */
 
-var path = require('path');
-if (path.existsSync('./../../lib/azure.js')) {
+var fs = require('fs');
+if (!fs.existsSync) {
+  fs.existsSync = require('path').existsSync;
+}
+
+var azure;
+if (fs.existsSync('./../../lib/azure.js')) {
   azure = require('./../../lib/azure');
 } else {
   azure = require('azure');

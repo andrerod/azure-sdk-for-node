@@ -1,5 +1,5 @@
 ﻿/**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
 */
 
 var fs = require('fs');
-var path = require('path');
 
 var args = (process.ARGV || process.argv);
 
@@ -28,7 +27,12 @@ var testList = args.pop();
 
 var fileContent;
 var root = false;
-if (path.existsSync(testList)) {
+
+if  (!fs.existsSync) {
+  fs.existsSync = require('path').existsSync;
+}
+
+if (fs.existsSync(testList)) {
   fileContent = fs.readFileSync(testList).toString();
 } else {
   fileContent = fs.readFileSync('./test/' + testList).toString();
@@ -58,6 +62,9 @@ files.forEach(function (file) {
 if (coverageOption !== -1) {
   args.push('-R');
   args.push('html-cov');
+} else {
+  args.push('-R');
+  args.push('list');
 }
 
 require('../node_modules/mocha/bin/mocha');
