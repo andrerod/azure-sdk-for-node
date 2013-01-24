@@ -36,7 +36,7 @@ describe('SQL Server Management', function () {
       subscriptionId, auth,
       { serializetype: 'XML'});
   });
-
+/*
   after(function (done) {
     deleteSqlServers(sqlServersToClean, done);
   });
@@ -282,4 +282,19 @@ describe('SQL Server Management', function () {
       });
     });
   }
+  */
+
+  describe('list SQL Server databases', function () {
+    var serverName = 'wz2kd6e5z1';
+
+    describe('when one database is defined', function () {
+      it('should return one rule in the list', function (done) {
+        service.listServerDatabases(serverName, function (err, rules) {
+          console.log(rules);
+
+          done(err);
+        });
+      });
+    });
+  });
 });
