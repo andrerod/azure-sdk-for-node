@@ -31,13 +31,13 @@ describe('SQL Azure Database', function () {
   var service;
 
   before(function () {
-    service = new SqlServerDatabaseService('andrerod', 'AzureRocks!12');
+    service = new SqlServerDatabaseService('irx8d7g0th', 'andrerod', 'AzureRocks!12');
   });
 
   describe('list SQL databases', function () {
 
     it('should list databasess', function (done) {
-      service.listServerDatabases('irx8d7g0th', function (err, databases, response) {
+      service.listServerDatabases(function (err, databases, response) {
         console.log(response);
 
         // cshould.exist(sqlServers);
