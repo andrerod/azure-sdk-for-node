@@ -1,1 +1,1 @@
-services/serviceManagement/sqldatabaseservice-tests.js
+services/serviceManagement/sqlserverdatabaseservice-tests.js
