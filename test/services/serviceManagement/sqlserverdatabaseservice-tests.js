@@ -37,8 +37,8 @@ describe('SQL Azure Database', function () {
   describe('list SQL databases', function () {
 
     it('should list databasess', function (done) {
-      service.listServerDatabases(function (err, databases, response) {
-        console.log(response);
+      service.listServerDatabases(function (err, databases) {
+        console.log(databases);
 
         // cshould.exist(sqlServers);
         // sqlServers.should.be.empty;
