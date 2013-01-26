@@ -25,6 +25,7 @@ var SERVER_ADMIN_USERNAME = 'azuresdk';
 var SERVER_ADMIN_PASSWORD = 'PassWord!1';
 var SERVER_LOCATION = 'West US';
 
+
 describe('SQL Azure Database', function () {
   var serverName;
 
@@ -41,10 +42,20 @@ describe('SQL Azure Database', function () {
     serviceManagement.createServer(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, function (err, name) {
       serverName = name;
 
-      // add firewall rule
-
+      // Create the SQL Azure service to test
       service = azure.createSqlService(serverName, SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD);
-      done();
+
+      // find out which ip address to add to the firewall rule by trying to access the server
+      service.listServerDatabases(function (err) {
+        var ipAddress = err.match(/Client with IP address '/);
+        console.log(ipAddress);
+
+        // add firewall rule
+        serviceManagement.createServerFirewallRule(serverName, 'rule1', ipAddress, ipAddress, function () {
+
+          done();
+        });
+      });
     });
   });
 
@@ -53,38 +64,22 @@ describe('SQL Azure Database', function () {
   });
 
   describe('list SQL databases', function () {
-
-    it('should list databasess', function (done) {
+    describe('No defined databases', function () {
       service.listServerDatabases(function (err, databases) {
-        should.exist(databases);
-        databases.should.be.empty;
+        should.exist(sqlServers);
+        sqlServers.should.be.empty;
         done(err);
       });
     });
 
-
-    /*
-    describe('No defined databases', function () {
-      before(function (done) {
-        service.listServers(function (err, sqlServers) {
-          deleteSqlServers(sqlServers.map(function (s) { return s.Name; }), done);
-        });
-      });
-
-      it('should return empty list of databases', function (done) {
-        service.listServers(function (err, sqlServers) {
-          should.exist(sqlServers);
-          sqlServers.should.be.empty;
-          done(err);
-        });
-      });
-    });
-
+/*
     describe('when one database is defined', function () {
       before(function (done) {
-        service.listServers(function (err, sqlServers) {
-          deleteSqlServers(sqlServers.map(function (s) { return s.Name; }), function () {
-            service.createServer(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, done);
+        service.listServerDatabases(function (err, databases) {
+
+          // TODO: figure this out
+          deleteServerDatabases(databases.map(function (d) { return d.Name; }), function () {
+            service.createServerDatabase(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, done);
           });
         });
       });
