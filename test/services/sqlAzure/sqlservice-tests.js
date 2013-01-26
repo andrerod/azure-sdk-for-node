@@ -17,8 +17,6 @@ var should = require('should');
 var mocha = require('mocha');
 var uuid = require('node-uuid');
 
-var SqlServerDatabaseService = require('../../../lib/services/serviceManagement/sqlserverdatabaseservice');
-
 var testutil = require('../../util/util');
 
 var azure = testutil.libRequire('azure');
@@ -31,7 +29,7 @@ describe('SQL Azure Database', function () {
   var service;
 
   before(function () {
-    service = new SqlServerDatabaseService('irx8d7g0th', 'andrerod', 'AzureRocks!12');
+    service = azure.createSqlService('irx8d7g0th', 'andrerod', 'AzureRocks!12');
   });
 
   describe('list SQL databases', function () {
