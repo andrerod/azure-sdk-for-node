@@ -41,9 +41,11 @@ describe('SQL Azure Database', function () {
     serviceManagement.createServer(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, function (err, name) {
       serverName = name;
 
+      // add firewall rule
+
       service = azure.createSqlService(serverName, SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD);
       done();
-    }
+    });
   });
 
   after(function (done) {
