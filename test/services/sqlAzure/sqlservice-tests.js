@@ -26,10 +26,28 @@ var SERVER_ADMIN_PASSWORD = 'PassWord!1';
 var SERVER_LOCATION = 'West US';
 
 describe('SQL Azure Database', function () {
-  var service;
+  var serverName;
 
-  before(function () {
-    service = azure.createSqlService('irx8d7g0th', 'andrerod', 'AzureRocks!12');
+  var service;
+  var serviceManagement;
+
+  before(function (done) {
+    var subscriptionId = process.env['AZURE_SUBSCRIPTION_ID'];
+    var auth = { keyvalue: process.env['AZURE_CERTIFICATE_KEY'], certvalue: process.env['AZURE_CERTIFICATE'] };
+    serviceManagement = azure.createSqlManagementService(
+      subscriptionId, auth,
+      { serializetype: 'XML'});
+
+    serviceManagement.createServer(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, function (err, name) {
+      serverName = name;
+
+      service = azure.createSqlService(serverName, SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD);
+      done();
+    }
+  });
+
+  after(function (done) {
+    serviceManagement.deleteServer(serverName, done);
   });
 
   describe('list SQL databases', function () {
