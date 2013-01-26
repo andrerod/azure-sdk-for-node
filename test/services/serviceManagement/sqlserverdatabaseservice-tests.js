@@ -38,10 +38,8 @@ describe('SQL Azure Database', function () {
 
     it('should list databasess', function (done) {
       service.listServerDatabases(function (err, databases) {
-        console.log(databases);
-
-        // cshould.exist(sqlServers);
-        // sqlServers.should.be.empty;
+        should.exist(databases);
+        databases.should.be.empty;
         done(err);
       });
     });
