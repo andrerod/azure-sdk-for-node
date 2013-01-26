@@ -1,1 +1,1 @@
-services/serviceManagement/sqlserverdatabaseservice-tests.js
+services/sqlAzure/sqlservice-tests.js
