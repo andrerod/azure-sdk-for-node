@@ -1,5 +1,3 @@
-another change
-
 # Windows Azure SDK for Node.js
 
 This project provides a Node.js package that makes it easy to access Windows Azure Services like Table Storage and Service Bus. 
