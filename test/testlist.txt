@@ -1,1 +1,2 @@
 services/serviceBus/notificationhubs-tests.js
+util/js2xml-tests.js
