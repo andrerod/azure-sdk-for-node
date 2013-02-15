@@ -59,7 +59,7 @@ suite('servicebusservice-tests', function () {
   teardown(function (done) {
     servicebustestutil.tearDownTest(serviceBusService, testPrefix, done);
   });
-/*
+
   test('CreateQueue', function (done) {
     var queueName = testutil.generateId(queueNamesPrefix, queueNames);
     var queueOptions = {
@@ -1006,7 +1006,7 @@ suite('servicebusservice-tests', function () {
       });
     });
   });
-*/
+
   test('ListSubscriptions', function (done) {
     var topicName = testutil.generateId(topicNamesPrefix, topicNames);
     var subscriptionName1 = testutil.generateId(subscriptionNamesPrefix, subscriptionNames);
