@@ -1042,9 +1042,6 @@ suite('servicebusservice-tests', function () {
                 assert.notEqual(subscription2, null);
 
                 serviceBusService.listSubscriptions(topicName, function (listError, subscriptions) {
-                  console.log('list');
-                  console.log(subscriptions);
-
                   assert.equal(listError, null);
                   assert.notEqual(subscriptions, null);
                   assert.equal(subscriptions.length, 2);
@@ -1077,7 +1074,7 @@ suite('servicebusservice-tests', function () {
       });
     });
   });
-/*
+
   test('ListSubscriptionsRanges', function (done) {
     var topicName = testutil.generateId(topicNamesPrefix, topicNames);
     var subscriptionName1 = '1' + testutil.generateId(subscriptionNamesPrefix, subscriptionNames);
@@ -1694,5 +1691,4 @@ suite('servicebusservice-tests', function () {
       done();
     });
   });
-*/
 });
