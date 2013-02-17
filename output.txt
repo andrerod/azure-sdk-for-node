@@ -4,35 +4,12 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <jslint>
-	<file name="lib/serviceruntime/protocol1runtimegoalstateclient.js">
-		<issue line="86" char="77" reason="Cyclomatic complexity is too high per function (6)." evidence="  self.namedPipeInputChannel.readInputChannel(self.endpoint, true, function (error, data) {" />
-	</file>
-	<file name="lib/serviceruntime/roleenvironment.js">
-		<issue line="500" char="65" reason="Too many statements per function (66)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
-		<issue line="500" char="65" reason="Cyclomatic complexity is too high per function (24)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
-	</file>
 	<file name="lib/services/blob/blobservice.js">
 		<issue line="63" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
-		<issue line="786" char="28" reason="Cyclomatic complexity is too high per function (6)." evidence="  var operation = function (length, md5) {" />
-		<issue line="1847" char="50" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype.listBlobRegions = function (container, blob, rangeStart, rangeEnd, optionsOrCallback, callback) {" />
-		<issue line="2236" char="49" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype._leaseBlobImpl = function (container, blob, leaseId, leaseAction, optionsOrCallback, callback) {" />
-		<issue line="2296" char="54" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._setHeadersFromBlob = function (webResource, blob) {" />
-		<issue line="2375" char="59" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._updatePageBlobPagesImpl = function (container, blob, length, rangeStart, rangeEnd, writeMethod, options) {" />
 		<issue line="2456" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
 		<issue line="2477" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
-		<issue line="2477" char="31" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateContainerName(containerName) {" />
 		<issue line="2510" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
 		<issue line="2526" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
-	</file>
-	<file name="lib/services/blob/models/containeraclresult.js">
-		<issue line="41" char="42" reason="Cyclomatic complexity is too high per function (6)." evidence="    signedIdentifiersJs.forEach(function (signedIdentifier) {" />
-	</file>
-	<file name="lib/services/blob/models/containerresult.js">
-		<issue line="31" char="34" reason="Cyclomatic complexity is too high per function (6)." evidence="ContainerResult.parse = function (containerXml) {" />
-	</file>
-	<file name="lib/services/blob/models/servicepropertiesresult.js">
-		<issue line="23" char="30" reason="Cyclomatic complexity is too high per function (17)." evidence="exports.serialize = function (servicePropertiesJs) {" />
-		<issue line="122" char="26" reason="Cyclomatic complexity is too high per function (17)." evidence="exports.parse = function (servicePropertiesXml) {" />
 	</file>
 	<file name="lib/services/blob/sharedkey.js">
 		<issue line="34" char="19" reason="&apos;SharedKey&apos; was used before it was defined." evidence="function SharedKey(storageAccount, storageAccessKey, usePathStyleUri) {" />
@@ -70,8 +47,6 @@
 		<issue line="73" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._skipOperator(&apos;;&apos;);" />
 		<issue line="74" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectKey&apos;;" />
 		<issue line="75" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="38" char="52" reason="Cyclomatic complexity is too high per function (7)." evidence="ConnectionStringParser.prototype._parse = function () {" />
-		<issue line="103" char="57" reason="Cyclomatic complexity is too high per function (6)." evidence="ConnectionStringParser.prototype._extractKey = function () {" />
 		<issue line="148" char="7" reason="Expected &apos;throw&apos; to have an indentation at 5 instead at 7." evidence="      throw new Error(&apos;Unterminated string starting at position &apos; + firstPos);" />
 		<issue line="162" char="7" reason="Expected &apos;throw&apos; to have an indentation at 5 instead at 7." evidence="      throw new Error(&apos;expecting &apos; + operatorChar + &apos; but instead got &apos; + currentChar + &apos; at position &apos; + this._pos);" />
 		<issue line="162" char="75" reason="&apos;currentChar&apos; is not defined." evidence="      throw new Error(&apos;expecting &apos; + operatorChar + &apos; but instead got &apos; + currentChar + &apos; at position &apos; + this._pos);" />
@@ -114,10 +89,8 @@
 		<issue line="385" char="75" reason="Trailing whitespace." evidence="          // The parentFilterNext is the filter next to the merged filter. " />
 		<issue line="443" char="62" reason="Missing space after &apos;function&apos;." evidence="ServiceClient.prototype._loadEnvironmentProxyValue = function() {" />
 		<issue line="465" char="57" reason="Missing space after &apos;function&apos;." evidence="ServiceClient.prototype._loadEnvironmentProxy = function() {" />
-		<issue line="505" char="51" reason="Cyclomatic complexity is too high per function (11)." evidence="ServiceClient.prototype._parseResponse = function (response) {" />
 		<issue line="583" char="57" reason="Strings must use singlequote." evidence="  webResource.requestUrl = this.protocol + this.host + &quot;:&quot; + this.port + webResource.path + queryString;" />
-		<issue line="656" char="52" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceClient.prototype._normalizeError = function (error) {" />
-		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;qs&apos;);" />
+		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;querystring&apos;);" />
 		<issue line="21" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
 		<issue line="30" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
 		<issue line="225" char="78" reason="&apos;responseBody&apos; is defined but never used." evidence="        var processResponseCallback = function (error, response, responseBody) {" />
@@ -127,9 +100,7 @@
 		<issue line="55" char="33" reason="&apos;ServiceManagementClient&apos; was used before it was defined." evidence="function ServiceManagementClient(authentication, hostOptions) {" />
 		<issue line="56" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementClient.super_.call(this);" />
 		<issue line="70" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setAuthentication = function(authentication) {" />
-		<issue line="70" char="64" reason="Cyclomatic complexity is too high per function (12)." evidence="ServiceManagementClient.prototype._setAuthentication = function(authentication) {" />
 		<issue line="117" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setServiceHost = function(hostOptions) {" />
-		<issue line="117" char="61" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementClient.prototype._setServiceHost = function(hostOptions) {" />
 		<issue line="148" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._getContentType = function() {" />
 		<issue line="161" char="60" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._getAcceptType = function() {" />
 		<issue line="177" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._buildRequestOptions = function(webResource, options, callback) {" />
@@ -137,7 +108,6 @@
 		<issue line="225" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setProxyUrl = function(proxyurl) {" />
 		<issue line="257" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setProxy = function(proxy, isHTTPS) {" />
 		<issue line="275" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setAgent = function(self, reqopts, isHTTPS) {" />
-		<issue line="275" char="55" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementClient.prototype._setAgent = function(self, reqopts, isHTTPS) {" />
 		<issue line="22" char="16" reason="&apos;WebResource&apos; is defined but never used." evidence="var WebResource = require(&apos;../../http/webresource&apos;);" />
 	</file>
 	<file name="lib/services/core/servicemanagementsettings.js">
@@ -162,7 +132,6 @@
 		<issue line="83" char="2" reason="Trailing whitespace." evidence="* " />
 		<issue line="85" char="80" reason="Trailing whitespace." evidence="* @param boolean {isRequired}   Either these conditions are all required or all " />
 		<issue line="89" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="93" char="19" reason="Cyclomatic complexity is too high per function (9)." evidence="  return function (userSettings) {" />
 		<issue line="137" char="2" reason="Trailing whitespace." evidence="* " />
 		<issue line="139" char="2" reason="Trailing whitespace." evidence="* " />
 		<issue line="169" char="2" reason="Trailing whitespace." evidence="* " />
@@ -187,10 +156,8 @@
 		<issue line="52" char="30" reason="&apos;StorageServiceClient&apos; was used before it was defined." evidence="function StorageServiceClient(storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider) {" />
 		<issue line="57" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  StorageServiceClient.super_.call(this, host, authenticationProvider);" />
 		<issue line="163" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(webResource.headers &amp;&amp; webResource.headers[HeaderConstants.CONTENT_LENGTH] === null) {" />
-		<issue line="154" char="64" reason="Cyclomatic complexity is too high per function (8)." evidence="StorageServiceClient.prototype._buildRequestOptions = function (webResource, options, callback) {" />
-		<issue line="246" char="66" reason="Cyclomatic complexity is too high per function (9)." evidence="StorageServiceClient.prototype._setAccountCredentials = function (storageAccount, storageAccessKey) {" />
 		<issue line="17" char="9" reason="&apos;http&apos; is defined but never used." evidence="var http = require(&apos;http&apos;);" />
-		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;qs&apos;);" />
+		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;querystring&apos;);" />
 		<issue line="21" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
 		<issue line="22" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
 		<issue line="32" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
@@ -230,8 +197,6 @@
 	</file>
 	<file name="lib/services/queue/models/servicepropertiesresult.js">
 		<issue line="24" char="33" reason="&apos;ServicePropertiesResult&apos; was used before it was defined." evidence="function ServicePropertiesResult() { }" />
-		<issue line="26" char="46" reason="Cyclomatic complexity is too high per function (16)." evidence="ServicePropertiesResult.serialize = function (servicePropertiesJs) {" />
-		<issue line="119" char="42" reason="Cyclomatic complexity is too high per function (16)." evidence="ServicePropertiesResult.parse = function (servicePropertiesXml) {" />
 	</file>
 	<file name="lib/services/queue/queueservice.js">
 		<issue line="43" char="112" reason="Trailing whitespace." evidence="* If no storageAccount or storageAccessKey are provided, the AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY " />
@@ -239,7 +204,6 @@
 		<issue line="57" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  QueueService.super_.call(this," />
 		<issue line="597" char="22" reason="Strings must use singlequote." evidence="    throw new Error(&quot;A message retrieved using &apos;peekMessages&apos; can not be deleted! Use &apos;getMessages&apos; instead.&quot;);" />
 		<issue line="712" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
-		<issue line="712" char="27" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateQueueName(queue) {" />
 		<issue line="745" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 		<issue line="97" char="48" reason="&apos;ServicePropertiesResult&apos; is not defined." evidence="      responseObject.servicePropertiesResult = ServicePropertiesResult.parse(responseObject.response.body.StorageServiceProperties);" />
 		<issue line="131" char="30" reason="&apos;ServicePropertiesResult&apos; is not defined." evidence="  var servicePropertiesXml = ServicePropertiesResult.serialize(serviceProperties);" />
@@ -258,10 +222,8 @@
 	<file name="lib/services/serviceBus/models/queuemessageresult.js">
 		<issue line="29" char="28" reason="&apos;QueueMessageResult&apos; was used before it was defined." evidence="function QueueMessageResult() { }" />
 		<issue line="40" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var property in brokerProperties) {" />
-		<issue line="31" char="37" reason="Cyclomatic complexity is too high per function (9)." evidence="QueueMessageResult.parse = function (responseObject) {" />
 		<issue line="85" char="42" reason="Strings must use singlequote." evidence="  if (azureutil.stringStartsWith(value, &quot;\&quot;&quot;) &amp;&amp; azureutil.stringEndsWith(value, &quot;\&quot;&quot;)) {" />
 		<issue line="85" char="83" reason="Strings must use singlequote." evidence="  if (azureutil.stringStartsWith(value, &quot;\&quot;&quot;) &amp;&amp; azureutil.stringEndsWith(value, &quot;\&quot;&quot;)) {" />
-		<issue line="80" char="51" reason="Cyclomatic complexity is too high per function (7)." evidence="QueueMessageResult._propertyFromString = function (value) {" />
 		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
 		<issue line="23" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
 	</file>
@@ -270,7 +232,6 @@
 		<issue line="59" char="17" reason="&apos;setName&apos; was used before it was defined." evidence="function setName(entry, nameProperty) {" />
 	</file>
 	<file name="lib/services/serviceBus/models/ruleresult.js">
-		<issue line="23" char="30" reason="Cyclomatic complexity is too high per function (9)." evidence="exports.serialize = function (rule) {" />
 		<issue line="16" char="16" reason="&apos;queryString&apos; is defined but never used." evidence="var queryString = require(&apos;querystring&apos;);" />
 	</file>
 	<file name="lib/services/serviceBus/notificationhubservice.js">
@@ -340,7 +301,6 @@
 		<issue line="50" char="31" reason="&apos;ServiceBusServiceBase&apos; was used before it was defined." evidence="function ServiceBusServiceBase(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
 		<issue line="87" char="21" reason="Trailing whitespace." evidence="    var settings = { " />
 		<issue line="97" char="25" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceBase.super_.call(this," />
-		<issue line="50" char="31" reason="Cyclomatic complexity is too high per function (9)." evidence="function ServiceBusServiceBase(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
 		<issue line="111" char="2" reason="Trailing whitespace." evidence="* " />
 		<issue line="151" char="2" reason="Trailing whitespace." evidence="* " />
 		<issue line="163" char="107" reason="Missing semicolon." evidence="    if (!responseObject.error &amp;&amp; (!validators || !validators.some(function (v) { return !v(responseObject) }))) {" />
@@ -367,7 +327,6 @@
 	<file name="lib/services/serviceBus/wrapservice.js">
 		<issue line="42" char="21" reason="&apos;WrapService&apos; was used before it was defined." evidence="function WrapService(acsHost, issuer, accessKey) {" />
 		<issue line="66" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  WrapService.super_.call(this, acsHost);" />
-		<issue line="42" char="21" reason="Cyclomatic complexity is too high per function (6)." evidence="function WrapService(acsHost, issuer, accessKey) {" />
 		<issue line="159" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
 		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
@@ -422,7 +381,6 @@
 		<issue line="201" char="12" reason="Missing space after &apos;for&apos;." evidence="        for(var l = 0; l &lt; role[key].length; l++) {" />
 		<issue line="211" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
 		<issue line="211" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
-		<issue line="156" char="53" reason="Cyclomatic complexity is too high per function (12)." evidence="RoleParser.prototype.handleCollectionType = function(metadata, role, key, serializeTo, typeInfo, output) {" />
 		<issue line="230" char="44" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.getTypeInfo = function(type) {" />
 		<issue line="239" char="5" reason="Expected &apos;var&apos; to have an indentation at 3 instead at 5." evidence="    var len = type.length;" />
 		<issue line="240" char="5" reason="Expected &apos;var&apos; to have an indentation at 3 instead at 5." evidence="    var nextToken = 0;" />
@@ -438,22 +396,18 @@
 		<issue line="249" char="5" reason="Expected &apos;}&apos; to have an indentation at 3 instead at 5." evidence="    }" />
 		<issue line="251" char="5" reason="Expected &apos;if&apos; to have an indentation at 3 instead at 5." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
 		<issue line="251" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
-		<issue line="251" char="7" reason="Too many errors. (89% scanned)." evidence="" />
+		<issue line="251" char="22" reason="Strings must use singlequote." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
+		<issue line="251" char="22" reason="Too many errors. (89% scanned)." evidence="" />
 	</file>
 	<file name="lib/services/serviceManagement/models/servicemanagementserialize.js">
 		<issue line="34" char="36" reason="&apos;ServiceManagementSerialize&apos; was used before it was defined." evidence="function ServiceManagementSerialize() {" />
 		<issue line="46" char="73" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateHostedService = function(serviceName, serviceOptions, client) {" />
-		<issue line="46" char="73" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildCreateHostedService = function(serviceName, serviceOptions, client) {" />
 		<issue line="93" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateStorageAccount = function(serviceName, serviceOptions, client) {" />
-		<issue line="93" char="74" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildCreateStorageAccount = function(serviceName, serviceOptions, client) {" />
 		<issue line="140" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildUpdateStorageAccount = function(serviceName, serviceOptions, client) {" />
-		<issue line="140" char="74" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementSerialize.prototype.buildUpdateStorageAccount = function(serviceName, serviceOptions, client) {" />
 		<issue line="191" char="75" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildRegenerateStorageKeys = function(serviceName, keyType, client) {" />
 		<issue line="218" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateOSImage = function(typeOs, imageName, mediaLink, imageOptions, client) {" />
 		<issue line="258" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddDisk = function(diskName, mediaLink, diskOptions, client) {" />
-		<issue line="258" char="61" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildAddDisk = function(diskName, mediaLink, diskOptions, client) {" />
 		<issue line="310" char="70" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateDeployment = function(serviceName, deploymentName," />
-		<issue line="310" char="70" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildCreateDeployment = function(serviceName, deploymentName," />
 		<issue line="364" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddRole = function(serviceName, deploymentName," />
 		<issue line="386" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildModifyRole = function(serviceName, deploymentName," />
 		<issue line="409" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddDataDisk = function(serviceName, deploymentName," />
@@ -462,10 +416,8 @@
 		<issue line="478" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildStartRole = function(serviceName, deploymentName," />
 		<issue line="501" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildRestartRole = function(serviceName, deploymentName," />
 		<issue line="525" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCaptureRole = function(serviceName, deploymentName," />
-		<issue line="525" char="65" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementSerialize.prototype.buildCaptureRole = function(serviceName, deploymentName," />
 		<issue line="578" char="68" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddCertificate = function(serviceName, data, format, password, client) {" />
 		<issue line="616" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildPersistentVMRoleXml = function(vmRole, node) {" />
-		<issue line="616" char="74" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementSerialize.prototype._buildPersistentVMRoleXml = function(vmRole, node) {" />
 		<issue line="667" char="75" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildPersistentVMRoleJson = function(vmRole) {" />
 		<issue line="678" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildOSDiskXml = function(osDisk, node) {" />
 		<issue line="694" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildOSDiskJson = function(osDisk) {" />
@@ -474,7 +426,6 @@
 		<issue line="733" char="90" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildWindowsProvisioningConfigurationXml = function(cfgset, node) {" />
 		<issue line="770" char="91" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildWindowsProvisioningConfigurationJson = function(cfgset) {" />
 		<issue line="781" char="88" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildLinuxProvisioningConfigurationXml = function(cfgset, node) {" />
-		<issue line="781" char="88" reason="Cyclomatic complexity is too high per function (8)." evidence="ServiceManagementSerialize.prototype._buildLinuxProvisioningConfigurationXml = function(cfgset, node) {" />
 		<issue line="828" char="89" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildLinuxProvisioningConfigurationJson = function(cfgset) {" />
 		<issue line="839" char="78" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildNetworkConfigurationXml = function(cfgset, node) {" />
 		<issue line="863" char="79" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildNetworkConfigurationJson = function(cfgset) {" />
@@ -512,11 +463,9 @@
 		<issue line="427" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.listHostedServices = function(callback) {" />
 		<issue line="453" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getHostedService = function(serviceName, callback) {" />
 		<issue line="483" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.createHostedService = function(serviceName, serviceOptions, callback) {" />
-		<issue line="483" char="66" reason="Cyclomatic complexity is too high per function (8)." evidence="ServiceManagementService.prototype.createHostedService = function(serviceName, serviceOptions, callback) {" />
 		<issue line="534" char="73" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getHostedServiceProperties = function(serviceName, callback) {" />
 		<issue line="557" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteHostedService = function(serviceName, callback) {" />
 		<issue line="588" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.createStorageAccount = function(serviceName, serviceOptions, callback) {" />
-		<issue line="588" char="67" reason="Cyclomatic complexity is too high per function (8)." evidence="ServiceManagementService.prototype.createStorageAccount = function(serviceName, serviceOptions, callback) {" />
 		<issue line="646" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.updateStorageAccount = function(serviceName, serviceOptions, callback) {" />
 		<issue line="678" char="68" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getStorageAccountKeys = function(serviceName, callback) {" />
 		<issue line="682" char="86" reason="Trailing whitespace." evidence="  var path = &apos;/&apos; + this.subscriptionId + &apos;/services/storageservices/&apos; + serviceName + " />
@@ -529,7 +478,6 @@
 		<issue line="821" char="85" reason="Trailing whitespace." evidence="  var path = &apos;/&apos; + this.subscriptionId + &apos;/services/hostedservices/&apos; + serviceName + " />
 		<issue line="852" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.createDeployment = function(serviceName, deploymentName, vmRole," />
 		<issue line="888" char="82" reason="Trailing whitespace." evidence="  var outbody = this.serialize.buildCreateDeployment(serviceName, deploymentName, " />
-		<issue line="852" char="63" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementService.prototype.createDeployment = function(serviceName, deploymentName, vmRole," />
 		<issue line="908" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteDeployment = function(serviceName, deploymentName, callback) {" />
 		<issue line="936" char="54" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getRole = function(serviceName, deploymentName, roleName, callback) {" />
 		<issue line="969" char="54" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.addRole = function(serviceName, deploymentName, vmRole," />
@@ -556,7 +504,10 @@
 		<issue line="1482" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(response &amp;&amp; response.isSuccessful &amp;&amp; response.headers[&apos;content-type&apos;].indexOf(&apos;application/xml&apos;) !== -1) {" />
 		<issue line="1483" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(hasTopLevelList) {" />
 		<issue line="1487" char="9" reason="Missing space after &apos;if&apos;." evidence="      if(keys.length === 1) {" />
-		<issue line="1487" char="9" reason="Too many errors. (89% scanned)." evidence="" />
+		<issue line="1489" char="11" reason="Missing space after &apos;if&apos;." evidence="        if(keys[0] !== Constants.XML_METADATA_MARKER) {" />
+		<issue line="1495" char="16" reason="Missing space after &apos;if&apos;." evidence="      } else if(keys.length === 2) {" />
+		<issue line="1496" char="11" reason="Expected &apos;var&apos; to have an indentation at 9 instead at 11." evidence="          var listKey = (keys[0] === Constants.XML_METADATA_MARKER ? keys[1] : keys[0]);" />
+		<issue line="1496" char="11" reason="Too many errors. (90% scanned)." evidence="" />
 	</file>
 	<file name="lib/services/serviceManagement/sqlmanagementservice.js">
 		<issue line="52" char="30" reason="&apos;SqlManagementService&apos; was used before it was defined." evidence="function SqlManagementService(subscriptionId, authentication, hostOptions) {" />
@@ -615,10 +566,6 @@
 	<file name="lib/services/table/models/querytablesresultcontinuation.js">
 		<issue line="28" char="39" reason="&apos;QueryTablesResultContinuation&apos; was used before it was defined." evidence="function QueryTablesResultContinuation(tableService, nextTableName) {" />
 	</file>
-	<file name="lib/services/table/models/servicepropertiesresult.js">
-		<issue line="24" char="30" reason="Cyclomatic complexity is too high per function (16)." evidence="exports.serialize = function (servicePropertiesJs) {" />
-		<issue line="117" char="26" reason="Cyclomatic complexity is too high per function (16)." evidence="exports.parse = function (servicePropertiesXml) {" />
-	</file>
 	<file name="lib/services/table/models/tableresult.js">
 		<issue line="26" char="21" reason="&apos;TableResult&apos; was used before it was defined." evidence="function TableResult() { }" />
 		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
@@ -646,7 +593,6 @@
 		<issue line="194" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var field in this._fields) {" />
 		<issue line="210" char="18" reason="Strings must use singlequote." evidence="      filter += &quot;PartitionKey eq &apos;&quot; + this._partitionKey + &quot;&apos;&quot;;" />
 		<issue line="210" char="61" reason="Strings must use singlequote." evidence="      filter += &quot;PartitionKey eq &apos;&quot; + this._partitionKey + &quot;&apos;&quot;;" />
-		<issue line="191" char="47" reason="Cyclomatic complexity is too high per function (9)." evidence="TableQuery.prototype.toQueryObject = function () {" />
 		<issue line="240" char="14" reason="Strings must use singlequote." evidence="    path += &quot;PartitionKey=&apos;&quot; + azureutil.encodeUri(this._partitionKey) + &quot;&apos;&quot;;" />
 		<issue line="240" char="75" reason="Strings must use singlequote." evidence="    path += &quot;PartitionKey=&apos;&quot; + azureutil.encodeUri(this._partitionKey) + &quot;&apos;&quot;;" />
 		<issue line="241" char="14" reason="Strings must use singlequote." evidence="    path += &quot;, RowKey=&apos;&quot; + azureutil.encodeUri(this._rowKey) + &quot;&apos;&quot;;" />
@@ -699,15 +645,12 @@
 		<issue line="94" char="19" reason="&apos;rightPadSeven&apos; was used before it was defined." evidence="var rightPadSeven = function (n) {" />
 	</file>
 	<file name="lib/util/js2xml.js">
-		<issue line="25" char="30" reason="Cyclomatic complexity is too high per function (7)." evidence="exports.serialize = function (entity) {" />
 		<issue line="63" char="28" reason="Unexpected space after &apos;_writeElementValue&apos;." evidence="function _writeElementValue (parentElement, name, value) {" />
 		<issue line="63" char="29" reason="&apos;_writeElementValue&apos; was used before it was defined." evidence="function _writeElementValue (parentElement, name, value) {" />
-		<issue line="63" char="29" reason="Cyclomatic complexity is too high per function (13)." evidence="function _writeElementValue (parentElement, name, value) {" />
 	</file>
 	<file name="lib/util/odatahandler.js">
 		<issue line="29" char="22" reason="&apos;OdataHandler&apos; was used before it was defined." evidence="function OdataHandler(nsMeta, nsData) {" />
 		<issue line="72" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var property in entityXml.content[propertiesXmlTag]) {" />
-		<issue line="41" char="41" reason="Cyclomatic complexity is too high per function (15)." evidence="OdataHandler.prototype.parse = function (entityXml, innerTag) {" />
 		<issue line="121" char="22" reason="Strings must use singlequote." evidence="    return prefix + &quot;:&quot; + name;" />
 		<issue line="137" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Binary&quot;:" />
 		<issue line="137" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Binary&quot;:" />
@@ -755,7 +698,8 @@
 		<issue line="165" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Time&quot;:" />
 		<issue line="166" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = value;" />
 		<issue line="167" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="167" char="7" reason="Too many errors. (51% scanned)." evidence="" />
+		<issue line="168" char="5" reason="Expected &apos;default&apos; to have an indentation at 3 instead at 5." evidence="    default:" />
+		<issue line="168" char="5" reason="Too many errors. (51% scanned)." evidence="" />
 	</file>
 	<file name="lib/util/rfc1123date.js">
 		<issue line="25" char="28" reason="Strings must use singlequote." evidence="  return dateFormat(date, &quot;ddd, dd mmm yyyy HH:MM:ss Z&quot;);" />
