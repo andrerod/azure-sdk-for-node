@@ -27,38 +27,9 @@
 		<issue line="707" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
 		<issue line="740" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
-	<file name="lib/services/serviceBus/models/acstokenresult.js">
-		<issue line="26" char="24" reason="&apos;AcsTokenResult&apos; was used before it was defined." evidence="function AcsTokenResult() {" />
-		<issue line="20" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
-	</file>
-	<file name="lib/services/serviceBus/models/notificationhubresult.js">
-		<issue line="16" char="6" reason="&apos;_&apos; is defined but never used." evidence="var _ = require(&apos;underscore&apos;);" />
-		<issue line="18" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
-	</file>
-	<file name="lib/services/serviceBus/models/queuemessageresult.js">
-		<issue line="29" char="28" reason="&apos;QueueMessageResult&apos; was used before it was defined." evidence="function QueueMessageResult() { }" />
-		<issue line="40" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var property in brokerProperties) {" />
-		<issue line="85" char="42" reason="Strings must use singlequote." evidence="  if (azureutil.stringStartsWith(value, &quot;\&quot;&quot;) &amp;&amp; azureutil.stringEndsWith(value, &quot;\&quot;&quot;)) {" />
-		<issue line="85" char="83" reason="Strings must use singlequote." evidence="  if (azureutil.stringStartsWith(value, &quot;\&quot;&quot;) &amp;&amp; azureutil.stringEndsWith(value, &quot;\&quot;&quot;)) {" />
-		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
-		<issue line="23" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
-	</file>
-	<file name="lib/services/serviceBus/models/resourceresult.js">
-		<issue line="51" char="7" reason="Missing semicolon." evidence="    })" />
-		<issue line="59" char="17" reason="&apos;setName&apos; was used before it was defined." evidence="function setName(entry, nameProperty) {" />
-	</file>
-	<file name="lib/services/serviceBus/models/ruleresult.js">
-		<issue line="16" char="16" reason="&apos;queryString&apos; is defined but never used." evidence="var queryString = require(&apos;querystring&apos;);" />
-	</file>
 	<file name="lib/services/serviceBus/notificationhubservice.js">
-		<issue line="43" char="32" reason="&apos;NotificationHubService&apos; was used before it was defined." evidence="function NotificationHubService(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
-		<issue line="44" char="26" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  NotificationHubService.super_.call(this," />
-		<issue line="57" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="73" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="99" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="112" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="129" char="25" reason="&apos;validateHubName&apos; was used before it was defined." evidence="function validateHubName(hub) {" />
-		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
+		<issue line="40" char="26" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  NotificationHubService.super_.call(this," />
+		<issue line="125" char="25" reason="&apos;validateHubName&apos; was used before it was defined." evidence="function validateHubName(hub) {" />
 	</file>
 	<file name="lib/services/serviceBus/servicebusservice.js">
 		<issue line="54" char="27" reason="&apos;ServiceBusService&apos; was used before it was defined." evidence="function ServiceBusService(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
