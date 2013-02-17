@@ -7,91 +7,6 @@
 	<file name="lib/services/core/serviceclient.js">
 		<issue line="102" char="23" reason="&apos;ServiceClient&apos; was used before it was defined." evidence="function ServiceClient(host, authenticationProvider) {" />
 	</file>
-	<file name="lib/services/sqlAzure/models/databaseresult.js">
-		<issue line="26" char="24" reason="&apos;DatabaseResult&apos; was used before it was defined." evidence="function DatabaseResult() { }" />
-		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
-		<issue line="21" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
-	</file>
-	<file name="lib/services/sqlAzure/sqlserveracs.js">
-		<issue line="43" char="22" reason="&apos;SqlServerAcs&apos; was used before it was defined." evidence="function SqlServerAcs(acsHost, serverName, administratorLogin, administratorLoginPassword) {" />
-		<issue line="49" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlServerAcs.super_.call(this, acsHost);" />
-		<issue line="56" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="133" char="37" reason="&apos;escapeConnectionCredentials&apos; was used before it was defined." evidence="function escapeConnectionCredentials(value) {" />
-		<issue line="21" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
-		<issue line="27" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
-		<issue line="28" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
-		<issue line="29" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
-	</file>
-	<file name="lib/services/sqlAzure/sqlservice.js">
-		<issue line="50" char="20" reason="&apos;SqlService&apos; was used before it was defined." evidence="function SqlService(serverName, administratorLogin, administratorLoginPassword, host, acsHost, authenticationProvider) {" />
-		<issue line="56" char="14" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlService.super_.call(this," />
-		<issue line="193" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
-		<issue line="195" char="21" reason="&apos;TableService&apos; is not defined." evidence="    throw new Error(TableService.incorrectCallbackErr);" />
-		<issue line="18" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
-		<issue line="30" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
-	</file>
-	<file name="lib/services/table/batchserviceclient.js">
-		<issue line="42" char="28" reason="&apos;BatchServiceClient&apos; was used before it was defined." evidence="function BatchServiceClient(storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider) {" />
-		<issue line="43" char="22" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BatchServiceClient.super_.call(this, storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider);" />
-		<issue line="61" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="70" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="79" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="118" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var header in webResource.headers) {" />
-		<issue line="150" char="67" reason="Strings must use singlequote." evidence="  var batchBoundary = &apos;batch_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
-		<issue line="150" char="103" reason="Strings must use singlequote." evidence="  var batchBoundary = &apos;batch_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
-		<issue line="151" char="75" reason="Strings must use singlequote." evidence="  var changesetBoundary = &apos;changeset_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
-		<issue line="151" char="111" reason="Strings must use singlequote." evidence="  var changesetBoundary = &apos;changeset_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
-		<issue line="156" char="35" reason="Missing space after &apos;function&apos;." evidence="  this.operations.forEach(function(operation){" />
-		<issue line="156" char="46" reason="Missing space after &apos;)&apos;." evidence="  this.operations.forEach(function(operation){" />
-		<issue line="207" char="55" reason="Unexpected space after &apos;string&apos;." evidence="      typeof responseObject.response.body === &apos;string&apos; ) {" />
-		<issue line="212" char="34" reason="Missing space after &apos;function&apos;." evidence="    rawResponses.forEach(function(rawResponse) {" />
-		<issue line="256" char="33" reason="Missing space after &apos;function&apos;." evidence="  responseLines.forEach(function(line) {" />
-		<issue line="21" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
-	</file>
-	<file name="lib/services/table/models/entityresult.js">
-		<issue line="26" char="22" reason="&apos;EntityResult&apos; was used before it was defined." evidence="function EntityResult() { }" />
-		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
-		<issue line="21" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
-	</file>
-	<file name="lib/services/table/models/queryentitiesresultcontinuation.js">
-		<issue line="25" char="41" reason="&apos;QueryEntitiesResultContinuation&apos; was used before it was defined." evidence="function QueryEntitiesResultContinuation(tableService, tableQuery, nextPartitionKey, nextRowKey) {" />
-	</file>
-	<file name="lib/services/table/models/querytablesresultcontinuation.js">
-		<issue line="28" char="39" reason="&apos;QueryTablesResultContinuation&apos; was used before it was defined." evidence="function QueryTablesResultContinuation(tableService, nextTableName) {" />
-	</file>
-	<file name="lib/services/table/models/tableresult.js">
-		<issue line="26" char="21" reason="&apos;TableResult&apos; was used before it was defined." evidence="function TableResult() { }" />
-		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
-		<issue line="21" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
-	</file>
-	<file name="lib/services/table/sharedkeylitetable.js">
-		<issue line="36" char="28" reason="&apos;SharedKeyLiteTable&apos; was used before it was defined." evidence="function SharedKeyLiteTable(storageAccount, storageAccessKey, usePathStyleUri) {" />
-		<issue line="45" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-	</file>
-	<file name="lib/services/table/sharedkeytable.js">
-		<issue line="36" char="24" reason="&apos;SharedKeyTable&apos; was used before it was defined." evidence="function SharedKeyTable(storageAccount, storageAccessKey, usePathStyleUri) {" />
-		<issue line="45" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-	</file>
-	<file name="lib/services/table/tablequery.js">
-		<issue line="32" char="20" reason="&apos;TableQuery&apos; was used before it was defined." evidence="function TableQuery() {" />
-		<issue line="54" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var field in arguments) {" />
-		<issue line="111" char="29" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
-		<issue line="111" char="50" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
-		<issue line="137" char="29" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
-		<issue line="137" char="50" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
-		<issue line="163" char="29" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
-		<issue line="163" char="50" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
-		<issue line="194" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var field in this._fields) {" />
-		<issue line="210" char="18" reason="Strings must use singlequote." evidence="      filter += &quot;PartitionKey eq &apos;&quot; + this._partitionKey + &quot;&apos;&quot;;" />
-		<issue line="210" char="61" reason="Strings must use singlequote." evidence="      filter += &quot;PartitionKey eq &apos;&quot; + this._partitionKey + &quot;&apos;&quot;;" />
-		<issue line="240" char="14" reason="Strings must use singlequote." evidence="    path += &quot;PartitionKey=&apos;&quot; + azureutil.encodeUri(this._partitionKey) + &quot;&apos;&quot;;" />
-		<issue line="240" char="75" reason="Strings must use singlequote." evidence="    path += &quot;PartitionKey=&apos;&quot; + azureutil.encodeUri(this._partitionKey) + &quot;&apos;&quot;;" />
-		<issue line="241" char="14" reason="Strings must use singlequote." evidence="    path += &quot;, RowKey=&apos;&quot; + azureutil.encodeUri(this._rowKey) + &quot;&apos;&quot;;" />
-		<issue line="241" char="65" reason="Strings must use singlequote." evidence="    path += &quot;, RowKey=&apos;&quot; + azureutil.encodeUri(this._rowKey) + &quot;&apos;&quot;;" />
-		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
-	</file>
 	<file name="lib/services/table/tableservice.js">
 		<issue line="64" char="22" reason="&apos;TableService&apos; was used before it was defined." evidence="function TableService(storageAccountOrConnectionString, storageAccessKey, host, authenticationProvider) {" />
 		<issue line="67" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  TableService.super_.call(this," />
@@ -110,36 +25,6 @@
 		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
 		<issue line="19" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
 		<issue line="28" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
-	</file>
-	<file name="lib/util/atomhandler.js">
-		<issue line="39" char="20" reason="Strings must use singlequote." evidence="  throw new Error(&quot;Unrecognized result &quot; + util.inspect(xml));" />
-		<issue line="60" char="73" reason="Missing semicolon." evidence="  content[Constants.XML_METADATA_MARKER] = { &apos;type&apos;: &apos;application/xml&apos; }" />
-		<issue line="67" char="25" reason="&apos;parseFeedResult&apos; was used before it was defined." evidence="function parseFeedResult(feed, contentElementName) {" />
-		<issue line="70" char="7" reason="Missing space after &apos;if&apos;." evidence="    if( _.isArray(feed.entry)) {" />
-		<issue line="70" char="8" reason="Unexpected space after &apos;(&apos;." evidence="    if( _.isArray(feed.entry)) {" />
-		<issue line="81" char="26" reason="&apos;parseEntryResult&apos; was used before it was defined." evidence="function parseEntryResult(entry, contentElementName) {" />
-		<issue line="82" char="74" reason="Missing semicolon." evidence="  delete entry.content[contentElementName][Constants.XML_METADATA_MARKER]" />
-		<issue line="86" char="48" reason="Missing semicolon." evidence="    result[Constants.ATOM_METADATA_MARKER] = {}" />
-	</file>
-	<file name="lib/util/constants.js">
-		<issue line="234" char="3" reason="Identifier &apos;MessageText_ELEMENT&apos; is not in camel case." evidence="  MessageText_ELEMENT: &apos;MessageText&apos;," />
-		<issue line="242" char="3" reason="Identifier &apos;QueueMessage_ELEMENT&apos; is not in camel case." evidence="  QueueMessage_ELEMENT: &apos;QueueMessage&apos;," />
-	</file>
-	<file name="lib/util/iso8061date.js">
-		<issue line="37" char="5" reason="Expected &apos;]&apos; to have an indentation at 7 instead at 5." evidence="    ];" />
-		<issue line="40" char="9" reason="Expected &apos;components&apos; to have an indentation at 7 instead at 9." evidence="        components.push(&apos;.&apos;);" />
-		<issue line="41" char="9" reason="Expected &apos;if&apos; to have an indentation at 7 instead at 9." evidence="        if (!millisecondsPading) {" />
-		<issue line="42" char="11" reason="Expected &apos;millisecondsPading&apos; to have an indentation at 9 instead at 11." evidence="          millisecondsPading = 3;" />
-		<issue line="43" char="9" reason="Expected &apos;}&apos; to have an indentation at 7 instead at 9." evidence="        }" />
-		<issue line="45" char="9" reason="Expected &apos;components&apos; to have an indentation at 7 instead at 9." evidence="        components.push(leftPad(date.getUTCMilliseconds(), millisecondsPading));" />
-		<issue line="50" char="1" reason="Expected &apos;}&apos; to have an indentation at 3 instead at 1." evidence="};" />
-		<issue line="81" char="16" reason="&apos;leftPadTwo&apos; was used before it was defined." evidence="var leftPadTwo = function (n) {" />
-		<issue line="85" char="13" reason="&apos;leftPad&apos; was used before it was defined." evidence="var leftPad = function (n, millisecondsPading) {" />
-		<issue line="94" char="19" reason="&apos;rightPadSeven&apos; was used before it was defined." evidence="var rightPadSeven = function (n) {" />
-	</file>
-	<file name="lib/util/js2xml.js">
-		<issue line="63" char="28" reason="Unexpected space after &apos;_writeElementValue&apos;." evidence="function _writeElementValue (parentElement, name, value) {" />
-		<issue line="63" char="29" reason="&apos;_writeElementValue&apos; was used before it was defined." evidence="function _writeElementValue (parentElement, name, value) {" />
 	</file>
 	<file name="lib/util/odatahandler.js">
 		<issue line="29" char="22" reason="&apos;OdataHandler&apos; was used before it was defined." evidence="function OdataHandler(nsMeta, nsData) {" />
@@ -194,19 +79,7 @@
 		<issue line="168" char="5" reason="Expected &apos;default&apos; to have an indentation at 3 instead at 5." evidence="    default:" />
 		<issue line="168" char="5" reason="Too many errors. (51% scanned)." evidence="" />
 	</file>
-	<file name="lib/util/rfc1123date.js">
-		<issue line="25" char="28" reason="Strings must use singlequote." evidence="  return dateFormat(date, &quot;ddd, dd mmm yyyy HH:MM:ss Z&quot;);" />
-	</file>
 	<file name="lib/util/util.js">
 		<issue line="57" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var key in value) {" />
-		<issue line="175" char="33" reason="Missing space after &apos;function&apos;." evidence="exports.stringIsFloat = function(value) {" />
-		<issue line="191" char="34" reason="Missing space after &apos;function&apos;." evidence="exports.stringIsNumber = function(value) {" />
-		<issue line="201" char="32" reason="Missing space after &apos;function&apos;." evidence="exports.stringIsDate = function(date) {" />
-		<issue line="202" char="49" reason="Strings must use singlequote." evidence="  if (Object.prototype.toString.call(date) !== &quot;[object Date]&quot;) {" />
-		<issue line="222" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="225" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="227" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="242" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="244" char="2" reason="Trailing whitespace." evidence="* " />
 	</file>
 </jslint>
