@@ -7,59 +7,6 @@
 	<file name="lib/services/core/serviceclient.js">
 		<issue line="102" char="23" reason="&apos;ServiceClient&apos; was used before it was defined." evidence="function ServiceClient(host, authenticationProvider) {" />
 	</file>
-	<file name="lib/services/serviceManagement/models/roleparser.js">
-		<issue line="25" char="20" reason="&apos;RoleParser&apos; was used before it was defined." evidence="function RoleParser() {" />
-		<issue line="38" char="6" reason="Missing space after &apos;for&apos;." evidence="  for(var key in roleSchema) {" />
-		<issue line="41" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(typeInfo.isCollection) {" />
-		<issue line="43" char="14" reason="Missing space after &apos;if&apos;." evidence="    } else if(typeInfo.isComplex) {" />
-		<issue line="38" char="6" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for(var key in roleSchema) {" />
-		<issue line="74" char="52" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.handlePrimitiveType = function(metadata, role, key, serializeTo, output) {" />
-		<issue line="75" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(typeof (role[key]) === &apos;boolean&apos; || role[key]) {" />
-		<issue line="76" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(serializeTo === &apos;XML&apos;) {" />
-		<issue line="81" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
-		<issue line="81" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
-		<issue line="82" char="7" reason="Expected &apos;if&apos; to have an indentation at 5 instead at 7." evidence="      if(&apos;Default&apos; in metadata) {" />
-		<issue line="82" char="9" reason="Missing space after &apos;if&apos;." evidence="      if(&apos;Default&apos; in metadata) {" />
-		<issue line="83" char="9" reason="Expected &apos;output&apos; to have an indentation at 7 instead at 9." evidence="        output.ele(metadata.XmlNode).txt(metadata.Default);" />
-		<issue line="84" char="7" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 7." evidence="      } else {" />
-		<issue line="85" char="9" reason="Expected &apos;throw&apos; to have an indentation at 7 instead at 9." evidence="        throw new Error(&apos;Missing the required primitive field \&apos;&apos; + key + &apos;\&apos; in the role&apos;);" />
-		<issue line="86" char="7" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 7." evidence="      }" />
-		<issue line="113" char="50" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.handleComplexType = function(metadata, role, key, serializeTo, output) {" />
-		<issue line="114" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(key in role) {" />
-		<issue line="115" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(serializeTo === &apos;XML&apos;) {" />
-		<issue line="122" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
-		<issue line="122" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
-		<issue line="156" char="53" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.handleCollectionType = function(metadata, role, key, serializeTo, typeInfo, output) {" />
-		<issue line="157" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(key in role) {" />
-		<issue line="158" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(serializeTo === &apos;XML&apos;) {" />
-		<issue line="161" char="9" reason="Missing space after &apos;if&apos;." evidence="      if(typeInfo.isComplex) {" />
-		<issue line="162" char="11" reason="Missing space after &apos;if&apos;." evidence="        if(typeInfo.subType === &apos;Mixed&apos;) {" />
-		<issue line="171" char="14" reason="Missing space after &apos;for&apos;." evidence="          for(var j = 0; j &lt; keyValues.length; j++) {" />
-		<issue line="172" char="16" reason="Missing space after &apos;for&apos;." evidence="            for(var k = 0; k &lt; role[key].length; k++) {" />
-		<issue line="173" char="17" reason="Missing space after &apos;if&apos;." evidence="              if(keyProperty in role[key][k]) {" />
-		<issue line="174" char="19" reason="Missing space after &apos;if&apos;." evidence="                if(role[key][k][keyProperty] === keyValues[j]) {" />
-		<issue line="190" char="14" reason="Missing space after &apos;for&apos;." evidence="          for(var i = 0; i &lt; role[key].length; i++) {" />
-		<issue line="201" char="12" reason="Missing space after &apos;for&apos;." evidence="        for(var l = 0; l &lt; role[key].length; l++) {" />
-		<issue line="211" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
-		<issue line="211" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
-		<issue line="230" char="44" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.getTypeInfo = function(type) {" />
-		<issue line="239" char="5" reason="Expected &apos;var&apos; to have an indentation at 3 instead at 5." evidence="    var len = type.length;" />
-		<issue line="240" char="5" reason="Expected &apos;var&apos; to have an indentation at 3 instead at 5." evidence="    var nextToken = 0;" />
-		<issue line="241" char="5" reason="Expected &apos;if&apos; to have an indentation at 3 instead at 5." evidence="    if(type.indexOf(&quot;Collection(&quot;) === 0) {" />
-		<issue line="241" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(type.indexOf(&quot;Collection(&quot;) === 0) {" />
-		<issue line="241" char="22" reason="Strings must use singlequote." evidence="    if(type.indexOf(&quot;Collection(&quot;) === 0) {" />
-		<issue line="242" char="7" reason="Expected &apos;nextToken&apos; to have an indentation at 5 instead at 7." evidence="      nextToken = 11;" />
-		<issue line="243" char="7" reason="Expected &apos;typeInfo&apos; to have an indentation at 5 instead at 7." evidence="      typeInfo.isCollection = true;" />
-		<issue line="244" char="7" reason="Expected &apos;if&apos; to have an indentation at 5 instead at 7." evidence="      if (type.charAt(len - 1) !== &apos;)&apos;) {" />
-		<issue line="245" char="9" reason="Expected &apos;throw&apos; to have an indentation at 7 instead at 9." evidence="        throw new Error(&apos;Invalid Role-Schema, Missing closing bracket for a collection type\&apos;&apos; + type + &apos;\&apos;&apos;);" />
-		<issue line="246" char="7" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 7." evidence="      }" />
-		<issue line="248" char="7" reason="Expected &apos;len&apos; to have an indentation at 5 instead at 7." evidence="      len--;" />
-		<issue line="249" char="5" reason="Expected &apos;}&apos; to have an indentation at 3 instead at 5." evidence="    }" />
-		<issue line="251" char="5" reason="Expected &apos;if&apos; to have an indentation at 3 instead at 5." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
-		<issue line="251" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
-		<issue line="251" char="22" reason="Strings must use singlequote." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
-		<issue line="251" char="22" reason="Too many errors. (89% scanned)." evidence="" />
-	</file>
 	<file name="lib/services/serviceManagement/models/servicemanagementserialize.js">
 		<issue line="34" char="36" reason="&apos;ServiceManagementSerialize&apos; was used before it was defined." evidence="function ServiceManagementSerialize() {" />
 		<issue line="46" char="73" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateHostedService = function(serviceName, serviceOptions, client) {" />
