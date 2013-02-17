@@ -4,47 +4,12 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <jslint>
-	<file name="lib/http/webresource.js">
-		<issue line="290" char="67" reason="Cyclomatic complexity is too high per function (6)." evidence="WebResource.prototype.addOptionalAccessConditionHeader = function (accessConditionHeaders) {" />
-		<issue line="314" char="73" reason="Cyclomatic complexity is too high per function (6)." evidence="WebResource.prototype.addOptionalSourceAccessConditionHeader = function (accessConditionHeaders) {" />
-		<issue line="354" char="33" reason="&apos;encodeSpecialCharacters&apos; was used before it was defined." evidence="function encodeSpecialCharacters(path) {" />
-	</file>
-	<file name="lib/serviceruntime/namedpipeinputchannel.js">
-		<issue line="31" char="33" reason="Cyclomatic complexity is too high per function (6)." evidence="  this._readData(name, function (error, data) {" />
-	</file>
 	<file name="lib/serviceruntime/protocol1runtimegoalstateclient.js">
 		<issue line="86" char="77" reason="Cyclomatic complexity is too high per function (6)." evidence="  self.namedPipeInputChannel.readInputChannel(self.endpoint, true, function (error, data) {" />
 	</file>
 	<file name="lib/serviceruntime/roleenvironment.js">
-		<issue line="51" char="21" reason="&apos;RoleEnvironment&apos; was used before it was defined." evidence="var RoleEnvironment = exports;" />
 		<issue line="500" char="65" reason="Too many statements per function (66)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
 		<issue line="500" char="65" reason="Cyclomatic complexity is too high per function (24)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
-	</file>
-	<file name="lib/serviceruntime/runtimeversionmanager.js">
-		<issue line="22" char="31" reason="&apos;RuntimeVersionManager&apos; was used before it was defined." evidence="function RuntimeVersionManager(runtimeVersionProtocolClient, runtimeKernel) {" />
-		<issue line="50" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var i in self.supportedVersionList) {" />
-	</file>
-	<file name="lib/serviceruntime/runtimeversionprotocolclient.js">
-		<issue line="24" char="38" reason="&apos;RuntimeVersionProtocolClient&apos; was used before it was defined." evidence="function RuntimeVersionProtocolClient(inputChannel) {" />
-		<issue line="41" char="9" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="        for (var endpoint in endpoints) {" />
-	</file>
-	<file name="lib/serviceruntime/xmlcurrentstateserializer.js">
-		<issue line="25" char="35" reason="&apos;XmlCurrentStateSerializer&apos; was used before it was defined." evidence="function XmlCurrentStateSerializer() { }" />
-	</file>
-	<file name="lib/serviceruntime/xmlgoalstatedeserializer.js">
-		<issue line="23" char="34" reason="&apos;XmlGoalStateDeserializer&apos; was used before it was defined." evidence="function XmlGoalStateDeserializer() { }" />
-	</file>
-	<file name="lib/serviceruntime/xmlroleenvironmentdatadeserializer.js">
-		<issue line="23" char="44" reason="&apos;XmlRoleEnvironmentDataDeserializer&apos; was used before it was defined." evidence="function XmlRoleEnvironmentDataDeserializer() { }" />
-		<issue line="54" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var configurationSetting in configurationSettings) {" />
-		<issue line="71" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var localResource in localResources) {" />
-		<issue line="93" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var endpoint in currentInstance.endpoints) {" />
-		<issue line="120" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var roleInstance in roleInstances) {" />
-		<issue line="111" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var role in roles) {" />
-		<issue line="103" char="73" reason="Cyclomatic complexity is too high per function (6)." evidence="XmlRoleEnvironmentDataDeserializer.prototype._translateRoles = function (xml, currentInstance, currentRole) {" />
-		<issue line="160" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var endpoint in endpoints) {" />
-		<issue line="154" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var instance in instances) {" />
-		<issue line="180" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var endpoint in endpoints) {" />
 	</file>
 	<file name="lib/services/blob/blobservice.js">
 		<issue line="55" char="27" reason="Strings must use singlequote." evidence="BlobService.needCntErr = &quot;Container name must be specified in the &apos;name&apos; parameter.&quot;;" />
