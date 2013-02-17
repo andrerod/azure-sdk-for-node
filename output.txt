@@ -4,85 +4,28 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <jslint>
-	<file name="lib/services/blob/blobservice.js">
-		<issue line="63" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
-	</file>
-	<file name="lib/services/core/servicebusserviceclient.js">
-		<issue line="36" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
-	</file>
 	<file name="lib/services/core/serviceclient.js">
 		<issue line="102" char="23" reason="&apos;ServiceClient&apos; was used before it was defined." evidence="function ServiceClient(host, authenticationProvider) {" />
 	</file>
-	<file name="lib/services/core/servicemanagementclient.js">
-		<issue line="39" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementClient.super_.call(this);" />
-	</file>
-	<file name="lib/services/core/sqlserviceclient.js">
-		<issue line="37" char="20" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlServiceClient.super_.call(this, host, authenticationProvider);" />
-	</file>
-	<file name="lib/services/core/storageserviceclient.js">
-		<issue line="44" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  StorageServiceClient.super_.call(this, host, authenticationProvider);" />
-	</file>
 	<file name="lib/services/queue/queueservice.js">
-		<issue line="52" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  QueueService.super_.call(this," />
 		<issue line="707" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
 		<issue line="740" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
 	<file name="lib/services/serviceBus/notificationhubservice.js">
-		<issue line="40" char="26" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  NotificationHubService.super_.call(this," />
 		<issue line="125" char="25" reason="&apos;validateHubName&apos; was used before it was defined." evidence="function validateHubName(hub) {" />
 	</file>
 	<file name="lib/services/serviceBus/servicebusservice.js">
-		<issue line="54" char="27" reason="&apos;ServiceBusService&apos; was used before it was defined." evidence="function ServiceBusService(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
-		<issue line="55" char="21" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusService.super_.call(this," />
-		<issue line="68" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="90" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="116" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="149" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="182" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="206" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="230" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="270" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="323" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="344" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="399" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="413" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="438" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="451" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="471" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="528" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="542" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="567" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="580" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="602" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="619" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="648" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="677" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="701" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="719" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="750" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="780" char="27" reason="&apos;setRequestHeaders&apos; was used before it was defined." evidence="function setRequestHeaders(webResource, message) {" />
-		<issue line="783" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;contentType&apos;:" />
-		<issue line="784" char="9" reason="Expected &apos;webResource&apos; to have an indentation at 7 instead at 9." evidence="        webResource.addOptionalHeader(HeaderConstants.CONTENT_TYPE, message[property]);" />
-		<issue line="785" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="786" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;brokerProperties&apos;:" />
-		<issue line="787" char="9" reason="Expected &apos;webResource&apos; to have an indentation at 7 instead at 9." evidence="        webResource.addOptionalHeader(HeaderConstants.BROKER_PROPERTIES_HEADER, JSON.stringify(message.brokerProperties));" />
-		<issue line="788" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="789" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;customProperties&apos;:" />
-		<issue line="791" char="9" reason="Expected &apos;for&apos; to have an indentation at 7 instead at 9." evidence="        for (var customProperty in message.customProperties) {" />
-		<issue line="792" char="11" reason="Expected &apos;var&apos; to have an indentation at 9 instead at 11." evidence="          var value = message.customProperties[customProperty];" />
-		<issue line="793" char="11" reason="Expected &apos;if&apos; to have an indentation at 9 instead at 11." evidence="          if (azureutil.objectIsString(value)) {" />
-		<issue line="794" char="13" reason="Expected &apos;value&apos; to have an indentation at 11 instead at 13." evidence="            value = &quot;\&quot;&quot; + value.toString() + &quot;\&quot;&quot;;" />
-		<issue line="794" char="22" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + value.toString() + &quot;\&quot;&quot;;" />
-		<issue line="794" char="48" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + value.toString() + &quot;\&quot;&quot;;" />
-		<issue line="795" char="11" reason="Expected &apos;}&apos; to have an indentation at 9 instead at 11." evidence="          } else if (azureutil.stringIsDate(value)) {" />
-		<issue line="796" char="13" reason="Expected &apos;value&apos; to have an indentation at 11 instead at 13." evidence="            value = &quot;\&quot;&quot; + RFC1123.format(value) + &quot;\&quot;&quot;;" />
-		<issue line="796" char="22" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + RFC1123.format(value) + &quot;\&quot;&quot;;" />
-		<issue line="796" char="53" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + RFC1123.format(value) + &quot;\&quot;&quot;;" />
-		<issue line="797" char="11" reason="Expected &apos;}&apos; to have an indentation at 9 instead at 11." evidence="          } else {" />
-		<issue line="798" char="13" reason="Expected &apos;value&apos; to have an indentation at 11 instead at 13." evidence="            value = value.toString();" />
-		<issue line="799" char="11" reason="Expected &apos;}&apos; to have an indentation at 9 instead at 11." evidence="          }" />
-		<issue line="801" char="11" reason="Expected &apos;webResource&apos; to have an indentation at 9 instead at 11." evidence="          webResource.addOptionalHeader(customProperty, value);" />
-		<issue line="801" char="11" reason="Too many errors. (90% scanned)." evidence="" />
+		<issue line="777" char="27" reason="&apos;setRequestHeaders&apos; was used before it was defined." evidence="function setRequestHeaders(webResource, message) {" />
+		<issue line="788" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var customProperty in message.customProperties) {" />
+		<issue line="778" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var property in message) {" />
+		<issue line="816" char="32" reason="&apos;createSubscriptionPath&apos; was used before it was defined." evidence="function createSubscriptionPath(topicPath, subscriptionPath) {" />
+		<issue line="820" char="24" reason="&apos;createRulePath&apos; was used before it was defined." evidence="function createRulePath(topicPath, subscriptionPath, rulePath) {" />
+		<issue line="830" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
+		<issue line="842" char="27" reason="&apos;validateTopicName&apos; was used before it was defined." evidence="function validateTopicName(topic) {" />
+		<issue line="854" char="34" reason="&apos;validateSubscriptionName&apos; was used before it was defined." evidence="function validateSubscriptionName(subscription) {" />
+		<issue line="866" char="26" reason="&apos;validateRuleName&apos; was used before it was defined." evidence="function validateRuleName(rule) {" />
+		<issue line="878" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
 	</file>
 	<file name="lib/services/serviceBus/servicebusservicebase.js">
 		<issue line="50" char="31" reason="&apos;ServiceBusServiceBase&apos; was used before it was defined." evidence="function ServiceBusServiceBase(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
