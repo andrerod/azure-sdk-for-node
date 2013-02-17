@@ -11,58 +11,8 @@
 		<issue line="2510" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
 		<issue line="2526" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
-	<file name="lib/services/blob/sharedkey.js">
-		<issue line="34" char="19" reason="&apos;SharedKey&apos; was used before it was defined." evidence="function SharedKey(storageAccount, storageAccessKey, usePathStyleUri) {" />
-		<issue line="43" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="98" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var n in queryStringValues) {" />
-		<issue line="103" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var name in paramNames) {" />
-		<issue line="141" char="86" reason="Strings must use singlequote." evidence="      canonicalizedHeaders += canonicalizedHeadersArray[headerName].toLowerCase() + &quot;:&quot; + webResource.headers[canonicalizedHeadersArray[headerName]] + &apos;\n&apos;;" />
-		<issue line="140" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var headerName in canonicalizedHeadersArray) {" />
-		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-	</file>
-	<file name="lib/services/blob/sharedkeylite.js">
-		<issue line="36" char="23" reason="&apos;SharedKeyLite&apos; was used before it was defined." evidence="function SharedKeyLite(storageAccount, storageAccessKey, usePathStyleUri) {" />
-		<issue line="45" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="124" char="86" reason="Strings must use singlequote." evidence="      canonicalizedHeaders += canonicalizedHeadersArray[headerName].toLowerCase() + &quot;:&quot; + webResource.headers[canonicalizedHeadersArray[headerName]] + &apos;\n&apos;;" />
-		<issue line="123" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var headerName in canonicalizedHeadersArray) {" />
-		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-	</file>
-	<file name="lib/services/core/connectionstringparser.js">
-		<issue line="54" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;ExpectKey&apos;:" />
-		<issue line="55" char="9" reason="Expected &apos;key&apos; to have an indentation at 7 instead at 9." evidence="        key = this._extractKey();" />
-		<issue line="56" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectAssignment&apos;;" />
-		<issue line="57" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="59" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;ExpectAssignment&apos;:" />
-		<issue line="60" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._skipOperator(&apos;=&apos;);" />
-		<issue line="61" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectValue&apos;;" />
-		<issue line="62" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="64" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;ExpectValue&apos;:" />
-		<issue line="65" char="9" reason="Expected &apos;value&apos; to have an indentation at 7 instead at 9." evidence="        value = this._extractValue();" />
-		<issue line="66" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectSeparator&apos;;" />
-		<issue line="67" char="9" reason="Expected &apos;parsedConnectionString&apos; to have an indentation at 7 instead at 9." evidence="        parsedConnectionString[key.toLowerCase()] = value;" />
-		<issue line="68" char="9" reason="Expected &apos;key&apos; to have an indentation at 7 instead at 9." evidence="        key = null;" />
-		<issue line="69" char="9" reason="Expected &apos;value&apos; to have an indentation at 7 instead at 9." evidence="        value = null;" />
-		<issue line="70" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="72" char="7" reason="Expected &apos;default&apos; to have an indentation at 5 instead at 7." evidence="      default:" />
-		<issue line="73" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._skipOperator(&apos;;&apos;);" />
-		<issue line="74" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectKey&apos;;" />
-		<issue line="75" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
-		<issue line="148" char="7" reason="Expected &apos;throw&apos; to have an indentation at 5 instead at 7." evidence="      throw new Error(&apos;Unterminated string starting at position &apos; + firstPos);" />
-		<issue line="162" char="7" reason="Expected &apos;throw&apos; to have an indentation at 5 instead at 7." evidence="      throw new Error(&apos;expecting &apos; + operatorChar + &apos; but instead got &apos; + currentChar + &apos; at position &apos; + this._pos);" />
-		<issue line="162" char="75" reason="&apos;currentChar&apos; is not defined." evidence="      throw new Error(&apos;expecting &apos; + operatorChar + &apos; but instead got &apos; + currentChar + &apos; at position &apos; + this._pos);" />
-		<issue line="16" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;../../util/util&apos;);" />
-	</file>
-	<file name="lib/services/core/exponentialretrypolicyfilter.js">
-		<issue line="49" char="38" reason="&apos;ExponentialRetryPolicyFilter&apos; was used before it was defined." evidence="function ExponentialRetryPolicyFilter(retryCount, retryInterval, minRetryInterval, maxRetryInterval) {" />
-		<issue line="120" char="27" reason="Missing space after &apos;function&apos;." evidence="  var operation = function() {" />
-		<issue line="133" char="30" reason="Missing space after &apos;function&apos;." evidence="          setTimeout(function() {" />
-	</file>
-	<file name="lib/services/core/linearretrypolicyfilter.js">
-		<issue line="37" char="33" reason="&apos;LinearRetryPolicyFilter&apos; was used before it was defined." evidence="function LinearRetryPolicyFilter(retryCount, retryInterval) {" />
-	</file>
 	<file name="lib/services/core/servicebusserviceclient.js">
-		<issue line="42" char="33" reason="&apos;ServiceBusServiceClient&apos; was used before it was defined." evidence="function ServiceBusServiceClient(accessKey, issuer, host, acsHost, authenticationProvider) {" />
-		<issue line="43" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
+		<issue line="40" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
 		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
 		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
 		<issue line="27" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
