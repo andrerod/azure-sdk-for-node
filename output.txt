@@ -1,0 +1,872 @@
+
+> azure@0.6.10 jshint /Users/andrerod/workspace/azure-sdk-for-node
+> node test/runjshint.js
+
+<?xml version="1.0" encoding="utf-8"?>
+<jslint>
+	<file name="lib/http/webresource.js">
+		<issue line="290" char="67" reason="Cyclomatic complexity is too high per function (6)." evidence="WebResource.prototype.addOptionalAccessConditionHeader = function (accessConditionHeaders) {" />
+		<issue line="314" char="73" reason="Cyclomatic complexity is too high per function (6)." evidence="WebResource.prototype.addOptionalSourceAccessConditionHeader = function (accessConditionHeaders) {" />
+		<issue line="354" char="33" reason="&apos;encodeSpecialCharacters&apos; was used before it was defined." evidence="function encodeSpecialCharacters(path) {" />
+	</file>
+	<file name="lib/serviceruntime/namedpipeinputchannel.js">
+		<issue line="31" char="33" reason="Cyclomatic complexity is too high per function (6)." evidence="  this._readData(name, function (error, data) {" />
+	</file>
+	<file name="lib/serviceruntime/protocol1runtimegoalstateclient.js">
+		<issue line="86" char="77" reason="Cyclomatic complexity is too high per function (6)." evidence="  self.namedPipeInputChannel.readInputChannel(self.endpoint, true, function (error, data) {" />
+	</file>
+	<file name="lib/serviceruntime/roleenvironment.js">
+		<issue line="51" char="21" reason="&apos;RoleEnvironment&apos; was used before it was defined." evidence="var RoleEnvironment = exports;" />
+		<issue line="500" char="65" reason="Too many statements per function (66)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
+		<issue line="500" char="65" reason="Cyclomatic complexity is too high per function (24)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
+	</file>
+	<file name="lib/serviceruntime/runtimeversionmanager.js">
+		<issue line="22" char="31" reason="&apos;RuntimeVersionManager&apos; was used before it was defined." evidence="function RuntimeVersionManager(runtimeVersionProtocolClient, runtimeKernel) {" />
+		<issue line="50" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var i in self.supportedVersionList) {" />
+	</file>
+	<file name="lib/serviceruntime/runtimeversionprotocolclient.js">
+		<issue line="24" char="38" reason="&apos;RuntimeVersionProtocolClient&apos; was used before it was defined." evidence="function RuntimeVersionProtocolClient(inputChannel) {" />
+		<issue line="41" char="9" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="        for (var endpoint in endpoints) {" />
+	</file>
+	<file name="lib/serviceruntime/xmlcurrentstateserializer.js">
+		<issue line="25" char="35" reason="&apos;XmlCurrentStateSerializer&apos; was used before it was defined." evidence="function XmlCurrentStateSerializer() { }" />
+	</file>
+	<file name="lib/serviceruntime/xmlgoalstatedeserializer.js">
+		<issue line="23" char="34" reason="&apos;XmlGoalStateDeserializer&apos; was used before it was defined." evidence="function XmlGoalStateDeserializer() { }" />
+	</file>
+	<file name="lib/serviceruntime/xmlroleenvironmentdatadeserializer.js">
+		<issue line="23" char="44" reason="&apos;XmlRoleEnvironmentDataDeserializer&apos; was used before it was defined." evidence="function XmlRoleEnvironmentDataDeserializer() { }" />
+		<issue line="54" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var configurationSetting in configurationSettings) {" />
+		<issue line="71" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var localResource in localResources) {" />
+		<issue line="93" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var endpoint in currentInstance.endpoints) {" />
+		<issue line="120" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var roleInstance in roleInstances) {" />
+		<issue line="111" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var role in roles) {" />
+		<issue line="103" char="73" reason="Cyclomatic complexity is too high per function (6)." evidence="XmlRoleEnvironmentDataDeserializer.prototype._translateRoles = function (xml, currentInstance, currentRole) {" />
+		<issue line="160" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var endpoint in endpoints) {" />
+		<issue line="154" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var instance in instances) {" />
+		<issue line="180" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var endpoint in endpoints) {" />
+	</file>
+	<file name="lib/services/blob/blobservice.js">
+		<issue line="55" char="27" reason="Strings must use singlequote." evidence="BlobService.needCntErr = &quot;Container name must be specified in the &apos;name&apos; parameter.&quot;;" />
+		<issue line="56" char="31" reason="Strings must use singlequote." evidence="BlobService.needCntBlobErr = &quot;Container and blob name must be specified in the &apos;name&apos; parameter, separated with a forward slash.&quot;;" />
+		<issue line="57" char="31" reason="Strings must use singlequote." evidence="BlobService.needBlobValErr = &quot;Blob value must be specified in the &apos;data&apos; parameter.&quot;;" />
+		<issue line="80" char="21" reason="&apos;BlobService&apos; was used before it was defined." evidence="function BlobService(storageAccountOrConnectionString, storageAccessKey, host, authenticationProvider) {" />
+		<issue line="83" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
+		<issue line="436" char="119" reason="Trailing whitespace." evidence="* Calling the Set Container Metadata operation overwrites all existing metadata that is associated with the container. " />
+		<issue line="585" char="46" reason="Trailing whitespace." evidence="* Marks the specified container for deletion. " />
+		<issue line="749" char="4" reason="Trailing whitespace." evidence="/** " />
+		<issue line="750" char="91" reason="Trailing whitespace." evidence="* Creates a new block blob or page blob, or updates the content of an existing block blob. " />
+		<issue line="792" char="28" reason="Cyclomatic complexity is too high per function (6)." evidence="  var operation = function (length, md5) {" />
+		<issue line="1645" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.renewLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
+		<issue line="1693" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.breakLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
+		<issue line="1771" char="55" reason="Trailing whitespace." evidence="    (rangeEnd - rangeStart) + 1, rangeStart, rangeEnd, " />
+		<issue line="1853" char="50" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype.listBlobRegions = function (container, blob, rangeStart, rangeEnd, optionsOrCallback, callback) {" />
+		<issue line="2024" char="75" reason="Trailing whitespace." evidence="* Writes a blob by specifying the list of block IDs that make up the blob. " />
+		<issue line="2025" char="113" reason="Trailing whitespace." evidence="* In order to be written as part of a blob, a block must have been successfully written to the server in a prior " />
+		<issue line="2256" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.ACQUIRE:" />
+		<issue line="2258" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.CREATED_CODE;" />
+		<issue line="2259" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2260" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RENEW:" />
+		<issue line="2262" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
+		<issue line="2263" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2264" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RELEASE:" />
+		<issue line="2266" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
+		<issue line="2267" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2268" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.BREAK:" />
+		<issue line="2270" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.ACCEPTED_CODE;" />
+		<issue line="2271" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2242" char="49" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype._leaseBlobImpl = function (container, blob, leaseId, leaseAction, optionsOrCallback, callback) {" />
+		<issue line="2302" char="54" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._setHeadersFromBlob = function (webResource, blob) {" />
+		<issue line="2381" char="59" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._updatePageBlobPagesImpl = function (container, blob, length, rangeStart, rangeEnd, writeMethod, options) {" />
+		<issue line="2462" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
+		<issue line="2500" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
+		<issue line="2500" char="31" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateContainerName(containerName) {" />
+		<issue line="2533" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
+		<issue line="2549" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="20" char="9" reason="&apos;path&apos; is defined but never used." evidence="var path = require(&apos;path&apos;);" />
+		<issue line="23" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
+		<issue line="33" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+		<issue line="2483" char="25" reason="&apos;generateBlockId&apos; is defined but never used." evidence="function generateBlockId(part) {" />
+	</file>
+	<file name="lib/services/blob/hmacsha256sign.js">
+		<issue line="30" char="24" reason="&apos;HmacSha256Sign&apos; was used before it was defined." evidence="function HmacSha256Sign(accessKey) {" />
+		<issue line="19" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="20" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = require(&apos;../../util/constants&apos;).HeaderConstants;" />
+	</file>
+	<file name="lib/services/blob/models/blobresult.js">
+		<issue line="25" char="20" reason="&apos;BlobResult&apos; was used before it was defined." evidence="function BlobResult(container, blob) {" />
+		<issue line="40" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var subPropertyName in blobXml[propertyName]) {" />
+		<issue line="17" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
+	</file>
+	<file name="lib/services/blob/models/blocklistresult.js">
+		<issue line="25" char="25" reason="&apos;BlockListResult&apos; was used before it was defined." evidence="function BlockListResult(committedBlocks, uncommittedBlocks, latestBlocks) {" />
+		<issue line="18" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../../util/util&apos;);" />
+	</file>
+	<file name="lib/services/blob/models/containeraclresult.js">
+		<issue line="27" char="28" reason="&apos;ContainerAclResult&apos; was used before it was defined." evidence="function ContainerAclResult(signedIdentifiers) {" />
+		<issue line="44" char="42" reason="Cyclomatic complexity is too high per function (6)." evidence="    signedIdentifiersJs.forEach(function (signedIdentifier) {" />
+	</file>
+	<file name="lib/services/blob/models/containerresult.js">
+		<issue line="26" char="25" reason="&apos;ContainerResult&apos; was used before it was defined." evidence="function ContainerResult(name, publicAccessLevel) {" />
+		<issue line="41" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var subPropertyName in containerXml[propertyName]) {" />
+		<issue line="17" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
+	</file>
+	<file name="lib/services/blob/models/leaseresult.js">
+		<issue line="23" char="21" reason="&apos;LeaseResult&apos; was used before it was defined." evidence="function LeaseResult(container, blob, id, time) {" />
+	</file>
+	<file name="lib/services/blob/models/listblobsresultcontinuation.js">
+		<issue line="27" char="37" reason="&apos;ListBlobsResultContinuation&apos; was used before it was defined." evidence="function ListBlobsResultContinuation(blobService, container, options, nextMarker) {" />
+		<issue line="19" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
+	</file>
+	<file name="lib/services/blob/models/listcontainersresultcontinuation.js">
+		<issue line="27" char="42" reason="&apos;ListContainersResultContinuation&apos; was used before it was defined." evidence="function ListContainersResultContinuation(blobService, options, nextMarker) {" />
+		<issue line="19" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
+	</file>
+	<file name="lib/services/blob/models/servicepropertiesresult.js">
+		<issue line="24" char="33" reason="Unexpected space after &apos;ServicePropertiesResult&apos;." evidence="function ServicePropertiesResult () {}" />
+		<issue line="24" char="34" reason="&apos;ServicePropertiesResult&apos; was used before it was defined." evidence="function ServicePropertiesResult () {}" />
+		<issue line="26" char="46" reason="Cyclomatic complexity is too high per function (17)." evidence="ServicePropertiesResult.serialize = function (servicePropertiesJs) {" />
+		<issue line="125" char="42" reason="Cyclomatic complexity is too high per function (17)." evidence="ServicePropertiesResult.parse = function (servicePropertiesXml) {" />
+	</file>
+	<file name="lib/services/blob/sharedaccesssignature.js">
+		<issue line="39" char="31" reason="&apos;SharedAccessSignature&apos; was used before it was defined." evidence="function SharedAccessSignature(storageAccount, storageAccessKey, permissionSet) {" />
+		<issue line="88" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var permission in this.permissionSet) {" />
+		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+		<issue line="22" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+	</file>
+	<file name="lib/services/blob/sharedkey.js">
+		<issue line="34" char="19" reason="&apos;SharedKey&apos; was used before it was defined." evidence="function SharedKey(storageAccount, storageAccessKey, usePathStyleUri) {" />
+		<issue line="43" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="98" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var n in queryStringValues) {" />
+		<issue line="103" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var name in paramNames) {" />
+		<issue line="141" char="86" reason="Strings must use singlequote." evidence="      canonicalizedHeaders += canonicalizedHeadersArray[headerName].toLowerCase() + &quot;:&quot; + webResource.headers[canonicalizedHeadersArray[headerName]] + &apos;\n&apos;;" />
+		<issue line="140" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var headerName in canonicalizedHeadersArray) {" />
+		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+	</file>
+	<file name="lib/services/blob/sharedkeylite.js">
+		<issue line="36" char="23" reason="&apos;SharedKeyLite&apos; was used before it was defined." evidence="function SharedKeyLite(storageAccount, storageAccessKey, usePathStyleUri) {" />
+		<issue line="45" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="124" char="86" reason="Strings must use singlequote." evidence="      canonicalizedHeaders += canonicalizedHeadersArray[headerName].toLowerCase() + &quot;:&quot; + webResource.headers[canonicalizedHeadersArray[headerName]] + &apos;\n&apos;;" />
+		<issue line="123" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var headerName in canonicalizedHeadersArray) {" />
+		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+	</file>
+	<file name="lib/services/core/connectionstringparser.js">
+		<issue line="54" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;ExpectKey&apos;:" />
+		<issue line="55" char="9" reason="Expected &apos;key&apos; to have an indentation at 7 instead at 9." evidence="        key = this._extractKey();" />
+		<issue line="56" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectAssignment&apos;;" />
+		<issue line="57" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
+		<issue line="59" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;ExpectAssignment&apos;:" />
+		<issue line="60" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._skipOperator(&apos;=&apos;);" />
+		<issue line="61" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectValue&apos;;" />
+		<issue line="62" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
+		<issue line="64" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;ExpectValue&apos;:" />
+		<issue line="65" char="9" reason="Expected &apos;value&apos; to have an indentation at 7 instead at 9." evidence="        value = this._extractValue();" />
+		<issue line="66" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectSeparator&apos;;" />
+		<issue line="67" char="9" reason="Expected &apos;parsedConnectionString&apos; to have an indentation at 7 instead at 9." evidence="        parsedConnectionString[key.toLowerCase()] = value;" />
+		<issue line="68" char="9" reason="Expected &apos;key&apos; to have an indentation at 7 instead at 9." evidence="        key = null;" />
+		<issue line="69" char="9" reason="Expected &apos;value&apos; to have an indentation at 7 instead at 9." evidence="        value = null;" />
+		<issue line="70" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
+		<issue line="72" char="7" reason="Expected &apos;default&apos; to have an indentation at 5 instead at 7." evidence="      default:" />
+		<issue line="73" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._skipOperator(&apos;;&apos;);" />
+		<issue line="74" char="9" reason="Expected &apos;this&apos; to have an indentation at 7 instead at 9." evidence="        this._state = &apos;ExpectKey&apos;;" />
+		<issue line="75" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
+		<issue line="38" char="52" reason="Cyclomatic complexity is too high per function (7)." evidence="ConnectionStringParser.prototype._parse = function () {" />
+		<issue line="103" char="57" reason="Cyclomatic complexity is too high per function (6)." evidence="ConnectionStringParser.prototype._extractKey = function () {" />
+		<issue line="148" char="7" reason="Expected &apos;throw&apos; to have an indentation at 5 instead at 7." evidence="      throw new Error(&apos;Unterminated string starting at position &apos; + firstPos);" />
+		<issue line="162" char="7" reason="Expected &apos;throw&apos; to have an indentation at 5 instead at 7." evidence="      throw new Error(&apos;expecting &apos; + operatorChar + &apos; but instead got &apos; + currentChar + &apos; at position &apos; + this._pos);" />
+		<issue line="162" char="75" reason="&apos;currentChar&apos; is not defined." evidence="      throw new Error(&apos;expecting &apos; + operatorChar + &apos; but instead got &apos; + currentChar + &apos; at position &apos; + this._pos);" />
+		<issue line="16" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;../../util/util&apos;);" />
+	</file>
+	<file name="lib/services/core/exponentialretrypolicyfilter.js">
+		<issue line="49" char="38" reason="&apos;ExponentialRetryPolicyFilter&apos; was used before it was defined." evidence="function ExponentialRetryPolicyFilter(retryCount, retryInterval, minRetryInterval, maxRetryInterval) {" />
+		<issue line="120" char="27" reason="Missing space after &apos;function&apos;." evidence="  var operation = function() {" />
+		<issue line="133" char="30" reason="Missing space after &apos;function&apos;." evidence="          setTimeout(function() {" />
+	</file>
+	<file name="lib/services/core/linearretrypolicyfilter.js">
+		<issue line="37" char="33" reason="&apos;LinearRetryPolicyFilter&apos; was used before it was defined." evidence="function LinearRetryPolicyFilter(retryCount, retryInterval) {" />
+	</file>
+	<file name="lib/services/core/servicebusserviceclient.js">
+		<issue line="42" char="33" reason="&apos;ServiceBusServiceClient&apos; was used before it was defined." evidence="function ServiceBusServiceClient(accessKey, issuer, host, acsHost, authenticationProvider) {" />
+		<issue line="43" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
+		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
+		<issue line="27" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+	</file>
+	<file name="lib/services/core/servicebussettings.js">
+		<issue line="33" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
+		<issue line="42" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="49" char="28" reason="&apos;ServiceBusSettings&apos; was used before it was defined." evidence="function ServiceBusSettings(serviceBusEndpointUri, wrapEndpointUri, namespace, wrapName, wrapPassword) {" />
+		<issue line="65" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="67" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="124" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="126" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="20" char="27" reason="&apos;ConnectionStringParser&apos; is defined but never used." evidence="var ConnectionStringParser = require(&apos;./connectionstringparser&apos;);" />
+	</file>
+	<file name="lib/services/core/serviceclient.js">
+		<issue line="23" char="23" reason="Strings must use singlequote." evidence="var events = require(&quot;events&quot;);" />
+		<issue line="108" char="23" reason="&apos;ServiceClient&apos; was used before it was defined." evidence="function ServiceClient(host, authenticationProvider) {" />
+		<issue line="220" char="48" reason="Strings must use singlequote." evidence="      self.logger.log(Logger.LogLevels.DEBUG, &quot;REQUEST OPTIONS:\n&quot; + util.inspect(requestOptions));" />
+		<issue line="223" char="50" reason="Strings must use singlequote." evidence="        self.logger.log(Logger.LogLevels.DEBUG, &quot;FINAL REQUEST OPTIONS:\n&quot; + util.inspect(finalRequestOptions));" />
+		<issue line="279" char="49" reason="Missing space after &apos;function&apos;." evidence="          body.outputStream.on(&apos;error&apos;, function(error) {" />
+		<issue line="329" char="46" reason="Trailing whitespace." evidence="      this.logger.log(Logger.LogLevels.DEBUG, " />
+		<issue line="337" char="44" reason="Strings must use singlequote." evidence="  this.logger.log(Logger.LogLevels.DEBUG, &quot;RESPONSE:\n&quot; + util.inspect(responseObject));" />
+		<issue line="370" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var property in this) {" />
+		<issue line="385" char="75" reason="Trailing whitespace." evidence="          // The parentFilterNext is the filter next to the merged filter. " />
+		<issue line="443" char="62" reason="Missing space after &apos;function&apos;." evidence="ServiceClient.prototype._loadEnvironmentProxyValue = function() {" />
+		<issue line="465" char="57" reason="Missing space after &apos;function&apos;." evidence="ServiceClient.prototype._loadEnvironmentProxy = function() {" />
+		<issue line="505" char="51" reason="Cyclomatic complexity is too high per function (11)." evidence="ServiceClient.prototype._parseResponse = function (response) {" />
+		<issue line="583" char="57" reason="Strings must use singlequote." evidence="  webResource.requestUrl = this.protocol + this.host + &quot;:&quot; + this.port + webResource.path + queryString;" />
+		<issue line="656" char="52" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceClient.prototype._normalizeError = function (error) {" />
+		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;qs&apos;);" />
+		<issue line="21" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+		<issue line="30" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+		<issue line="225" char="78" reason="&apos;responseBody&apos; is defined but never used." evidence="        var processResponseCallback = function (error, response, responseBody) {" />
+		<issue line="637" char="42" reason="&apos;host&apos; is defined but never used." evidence="ServiceClient.isEmulated = function (host) {" />
+	</file>
+	<file name="lib/services/core/servicemanagementclient.js">
+		<issue line="55" char="33" reason="&apos;ServiceManagementClient&apos; was used before it was defined." evidence="function ServiceManagementClient(authentication, hostOptions) {" />
+		<issue line="56" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementClient.super_.call(this);" />
+		<issue line="70" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setAuthentication = function(authentication) {" />
+		<issue line="70" char="64" reason="Cyclomatic complexity is too high per function (12)." evidence="ServiceManagementClient.prototype._setAuthentication = function(authentication) {" />
+		<issue line="117" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setServiceHost = function(hostOptions) {" />
+		<issue line="117" char="61" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementClient.prototype._setServiceHost = function(hostOptions) {" />
+		<issue line="148" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._getContentType = function() {" />
+		<issue line="161" char="60" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._getAcceptType = function() {" />
+		<issue line="177" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._buildRequestOptions = function(webResource, options, callback) {" />
+		<issue line="214" char="62" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setDefaultProxy = function() {" />
+		<issue line="225" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setProxyUrl = function(proxyurl) {" />
+		<issue line="257" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setProxy = function(proxy, isHTTPS) {" />
+		<issue line="275" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setAgent = function(self, reqopts, isHTTPS) {" />
+		<issue line="275" char="55" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementClient.prototype._setAgent = function(self, reqopts, isHTTPS) {" />
+		<issue line="22" char="16" reason="&apos;WebResource&apos; is defined but never used." evidence="var WebResource = require(&apos;../../http/webresource&apos;);" />
+	</file>
+	<file name="lib/services/core/servicemanagementsettings.js">
+		<issue line="36" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
+		<issue line="44" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="49" char="35" reason="&apos;ServiceManagementSettings&apos; was used before it was defined." evidence="function ServiceManagementSettings(subscriptionId, endpointUri, certificatePath) {" />
+		<issue line="57" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="59" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="103" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="105" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="16" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
+		<issue line="20" char="27" reason="&apos;ConnectionStringParser&apos; is defined but never used." evidence="var ConnectionStringParser = require(&apos;./connectionstringparser&apos;);" />
+	</file>
+	<file name="lib/services/core/servicesettings.js">
+		<issue line="37" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="39" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="49" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="51" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="61" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="63" char="51" reason="Trailing whitespace." evidence="* @param {array}  validKeys        The valid keys. " />
+		<issue line="64" char="56" reason="Trailing whitespace." evidence="* @return {array} The tokenized connection string keys. " />
+		<issue line="83" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="85" char="80" reason="Trailing whitespace." evidence="* @param boolean {isRequired}   Either these conditions are all required or all " />
+		<issue line="89" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="93" char="19" reason="Cyclomatic complexity is too high per function (9)." evidence="  return function (userSettings) {" />
+		<issue line="137" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="139" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="169" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="179" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="189" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="199" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="202" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="203" char="18" reason="Trailing whitespace." evidence="* @return {array} " />
+		<issue line="216" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="218" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="219" char="79" reason="Trailing whitespace." evidence="* @return boolean If any filter returns null, false. If there are any settings " />
+		<issue line="18" char="6" reason="&apos;_&apos; is defined but never used." evidence="var _ = require(&apos;underscore&apos;);" />
+	</file>
+	<file name="lib/services/core/sqlserviceclient.js">
+		<issue line="43" char="26" reason="&apos;SqlServiceClient&apos; was used before it was defined." evidence="function SqlServiceClient(serverName, administratorLogin, administratorLoginPassword, host, acsHost, authenticationProvider) {" />
+		<issue line="44" char="20" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlServiceClient.super_.call(this, host, authenticationProvider);" />
+		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
+		<issue line="27" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+	</file>
+	<file name="lib/services/core/storageserviceclient.js">
+		<issue line="52" char="30" reason="&apos;StorageServiceClient&apos; was used before it was defined." evidence="function StorageServiceClient(storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider) {" />
+		<issue line="57" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  StorageServiceClient.super_.call(this, host, authenticationProvider);" />
+		<issue line="163" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(webResource.headers &amp;&amp; webResource.headers[HeaderConstants.CONTENT_LENGTH] === null) {" />
+		<issue line="154" char="64" reason="Cyclomatic complexity is too high per function (8)." evidence="StorageServiceClient.prototype._buildRequestOptions = function (webResource, options, callback) {" />
+		<issue line="246" char="66" reason="Cyclomatic complexity is too high per function (9)." evidence="StorageServiceClient.prototype._setAccountCredentials = function (storageAccount, storageAccessKey) {" />
+		<issue line="17" char="9" reason="&apos;http&apos; is defined but never used." evidence="var http = require(&apos;http&apos;);" />
+		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;qs&apos;);" />
+		<issue line="21" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+		<issue line="22" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
+		<issue line="32" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+		<issue line="33" char="11" reason="&apos;Logger&apos; is defined but never used." evidence="var Logger = require(&apos;../../diagnostics/logger&apos;);" />
+	</file>
+	<file name="lib/services/core/storageservicesettings.js">
+		<issue line="50" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
+		<issue line="63" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="71" char="32" reason="&apos;StorageServiceSettings&apos; was used before it was defined." evidence="function StorageServiceSettings(name, key, blobEndpointUri, queueEndpointUri, tableEndpointUri, usePathStyleUri) {" />
+		<issue line="87" char="78" reason="Trailing whitespace." evidence="* Returns a StorageServiceSettings with development storage credentials using " />
+		<issue line="89" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="91" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="115" char="79" reason="Trailing whitespace." evidence="* Gets a StorageServiceSettings object that references the development storage " />
+		<issue line="117" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="129" char="77" reason="Trailing whitespace." evidence="* Gets the default service endpoint using the specified protocol and account " />
+		<issue line="131" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="134" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="154" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="159" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="202" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="204" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="279" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="281" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="20" char="27" reason="&apos;ConnectionStringParser&apos; is defined but never used." evidence="var ConnectionStringParser = require(&apos;./connectionstringparser&apos;);" />
+	</file>
+	<file name="lib/services/queue/models/listqueuesresultcontinuation.js">
+		<issue line="27" char="38" reason="&apos;ListQueuesResultContinuation&apos; was used before it was defined." evidence="function ListQueuesResultContinuation(queueService, options, nextMarker) {" />
+		<issue line="19" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
+	</file>
+	<file name="lib/services/queue/models/queuemessageresult.js">
+		<issue line="26" char="28" reason="&apos;QueueMessageResult&apos; was used before it was defined." evidence="function QueueMessageResult(queue, messageid, popreceipt, metadata) {" />
+		<issue line="18" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../../util/util&apos;);" />
+	</file>
+	<file name="lib/services/queue/models/queueresult.js">
+		<issue line="23" char="21" reason="&apos;QueueResult&apos; was used before it was defined." evidence="function QueueResult(name, metadata) {" />
+		<issue line="35" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var property in messageXml) {" />
+	</file>
+	<file name="lib/services/queue/models/servicepropertiesresult.js">
+		<issue line="24" char="33" reason="&apos;ServicePropertiesResult&apos; was used before it was defined." evidence="function ServicePropertiesResult() { }" />
+		<issue line="26" char="46" reason="Cyclomatic complexity is too high per function (16)." evidence="ServicePropertiesResult.serialize = function (servicePropertiesJs) {" />
+		<issue line="119" char="42" reason="Cyclomatic complexity is too high per function (16)." evidence="ServicePropertiesResult.parse = function (servicePropertiesXml) {" />
+	</file>
+	<file name="lib/services/queue/queueservice.js">
+		<issue line="43" char="112" reason="Trailing whitespace." evidence="* If no storageAccount or storageAccessKey are provided, the AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY " />
+		<issue line="54" char="22" reason="&apos;QueueService&apos; was used before it was defined." evidence="function QueueService(storageAccountOrConnectionString, storageAccessKey, host, authenticationProvider) {" />
+		<issue line="57" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  QueueService.super_.call(this," />
+		<issue line="597" char="22" reason="Strings must use singlequote." evidence="    throw new Error(&quot;A message retrieved using &apos;peekMessages&apos; can not be deleted! Use &apos;getMessages&apos; instead.&quot;);" />
+		<issue line="712" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
+		<issue line="712" char="27" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateQueueName(queue) {" />
+		<issue line="745" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
+		<issue line="24" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+	</file>
+	<file name="lib/services/serviceBus/models/acstokenresult.js">
+		<issue line="26" char="24" reason="&apos;AcsTokenResult&apos; was used before it was defined." evidence="function AcsTokenResult() {" />
+		<issue line="20" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
+	</file>
+	<file name="lib/services/serviceBus/models/notificationhubresult.js">
+		<issue line="16" char="6" reason="&apos;_&apos; is defined but never used." evidence="var _ = require(&apos;underscore&apos;);" />
+		<issue line="18" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
+	</file>
+	<file name="lib/services/serviceBus/models/queuemessageresult.js">
+		<issue line="29" char="28" reason="&apos;QueueMessageResult&apos; was used before it was defined." evidence="function QueueMessageResult() { }" />
+		<issue line="40" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var property in brokerProperties) {" />
+		<issue line="31" char="37" reason="Cyclomatic complexity is too high per function (9)." evidence="QueueMessageResult.parse = function (responseObject) {" />
+		<issue line="85" char="42" reason="Strings must use singlequote." evidence="  if (azureutil.stringStartsWith(value, &quot;\&quot;&quot;) &amp;&amp; azureutil.stringEndsWith(value, &quot;\&quot;&quot;)) {" />
+		<issue line="85" char="83" reason="Strings must use singlequote." evidence="  if (azureutil.stringStartsWith(value, &quot;\&quot;&quot;) &amp;&amp; azureutil.stringEndsWith(value, &quot;\&quot;&quot;)) {" />
+		<issue line="80" char="51" reason="Cyclomatic complexity is too high per function (7)." evidence="QueueMessageResult._propertyFromString = function (value) {" />
+		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
+		<issue line="23" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
+	</file>
+	<file name="lib/services/serviceBus/models/resourceresult.js">
+		<issue line="51" char="7" reason="Missing semicolon." evidence="    })" />
+		<issue line="59" char="17" reason="&apos;setName&apos; was used before it was defined." evidence="function setName(entry, nameProperty) {" />
+	</file>
+	<file name="lib/services/serviceBus/models/ruleresult.js">
+		<issue line="23" char="30" reason="Cyclomatic complexity is too high per function (9)." evidence="exports.serialize = function (rule) {" />
+		<issue line="16" char="16" reason="&apos;queryString&apos; is defined but never used." evidence="var queryString = require(&apos;querystring&apos;);" />
+	</file>
+	<file name="lib/services/serviceBus/notificationhubservice.js">
+		<issue line="43" char="32" reason="&apos;NotificationHubService&apos; was used before it was defined." evidence="function NotificationHubService(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
+		<issue line="44" char="26" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  NotificationHubService.super_.call(this," />
+		<issue line="57" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="73" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="99" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="112" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="129" char="25" reason="&apos;validateHubName&apos; was used before it was defined." evidence="function validateHubName(hub) {" />
+		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
+	</file>
+	<file name="lib/services/serviceBus/servicebusservice.js">
+		<issue line="54" char="27" reason="&apos;ServiceBusService&apos; was used before it was defined." evidence="function ServiceBusService(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
+		<issue line="55" char="21" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusService.super_.call(this," />
+		<issue line="68" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="90" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="116" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="149" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="182" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="206" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="230" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="270" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="323" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="344" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="399" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="413" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="438" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="451" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="471" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="528" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="542" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="567" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="580" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="602" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="619" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="648" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="677" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="701" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="719" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="750" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="780" char="27" reason="&apos;setRequestHeaders&apos; was used before it was defined." evidence="function setRequestHeaders(webResource, message) {" />
+		<issue line="783" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;contentType&apos;:" />
+		<issue line="784" char="9" reason="Expected &apos;webResource&apos; to have an indentation at 7 instead at 9." evidence="        webResource.addOptionalHeader(HeaderConstants.CONTENT_TYPE, message[property]);" />
+		<issue line="785" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
+		<issue line="786" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;brokerProperties&apos;:" />
+		<issue line="787" char="9" reason="Expected &apos;webResource&apos; to have an indentation at 7 instead at 9." evidence="        webResource.addOptionalHeader(HeaderConstants.BROKER_PROPERTIES_HEADER, JSON.stringify(message.brokerProperties));" />
+		<issue line="788" char="9" reason="Expected &apos;break&apos; to have an indentation at 7 instead at 9." evidence="        break;" />
+		<issue line="789" char="7" reason="Expected &apos;case&apos; to have an indentation at 5 instead at 7." evidence="      case &apos;customProperties&apos;:" />
+		<issue line="791" char="9" reason="Expected &apos;for&apos; to have an indentation at 7 instead at 9." evidence="        for (var customProperty in message.customProperties) {" />
+		<issue line="792" char="11" reason="Expected &apos;var&apos; to have an indentation at 9 instead at 11." evidence="          var value = message.customProperties[customProperty];" />
+		<issue line="793" char="11" reason="Expected &apos;if&apos; to have an indentation at 9 instead at 11." evidence="          if (azureutil.objectIsString(value)) {" />
+		<issue line="794" char="13" reason="Expected &apos;value&apos; to have an indentation at 11 instead at 13." evidence="            value = &quot;\&quot;&quot; + value.toString() + &quot;\&quot;&quot;;" />
+		<issue line="794" char="22" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + value.toString() + &quot;\&quot;&quot;;" />
+		<issue line="794" char="48" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + value.toString() + &quot;\&quot;&quot;;" />
+		<issue line="795" char="11" reason="Expected &apos;}&apos; to have an indentation at 9 instead at 11." evidence="          } else if (azureutil.stringIsDate(value)) {" />
+		<issue line="796" char="13" reason="Expected &apos;value&apos; to have an indentation at 11 instead at 13." evidence="            value = &quot;\&quot;&quot; + RFC1123.format(value) + &quot;\&quot;&quot;;" />
+		<issue line="796" char="22" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + RFC1123.format(value) + &quot;\&quot;&quot;;" />
+		<issue line="796" char="53" reason="Strings must use singlequote." evidence="            value = &quot;\&quot;&quot; + RFC1123.format(value) + &quot;\&quot;&quot;;" />
+		<issue line="797" char="11" reason="Expected &apos;}&apos; to have an indentation at 9 instead at 11." evidence="          } else {" />
+		<issue line="798" char="13" reason="Expected &apos;value&apos; to have an indentation at 11 instead at 13." evidence="            value = value.toString();" />
+		<issue line="799" char="11" reason="Expected &apos;}&apos; to have an indentation at 9 instead at 11." evidence="          }" />
+		<issue line="801" char="11" reason="Expected &apos;webResource&apos; to have an indentation at 9 instead at 11." evidence="          webResource.addOptionalHeader(customProperty, value);" />
+		<issue line="801" char="11" reason="Too many errors. (90% scanned)." evidence="" />
+	</file>
+	<file name="lib/services/serviceBus/servicebusservicebase.js">
+		<issue line="50" char="31" reason="&apos;ServiceBusServiceBase&apos; was used before it was defined." evidence="function ServiceBusServiceBase(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
+		<issue line="87" char="21" reason="Trailing whitespace." evidence="    var settings = { " />
+		<issue line="97" char="25" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceBase.super_.call(this," />
+		<issue line="50" char="31" reason="Cyclomatic complexity is too high per function (9)." evidence="function ServiceBusServiceBase(namespaceOrConnectionString, accessKey, issuer, acsNamespace, host, authenticationProvider) {" />
+		<issue line="111" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="151" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="163" char="107" reason="Missing semicolon." evidence="    if (!responseObject.error &amp;&amp; (!validators || !validators.some(function (v) { return !v(responseObject) }))) {" />
+		<issue line="179" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="208" char="107" reason="Missing semicolon." evidence="    if (!responseObject.error &amp;&amp; (!validators || !validators.some(function (v) { return !v(responseObject) }))) {" />
+		<issue line="224" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="252" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="21" char="12" reason="&apos;RFC1123&apos; is defined but never used." evidence="var RFC1123 = require(&apos;../../util/rfc1123date&apos;);" />
+	</file>
+	<file name="lib/services/serviceBus/wrap.js">
+		<issue line="43" char="14" reason="&apos;Wrap&apos; was used before it was defined." evidence="function Wrap(acsHost, issuer, accessKey) {" />
+		<issue line="52" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="66" char="10" reason="Strings must use singlequote." evidence="        &quot;WRAP access_token=\&quot;&quot; + accessToken[ServiceBusConstants.WRAP_ACCESS_TOKEN] + &quot;\&quot;&quot;);" />
+		<issue line="66" char="88" reason="Strings must use singlequote." evidence="        &quot;WRAP access_token=\&quot;&quot; + accessToken[ServiceBusConstants.WRAP_ACCESS_TOKEN] + &quot;\&quot;&quot;);" />
+		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
+		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="22" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+		<issue line="23" char="28" reason="&apos;ServiceBusServiceClient&apos; is defined but never used." evidence="var ServiceBusServiceClient = require(&apos;../core/servicebusserviceclient&apos;);" />
+		<issue line="26" char="16" reason="&apos;WebResource&apos; is defined but never used." evidence="var WebResource = require(&apos;../../http/webresource&apos;);" />
+		<issue line="28" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
+		<issue line="29" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+	</file>
+	<file name="lib/services/serviceBus/wrapservice.js">
+		<issue line="42" char="21" reason="&apos;WrapService&apos; was used before it was defined." evidence="function WrapService(acsHost, issuer, accessKey) {" />
+		<issue line="66" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  WrapService.super_.call(this, acsHost);" />
+		<issue line="42" char="21" reason="Cyclomatic complexity is too high per function (6)." evidence="function WrapService(acsHost, issuer, accessKey) {" />
+		<issue line="159" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
+	</file>
+	<file name="lib/services/serviceBus/wraptokenmanager.js">
+		<issue line="42" char="26" reason="&apos;WrapTokenManager&apos; was used before it was defined." evidence="function WrapTokenManager(acsHost, issuer, accessKey) {" />
+		<issue line="48" char="53" reason="Missing space after &apos;function&apos;." evidence="WrapTokenManager.prototype.getAccessToken = function(scopeUri, callback) {" />
+		<issue line="69" char="50" reason="Trailing whitespace." evidence="      now.setMilliseconds(now.getMilliseconds() + " />
+		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
+		<issue line="19" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="21" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+		<issue line="23" char="16" reason="&apos;WebResource&apos; is defined but never used." evidence="var WebResource = require(&apos;../../http/webresource&apos;);" />
+		<issue line="25" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
+		<issue line="26" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+		<issue line="27" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
+	</file>
+	<file name="lib/services/serviceManagement/models/namevalidation.js">
+		<issue line="32" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(callback) {" />
+	</file>
+	<file name="lib/services/serviceManagement/models/roleparser.js">
+		<issue line="25" char="20" reason="&apos;RoleParser&apos; was used before it was defined." evidence="function RoleParser() {" />
+		<issue line="38" char="6" reason="Missing space after &apos;for&apos;." evidence="  for(var key in roleSchema) {" />
+		<issue line="41" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(typeInfo.isCollection) {" />
+		<issue line="43" char="14" reason="Missing space after &apos;if&apos;." evidence="    } else if(typeInfo.isComplex) {" />
+		<issue line="38" char="6" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for(var key in roleSchema) {" />
+		<issue line="74" char="52" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.handlePrimitiveType = function(metadata, role, key, serializeTo, output) {" />
+		<issue line="75" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(typeof (role[key]) === &apos;boolean&apos; || role[key]) {" />
+		<issue line="76" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(serializeTo === &apos;XML&apos;) {" />
+		<issue line="81" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
+		<issue line="81" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
+		<issue line="82" char="7" reason="Expected &apos;if&apos; to have an indentation at 5 instead at 7." evidence="      if(&apos;Default&apos; in metadata) {" />
+		<issue line="82" char="9" reason="Missing space after &apos;if&apos;." evidence="      if(&apos;Default&apos; in metadata) {" />
+		<issue line="83" char="9" reason="Expected &apos;output&apos; to have an indentation at 7 instead at 9." evidence="        output.ele(metadata.XmlNode).txt(metadata.Default);" />
+		<issue line="84" char="7" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 7." evidence="      } else {" />
+		<issue line="85" char="9" reason="Expected &apos;throw&apos; to have an indentation at 7 instead at 9." evidence="        throw new Error(&apos;Missing the required primitive field \&apos;&apos; + key + &apos;\&apos; in the role&apos;);" />
+		<issue line="86" char="7" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 7." evidence="      }" />
+		<issue line="113" char="50" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.handleComplexType = function(metadata, role, key, serializeTo, output) {" />
+		<issue line="114" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(key in role) {" />
+		<issue line="115" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(serializeTo === &apos;XML&apos;) {" />
+		<issue line="122" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
+		<issue line="122" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
+		<issue line="156" char="53" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.handleCollectionType = function(metadata, role, key, serializeTo, typeInfo, output) {" />
+		<issue line="157" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(key in role) {" />
+		<issue line="158" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(serializeTo === &apos;XML&apos;) {" />
+		<issue line="161" char="9" reason="Missing space after &apos;if&apos;." evidence="      if(typeInfo.isComplex) {" />
+		<issue line="162" char="11" reason="Missing space after &apos;if&apos;." evidence="        if(typeInfo.subType === &apos;Mixed&apos;) {" />
+		<issue line="171" char="14" reason="Missing space after &apos;for&apos;." evidence="          for(var j = 0; j &lt; keyValues.length; j++) {" />
+		<issue line="172" char="16" reason="Missing space after &apos;for&apos;." evidence="            for(var k = 0; k &lt; role[key].length; k++) {" />
+		<issue line="173" char="17" reason="Missing space after &apos;if&apos;." evidence="              if(keyProperty in role[key][k]) {" />
+		<issue line="174" char="19" reason="Missing space after &apos;if&apos;." evidence="                if(role[key][k][keyProperty] === keyValues[j]) {" />
+		<issue line="190" char="14" reason="Missing space after &apos;for&apos;." evidence="          for(var i = 0; i &lt; role[key].length; i++) {" />
+		<issue line="201" char="12" reason="Missing space after &apos;for&apos;." evidence="        for(var l = 0; l &lt; role[key].length; l++) {" />
+		<issue line="211" char="3" reason="Empty block." evidence="  } else if(metadata.Required) {" />
+		<issue line="211" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(metadata.Required) {" />
+		<issue line="156" char="53" reason="Cyclomatic complexity is too high per function (12)." evidence="RoleParser.prototype.handleCollectionType = function(metadata, role, key, serializeTo, typeInfo, output) {" />
+		<issue line="230" char="44" reason="Missing space after &apos;function&apos;." evidence="RoleParser.prototype.getTypeInfo = function(type) {" />
+		<issue line="239" char="5" reason="Expected &apos;var&apos; to have an indentation at 3 instead at 5." evidence="    var len = type.length;" />
+		<issue line="240" char="5" reason="Expected &apos;var&apos; to have an indentation at 3 instead at 5." evidence="    var nextToken = 0;" />
+		<issue line="241" char="5" reason="Expected &apos;if&apos; to have an indentation at 3 instead at 5." evidence="    if(type.indexOf(&quot;Collection(&quot;) === 0) {" />
+		<issue line="241" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(type.indexOf(&quot;Collection(&quot;) === 0) {" />
+		<issue line="241" char="22" reason="Strings must use singlequote." evidence="    if(type.indexOf(&quot;Collection(&quot;) === 0) {" />
+		<issue line="242" char="7" reason="Expected &apos;nextToken&apos; to have an indentation at 5 instead at 7." evidence="      nextToken = 11;" />
+		<issue line="243" char="7" reason="Expected &apos;typeInfo&apos; to have an indentation at 5 instead at 7." evidence="      typeInfo.isCollection = true;" />
+		<issue line="244" char="7" reason="Expected &apos;if&apos; to have an indentation at 5 instead at 7." evidence="      if (type.charAt(len - 1) !== &apos;)&apos;) {" />
+		<issue line="245" char="9" reason="Expected &apos;throw&apos; to have an indentation at 7 instead at 9." evidence="        throw new Error(&apos;Invalid Role-Schema, Missing closing bracket for a collection type\&apos;&apos; + type + &apos;\&apos;&apos;);" />
+		<issue line="246" char="7" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 7." evidence="      }" />
+		<issue line="248" char="7" reason="Expected &apos;len&apos; to have an indentation at 5 instead at 7." evidence="      len--;" />
+		<issue line="249" char="5" reason="Expected &apos;}&apos; to have an indentation at 3 instead at 5." evidence="    }" />
+		<issue line="251" char="5" reason="Expected &apos;if&apos; to have an indentation at 3 instead at 5." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
+		<issue line="251" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(type.indexOf(&quot;Complex.&quot;, nextToken) === nextToken) {" />
+		<issue line="251" char="7" reason="Too many errors. (89% scanned)." evidence="" />
+	</file>
+	<file name="lib/services/serviceManagement/models/servicemanagementserialize.js">
+		<issue line="34" char="36" reason="&apos;ServiceManagementSerialize&apos; was used before it was defined." evidence="function ServiceManagementSerialize() {" />
+		<issue line="46" char="73" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateHostedService = function(serviceName, serviceOptions, client) {" />
+		<issue line="46" char="73" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildCreateHostedService = function(serviceName, serviceOptions, client) {" />
+		<issue line="93" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateStorageAccount = function(serviceName, serviceOptions, client) {" />
+		<issue line="93" char="74" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildCreateStorageAccount = function(serviceName, serviceOptions, client) {" />
+		<issue line="140" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildUpdateStorageAccount = function(serviceName, serviceOptions, client) {" />
+		<issue line="140" char="74" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementSerialize.prototype.buildUpdateStorageAccount = function(serviceName, serviceOptions, client) {" />
+		<issue line="191" char="75" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildRegenerateStorageKeys = function(serviceName, keyType, client) {" />
+		<issue line="218" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateOSImage = function(typeOs, imageName, mediaLink, imageOptions, client) {" />
+		<issue line="258" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddDisk = function(diskName, mediaLink, diskOptions, client) {" />
+		<issue line="258" char="61" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildAddDisk = function(diskName, mediaLink, diskOptions, client) {" />
+		<issue line="310" char="70" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCreateDeployment = function(serviceName, deploymentName," />
+		<issue line="310" char="70" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementSerialize.prototype.buildCreateDeployment = function(serviceName, deploymentName," />
+		<issue line="364" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddRole = function(serviceName, deploymentName," />
+		<issue line="386" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildModifyRole = function(serviceName, deploymentName," />
+		<issue line="409" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddDataDisk = function(serviceName, deploymentName," />
+		<issue line="433" char="68" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildModifyDataDisk = function(serviceName, deploymentName," />
+		<issue line="455" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildShutdownRole = function(serviceName, deploymentName," />
+		<issue line="478" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildStartRole = function(serviceName, deploymentName," />
+		<issue line="501" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildRestartRole = function(serviceName, deploymentName," />
+		<issue line="525" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildCaptureRole = function(serviceName, deploymentName," />
+		<issue line="525" char="65" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementSerialize.prototype.buildCaptureRole = function(serviceName, deploymentName," />
+		<issue line="578" char="68" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype.buildAddCertificate = function(serviceName, data, format, password, client) {" />
+		<issue line="616" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildPersistentVMRoleXml = function(vmRole, node) {" />
+		<issue line="616" char="74" reason="Cyclomatic complexity is too high per function (9)." evidence="ServiceManagementSerialize.prototype._buildPersistentVMRoleXml = function(vmRole, node) {" />
+		<issue line="667" char="75" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildPersistentVMRoleJson = function(vmRole) {" />
+		<issue line="678" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildOSDiskXml = function(osDisk, node) {" />
+		<issue line="694" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildOSDiskJson = function(osDisk) {" />
+		<issue line="705" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildDataDiskXml = function(dataDisk, node) {" />
+		<issue line="722" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildDataDiskJson = function(dataDisk) {" />
+		<issue line="733" char="90" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildWindowsProvisioningConfigurationXml = function(cfgset, node) {" />
+		<issue line="770" char="91" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildWindowsProvisioningConfigurationJson = function(cfgset) {" />
+		<issue line="781" char="88" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildLinuxProvisioningConfigurationXml = function(cfgset, node) {" />
+		<issue line="781" char="88" reason="Cyclomatic complexity is too high per function (8)." evidence="ServiceManagementSerialize.prototype._buildLinuxProvisioningConfigurationXml = function(cfgset, node) {" />
+		<issue line="828" char="89" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildLinuxProvisioningConfigurationJson = function(cfgset) {" />
+		<issue line="839" char="78" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildNetworkConfigurationXml = function(cfgset, node) {" />
+		<issue line="863" char="79" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildNetworkConfigurationJson = function(cfgset) {" />
+		<issue line="874" char="72" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildInputEndpointsXml = function(cfgset, node) {" />
+		<issue line="903" char="73" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementSerialize.prototype._buildInputEndpointsJson = function(cfgset) {" />
+		<issue line="913" char="24" reason="&apos;_createXmlRoot&apos; was used before it was defined." evidence="function _createXmlRoot(rootName) {" />
+		<issue line="927" char="29" reason="&apos;_addDefinedValueXml&apos; was used before it was defined." evidence="function _addDefinedValueXml(node, elename, value) {" />
+		<issue line="941" char="31" reason="&apos;_addDefinedNumericXml&apos; was used before it was defined." evidence="function _addDefinedNumericXml(node, elename, value) {" />
+		<issue line="16" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
+	</file>
+	<file name="lib/services/serviceManagement/servicebusmanagementservice.js">
+		<issue line="54" char="37" reason="&apos;ServiceBusManagementService&apos; was used before it was defined." evidence="function ServiceBusManagementService(subscriptionId, authentication, hostOptions) {" />
+		<issue line="59" char="31" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusManagementService.super_.call(this, authentication, hostOptions);" />
+		<issue line="153" char="70" reason="Unexpected space after &apos;}&apos;." evidence="    validateArgs(&apos;getRegions&apos;, function (v) { v.callback(callback); } );" />
+		<issue line="170" char="66" reason="Strings must use singlequote." evidence="      var path = that._makePath(&apos;CheckNamespaceAvailability&apos;) + &quot;?namespace=&quot; + name;" />
+		<issue line="186" char="74" reason="Trailing whitespace." evidence="    // requestBody can be omitted, normalize arguments if that&apos;s the case " />
+		<issue line="222" char="22" reason="&apos;validateArgs&apos; was used before it was defined." evidence="function validateArgs(functionName, validationRules) {" />
+		<issue line="227" char="27" reason="&apos;ArgumentValidator&apos; was used before it was defined." evidence="function ArgumentValidator(functionName) {" />
+		<issue line="238" char="6" reason="Expected &apos;if&apos; to have an indentation at 7 instead at 6." evidence="     if (!val) {" />
+		<issue line="239" char="7" reason="Expected &apos;throwMissingArgument&apos; to have an indentation at 9 instead at 7." evidence="      throwMissingArgument(name, this.func);" />
+		<issue line="240" char="5" reason="Expected &apos;}&apos; to have an indentation at 7 instead at 5." evidence="    }" />
+		<issue line="241" char="3" reason="Expected &apos;}&apos; to have an indentation at 5 instead at 3." evidence="  }," />
+		<issue line="252" char="30" reason="&apos;throwMissingArgument&apos; was used before it was defined." evidence="function throwMissingArgument(name, func) {" />
+		<issue line="265" char="16" reason="&apos;toBool&apos; was used before it was defined." evidence="function toBool(value) {" />
+		<issue line="269" char="21" reason="&apos;createEntry&apos; was used before it was defined." evidence="function createEntry(payloadElementName, payload) {" />
+		<issue line="270" char="16" reason="Trailing whitespace." evidence="  var entry = { " />
+		<issue line="17" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
+		<issue line="256" char="27" reason="&apos;throwMissingValue&apos; is defined but never used." evidence="function throwMissingValue(name, func) {" />
+		<issue line="166" char="54" reason="&apos;isValid&apos; is defined but never used." evidence="    namespaceNameIsValid(name, function (err, isValid) {" />
+	</file>
+	<file name="lib/services/serviceManagement/servicemanagementservice.js">
+		<issue line="51" char="34" reason="&apos;ServiceManagementService&apos; was used before it was defined." evidence="function ServiceManagementService(subscriptionId, authentication, hostOptions) {" />
+		<issue line="56" char="28" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementService.super_.call(this, authentication, hostOptions);" />
+		<issue line="403" char="57" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteDisk = function(diskName, callback) {" />
+		<issue line="427" char="65" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.listHostedServices = function(callback) {" />
+		<issue line="453" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getHostedService = function(serviceName, callback) {" />
+		<issue line="483" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.createHostedService = function(serviceName, serviceOptions, callback) {" />
+		<issue line="483" char="66" reason="Cyclomatic complexity is too high per function (8)." evidence="ServiceManagementService.prototype.createHostedService = function(serviceName, serviceOptions, callback) {" />
+		<issue line="534" char="73" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getHostedServiceProperties = function(serviceName, callback) {" />
+		<issue line="557" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteHostedService = function(serviceName, callback) {" />
+		<issue line="588" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.createStorageAccount = function(serviceName, serviceOptions, callback) {" />
+		<issue line="588" char="67" reason="Cyclomatic complexity is too high per function (8)." evidence="ServiceManagementService.prototype.createStorageAccount = function(serviceName, serviceOptions, callback) {" />
+		<issue line="646" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.updateStorageAccount = function(serviceName, serviceOptions, callback) {" />
+		<issue line="678" char="68" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getStorageAccountKeys = function(serviceName, callback) {" />
+		<issue line="682" char="86" reason="Trailing whitespace." evidence="  var path = &apos;/&apos; + this.subscriptionId + &apos;/services/storageservices/&apos; + serviceName + " />
+		<issue line="702" char="74" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getStorageAccountProperties = function(serviceName, callback) {" />
+		<issue line="730" char="75" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.regenerateStorageAccountKeys = function(serviceName, keyType, callback) {" />
+		<issue line="761" char="67" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteStorageAccount = function(serviceName, callback) {" />
+		<issue line="786" char="60" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getDeployment = function(serviceName, deploymentName, callback) {" />
+		<issue line="791" char="85" reason="Trailing whitespace." evidence="  var path = &apos;/&apos; + this.subscriptionId + &apos;/services/hostedservices/&apos; + serviceName + " />
+		<issue line="816" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getDeploymentBySlot = function(serviceName, deploymentSlot, callback) {" />
+		<issue line="821" char="85" reason="Trailing whitespace." evidence="  var path = &apos;/&apos; + this.subscriptionId + &apos;/services/hostedservices/&apos; + serviceName + " />
+		<issue line="852" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.createDeployment = function(serviceName, deploymentName, vmRole," />
+		<issue line="888" char="82" reason="Trailing whitespace." evidence="  var outbody = this.serialize.buildCreateDeployment(serviceName, deploymentName, " />
+		<issue line="852" char="63" reason="Cyclomatic complexity is too high per function (7)." evidence="ServiceManagementService.prototype.createDeployment = function(serviceName, deploymentName, vmRole," />
+		<issue line="908" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteDeployment = function(serviceName, deploymentName, callback) {" />
+		<issue line="936" char="54" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.getRole = function(serviceName, deploymentName, roleName, callback) {" />
+		<issue line="969" char="54" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.addRole = function(serviceName, deploymentName, vmRole," />
+		<issue line="1009" char="57" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.modifyRole = function(serviceName, deploymentName, roleName," />
+		<issue line="1049" char="57" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteRole = function(serviceName, deploymentName, roleName," />
+		<issue line="1086" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.addDataDisk = function(serviceName, deploymentName, roleName," />
+		<issue line="1129" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.modifyDataDisk = function(serviceName, deploymentName, roleName, lun," />
+		<issue line="1168" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.removeDataDisk = function(serviceName, deploymentName, roleName, lun," />
+		<issue line="1206" char="59" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.shutdownRole = function(serviceName, deploymentName," />
+		<issue line="1241" char="56" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.startRole = function(serviceName, deploymentName," />
+		<issue line="1276" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.restartRole = function(serviceName, deploymentName," />
+		<issue line="1311" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.captureRole = function(serviceName, deploymentName," />
+		<issue line="1347" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.addCertificate = function(serviceName, data, format, password, callback) {" />
+		<issue line="1356" char="70" reason="Trailing whitespace." evidence="  var outbody = this.serialize.buildAddCertificate(serviceName, data, " />
+		<issue line="1376" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.deleteCertificate = function(serviceName, algorithm, thumbprint, callback) {" />
+		<issue line="1402" char="63" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.listCertificates = function(serviceName, callback) {" />
+		<issue line="1430" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.setProxyUrl = function(proxyurl) {" />
+		<issue line="1450" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementService.prototype.setProxy = function(proxy, isHttps) {" />
+		<issue line="1459" char="27" reason="&apos;throwMissingValue&apos; was used before it was defined." evidence="function throwMissingValue(name, func) {" />
+		<issue line="1463" char="32" reason="&apos;validateStringArgument&apos; was used before it was defined." evidence="function validateStringArgument(val, name, func) {" />
+		<issue line="1469" char="32" reason="&apos;validateObjectArgument&apos; was used before it was defined." evidence="function validateObjectArgument(val, name, func) {" />
+		<issue line="1475" char="29" reason="&apos;validateObjectValue&apos; was used before it was defined." evidence="function validateObjectValue(val, name, func) {" />
+		<issue line="1481" char="34" reason="&apos;applyTransformIfRequired&apos; was used before it was defined." evidence="function applyTransformIfRequired(name, response, hasTopLevelList) {" />
+		<issue line="1482" char="5" reason="Missing space after &apos;if&apos;." evidence="  if(response &amp;&amp; response.isSuccessful &amp;&amp; response.headers[&apos;content-type&apos;].indexOf(&apos;application/xml&apos;) !== -1) {" />
+		<issue line="1483" char="7" reason="Missing space after &apos;if&apos;." evidence="    if(hasTopLevelList) {" />
+		<issue line="1487" char="9" reason="Missing space after &apos;if&apos;." evidence="      if(keys.length === 1) {" />
+		<issue line="1487" char="9" reason="Too many errors. (89% scanned)." evidence="" />
+	</file>
+	<file name="lib/services/serviceManagement/sqlmanagementservice.js">
+		<issue line="52" char="30" reason="&apos;SqlManagementService&apos; was used before it was defined." evidence="function SqlManagementService(subscriptionId, authentication, hostOptions) {" />
+		<issue line="62" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlManagementService.super_.call(this, authentication, hostOptions);" />
+		<issue line="18" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
+	</file>
+	<file name="lib/services/sqlAzure/models/databaseresult.js">
+		<issue line="26" char="24" reason="&apos;DatabaseResult&apos; was used before it was defined." evidence="function DatabaseResult() { }" />
+		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
+		<issue line="21" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
+	</file>
+	<file name="lib/services/sqlAzure/sqlserveracs.js">
+		<issue line="43" char="22" reason="&apos;SqlServerAcs&apos; was used before it was defined." evidence="function SqlServerAcs(acsHost, serverName, administratorLogin, administratorLoginPassword) {" />
+		<issue line="49" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlServerAcs.super_.call(this, acsHost);" />
+		<issue line="56" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="133" char="37" reason="&apos;escapeConnectionCredentials&apos; was used before it was defined." evidence="function escapeConnectionCredentials(value) {" />
+		<issue line="21" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
+		<issue line="27" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
+		<issue line="28" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+		<issue line="29" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
+	</file>
+	<file name="lib/services/sqlAzure/sqlservice.js">
+		<issue line="50" char="20" reason="&apos;SqlService&apos; was used before it was defined." evidence="function SqlService(serverName, administratorLogin, administratorLoginPassword, host, acsHost, authenticationProvider) {" />
+		<issue line="56" char="14" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlService.super_.call(this," />
+		<issue line="193" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="195" char="21" reason="&apos;TableService&apos; is not defined." evidence="    throw new Error(TableService.incorrectCallbackErr);" />
+		<issue line="18" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
+		<issue line="30" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+	</file>
+	<file name="lib/services/table/batchserviceclient.js">
+		<issue line="42" char="28" reason="&apos;BatchServiceClient&apos; was used before it was defined." evidence="function BatchServiceClient(storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider) {" />
+		<issue line="43" char="22" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BatchServiceClient.super_.call(this, storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider);" />
+		<issue line="61" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="70" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="79" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="118" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var header in webResource.headers) {" />
+		<issue line="150" char="67" reason="Strings must use singlequote." evidence="  var batchBoundary = &apos;batch_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
+		<issue line="150" char="103" reason="Strings must use singlequote." evidence="  var batchBoundary = &apos;batch_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
+		<issue line="151" char="75" reason="Strings must use singlequote." evidence="  var changesetBoundary = &apos;changeset_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
+		<issue line="151" char="111" reason="Strings must use singlequote." evidence="  var changesetBoundary = &apos;changeset_&apos; + crypto.createHash(&apos;md5&apos;).update(&quot;&quot; + (new Date()).getTime()).digest(&quot;hex&quot;);" />
+		<issue line="156" char="35" reason="Missing space after &apos;function&apos;." evidence="  this.operations.forEach(function(operation){" />
+		<issue line="156" char="46" reason="Missing space after &apos;)&apos;." evidence="  this.operations.forEach(function(operation){" />
+		<issue line="207" char="55" reason="Unexpected space after &apos;string&apos;." evidence="      typeof responseObject.response.body === &apos;string&apos; ) {" />
+		<issue line="212" char="34" reason="Missing space after &apos;function&apos;." evidence="    rawResponses.forEach(function(rawResponse) {" />
+		<issue line="256" char="33" reason="Missing space after &apos;function&apos;." evidence="  responseLines.forEach(function(line) {" />
+		<issue line="21" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+	</file>
+	<file name="lib/services/table/models/entityresult.js">
+		<issue line="26" char="22" reason="&apos;EntityResult&apos; was used before it was defined." evidence="function EntityResult() { }" />
+		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
+		<issue line="21" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
+	</file>
+	<file name="lib/services/table/models/queryentitiesresultcontinuation.js">
+		<issue line="25" char="41" reason="&apos;QueryEntitiesResultContinuation&apos; was used before it was defined." evidence="function QueryEntitiesResultContinuation(tableService, tableQuery, nextPartitionKey, nextRowKey) {" />
+	</file>
+	<file name="lib/services/table/models/querytablesresultcontinuation.js">
+		<issue line="28" char="39" reason="&apos;QueryTablesResultContinuation&apos; was used before it was defined." evidence="function QueryTablesResultContinuation(tableService, nextTableName) {" />
+	</file>
+	<file name="lib/services/table/models/servicepropertiesresult.js">
+		<issue line="24" char="30" reason="Cyclomatic complexity is too high per function (16)." evidence="exports.serialize = function (servicePropertiesJs) {" />
+		<issue line="117" char="26" reason="Cyclomatic complexity is too high per function (16)." evidence="exports.parse = function (servicePropertiesXml) {" />
+	</file>
+	<file name="lib/services/table/models/tableresult.js">
+		<issue line="26" char="21" reason="&apos;TableResult&apos; was used before it was defined." evidence="function TableResult() { }" />
+		<issue line="20" char="24" reason="&apos;ServiceBusConstants&apos; is defined but never used." evidence="var ServiceBusConstants = Constants.ServiceBusConstants;" />
+		<issue line="21" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = Constants.HeaderConstants;" />
+	</file>
+	<file name="lib/services/table/sharedkeylitetable.js">
+		<issue line="36" char="28" reason="&apos;SharedKeyLiteTable&apos; was used before it was defined." evidence="function SharedKeyLiteTable(storageAccount, storageAccessKey, usePathStyleUri) {" />
+		<issue line="45" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+	</file>
+	<file name="lib/services/table/sharedkeytable.js">
+		<issue line="36" char="24" reason="&apos;SharedKeyTable&apos; was used before it was defined." evidence="function SharedKeyTable(storageAccount, storageAccessKey, usePathStyleUri) {" />
+		<issue line="45" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
+	</file>
+	<file name="lib/services/table/tablequery.js">
+		<issue line="32" char="20" reason="&apos;TableQuery&apos; was used before it was defined." evidence="function TableQuery() {" />
+		<issue line="54" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var field in arguments) {" />
+		<issue line="111" char="29" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
+		<issue line="111" char="50" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
+		<issue line="137" char="29" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
+		<issue line="137" char="50" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
+		<issue line="163" char="29" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
+		<issue line="163" char="50" reason="Strings must use singlequote." evidence="      quotedArguments.push(&quot;&apos;&quot; + arguments[i] + &quot;&apos;&quot;);" />
+		<issue line="194" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var field in this._fields) {" />
+		<issue line="210" char="18" reason="Strings must use singlequote." evidence="      filter += &quot;PartitionKey eq &apos;&quot; + this._partitionKey + &quot;&apos;&quot;;" />
+		<issue line="210" char="61" reason="Strings must use singlequote." evidence="      filter += &quot;PartitionKey eq &apos;&quot; + this._partitionKey + &quot;&apos;&quot;;" />
+		<issue line="191" char="47" reason="Cyclomatic complexity is too high per function (9)." evidence="TableQuery.prototype.toQueryObject = function () {" />
+		<issue line="240" char="14" reason="Strings must use singlequote." evidence="    path += &quot;PartitionKey=&apos;&quot; + azureutil.encodeUri(this._partitionKey) + &quot;&apos;&quot;;" />
+		<issue line="240" char="75" reason="Strings must use singlequote." evidence="    path += &quot;PartitionKey=&apos;&quot; + azureutil.encodeUri(this._partitionKey) + &quot;&apos;&quot;;" />
+		<issue line="241" char="14" reason="Strings must use singlequote." evidence="    path += &quot;, RowKey=&apos;&quot; + azureutil.encodeUri(this._rowKey) + &quot;&apos;&quot;;" />
+		<issue line="241" char="65" reason="Strings must use singlequote." evidence="    path += &quot;, RowKey=&apos;&quot; + azureutil.encodeUri(this._rowKey) + &quot;&apos;&quot;;" />
+		<issue line="17" char="9" reason="&apos;util&apos; is defined but never used." evidence="var util = require(&apos;util&apos;);" />
+	</file>
+	<file name="lib/services/table/tableservice.js">
+		<issue line="64" char="22" reason="&apos;TableService&apos; was used before it was defined." evidence="function TableService(storageAccountOrConnectionString, storageAccessKey, host, authenticationProvider) {" />
+		<issue line="67" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  TableService.super_.call(this," />
+		<issue line="182" char="38" reason="Strings must use singlequote." evidence="  var webResource = WebResource.get(&quot;Tables(&apos;&quot; + table + &quot;&apos;)&quot;);" />
+		<issue line="182" char="59" reason="Strings must use singlequote." evidence="  var webResource = WebResource.get(&quot;Tables(&apos;&quot; + table + &quot;&apos;)&quot;);" />
+		<issue line="294" char="38" reason="Strings must use singlequote." evidence="  var webResource = WebResource.del(&quot;Tables(&apos;&quot; + table + &quot;&apos;)&quot;);" />
+		<issue line="294" char="59" reason="Strings must use singlequote." evidence="  var webResource = WebResource.del(&quot;Tables(&apos;&quot; + table + &quot;&apos;)&quot;);" />
+		<issue line="453" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var queryStringName in queryString) {" />
+		<issue line="846" char="23" reason="&apos;getEntityPath&apos; was used before it was defined." evidence="function getEntityPath(tableName, partitionKey, rowKey) {" />
+		<issue line="850" char="20" reason="Strings must use singlequote." evidence="    path = path + &quot;(PartitionKey=&apos;&quot; + partitionKey + &quot;&apos;,RowKey=&apos;&quot; + rowKey + &quot;&apos;)&quot;;" />
+		<issue line="850" char="55" reason="Strings must use singlequote." evidence="    path = path + &quot;(PartitionKey=&apos;&quot; + partitionKey + &quot;&apos;,RowKey=&apos;&quot; + rowKey + &quot;&apos;)&quot;;" />
+		<issue line="850" char="79" reason="Strings must use singlequote." evidence="    path = path + &quot;(PartitionKey=&apos;&quot; + partitionKey + &quot;&apos;,RowKey=&apos;&quot; + rowKey + &quot;&apos;)&quot;;" />
+		<issue line="864" char="27" reason="&apos;validateTableName&apos; was used before it was defined." evidence="function validateTableName(table) {" />
+		<issue line="876" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="888" char="28" reason="&apos;validateTableQuery&apos; was used before it was defined." evidence="function validateTableQuery(tableQuery) {" />
+		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
+		<issue line="19" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
+		<issue line="28" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+	</file>
+	<file name="lib/util/atomhandler.js">
+		<issue line="39" char="20" reason="Strings must use singlequote." evidence="  throw new Error(&quot;Unrecognized result &quot; + util.inspect(xml));" />
+		<issue line="60" char="73" reason="Missing semicolon." evidence="  content[Constants.XML_METADATA_MARKER] = { &apos;type&apos;: &apos;application/xml&apos; }" />
+		<issue line="67" char="25" reason="&apos;parseFeedResult&apos; was used before it was defined." evidence="function parseFeedResult(feed, contentElementName) {" />
+		<issue line="70" char="7" reason="Missing space after &apos;if&apos;." evidence="    if( _.isArray(feed.entry)) {" />
+		<issue line="70" char="8" reason="Unexpected space after &apos;(&apos;." evidence="    if( _.isArray(feed.entry)) {" />
+		<issue line="81" char="26" reason="&apos;parseEntryResult&apos; was used before it was defined." evidence="function parseEntryResult(entry, contentElementName) {" />
+		<issue line="82" char="74" reason="Missing semicolon." evidence="  delete entry.content[contentElementName][Constants.XML_METADATA_MARKER]" />
+		<issue line="86" char="48" reason="Missing semicolon." evidence="    result[Constants.ATOM_METADATA_MARKER] = {}" />
+	</file>
+	<file name="lib/util/constants.js">
+		<issue line="234" char="3" reason="Identifier &apos;MessageText_ELEMENT&apos; is not in camel case." evidence="  MessageText_ELEMENT: &apos;MessageText&apos;," />
+		<issue line="242" char="3" reason="Identifier &apos;QueueMessage_ELEMENT&apos; is not in camel case." evidence="  QueueMessage_ELEMENT: &apos;QueueMessage&apos;," />
+	</file>
+	<file name="lib/util/iso8061date.js">
+		<issue line="37" char="5" reason="Expected &apos;]&apos; to have an indentation at 7 instead at 5." evidence="    ];" />
+		<issue line="40" char="9" reason="Expected &apos;components&apos; to have an indentation at 7 instead at 9." evidence="        components.push(&apos;.&apos;);" />
+		<issue line="41" char="9" reason="Expected &apos;if&apos; to have an indentation at 7 instead at 9." evidence="        if (!millisecondsPading) {" />
+		<issue line="42" char="11" reason="Expected &apos;millisecondsPading&apos; to have an indentation at 9 instead at 11." evidence="          millisecondsPading = 3;" />
+		<issue line="43" char="9" reason="Expected &apos;}&apos; to have an indentation at 7 instead at 9." evidence="        }" />
+		<issue line="45" char="9" reason="Expected &apos;components&apos; to have an indentation at 7 instead at 9." evidence="        components.push(leftPad(date.getUTCMilliseconds(), millisecondsPading));" />
+		<issue line="50" char="1" reason="Expected &apos;}&apos; to have an indentation at 3 instead at 1." evidence="};" />
+		<issue line="81" char="16" reason="&apos;leftPadTwo&apos; was used before it was defined." evidence="var leftPadTwo = function (n) {" />
+		<issue line="85" char="13" reason="&apos;leftPad&apos; was used before it was defined." evidence="var leftPad = function (n, millisecondsPading) {" />
+		<issue line="94" char="19" reason="&apos;rightPadSeven&apos; was used before it was defined." evidence="var rightPadSeven = function (n) {" />
+	</file>
+	<file name="lib/util/js2xml.js">
+		<issue line="25" char="30" reason="Cyclomatic complexity is too high per function (7)." evidence="exports.serialize = function (entity) {" />
+		<issue line="63" char="28" reason="Unexpected space after &apos;_writeElementValue&apos;." evidence="function _writeElementValue (parentElement, name, value) {" />
+		<issue line="63" char="29" reason="&apos;_writeElementValue&apos; was used before it was defined." evidence="function _writeElementValue (parentElement, name, value) {" />
+		<issue line="63" char="29" reason="Cyclomatic complexity is too high per function (13)." evidence="function _writeElementValue (parentElement, name, value) {" />
+	</file>
+	<file name="lib/util/odatahandler.js">
+		<issue line="29" char="22" reason="&apos;OdataHandler&apos; was used before it was defined." evidence="function OdataHandler(nsMeta, nsData) {" />
+		<issue line="72" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var property in entityXml.content[propertiesXmlTag]) {" />
+		<issue line="41" char="41" reason="Cyclomatic complexity is too high per function (15)." evidence="OdataHandler.prototype.parse = function (entityXml, innerTag) {" />
+		<issue line="121" char="22" reason="Strings must use singlequote." evidence="    return prefix + &quot;:&quot; + name;" />
+		<issue line="137" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Binary&quot;:" />
+		<issue line="137" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Binary&quot;:" />
+		<issue line="138" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = value;" />
+		<issue line="139" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="140" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Boolean&quot;:" />
+		<issue line="140" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Boolean&quot;:" />
+		<issue line="141" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = value === &apos;true&apos; || value === &apos;1&apos;;" />
+		<issue line="142" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="143" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Byte&quot;:" />
+		<issue line="143" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Byte&quot;:" />
+		<issue line="144" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = value;" />
+		<issue line="145" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="146" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.DateTime&quot;:" />
+		<issue line="146" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.DateTime&quot;:" />
+		<issue line="147" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.DateTimeOffset&quot;:" />
+		<issue line="147" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.DateTimeOffset&quot;:" />
+		<issue line="148" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = ISO8061Date.parse(value);" />
+		<issue line="149" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="150" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Decimal&quot;:" />
+		<issue line="150" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Decimal&quot;:" />
+		<issue line="151" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Double&quot;:" />
+		<issue line="151" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Double&quot;:" />
+		<issue line="152" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = parseFloat(value);" />
+		<issue line="153" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="154" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Guid&quot;:" />
+		<issue line="154" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Guid&quot;:" />
+		<issue line="155" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = value;" />
+		<issue line="156" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="157" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Int16&quot;:" />
+		<issue line="157" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Int16&quot;:" />
+		<issue line="158" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Int32&quot;:" />
+		<issue line="158" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Int32&quot;:" />
+		<issue line="159" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Int64&quot;:" />
+		<issue line="159" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Int64&quot;:" />
+		<issue line="160" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = parseInt(value, 10);" />
+		<issue line="161" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="162" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.SByte&quot;:" />
+		<issue line="162" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.SByte&quot;:" />
+		<issue line="163" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Single&quot;:" />
+		<issue line="163" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Single&quot;:" />
+		<issue line="164" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.String&quot;:" />
+		<issue line="164" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.String&quot;:" />
+		<issue line="165" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case &quot;Edm.Time&quot;:" />
+		<issue line="165" char="11" reason="Strings must use singlequote." evidence="    case &quot;Edm.Time&quot;:" />
+		<issue line="166" char="7" reason="Expected &apos;entity&apos; to have an indentation at 5 instead at 7." evidence="      entity[propertyName] = value;" />
+		<issue line="167" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="167" char="7" reason="Too many errors. (51% scanned)." evidence="" />
+	</file>
+	<file name="lib/util/rfc1123date.js">
+		<issue line="25" char="28" reason="Strings must use singlequote." evidence="  return dateFormat(date, &quot;ddd, dd mmm yyyy HH:MM:ss Z&quot;);" />
+	</file>
+	<file name="lib/util/util.js">
+		<issue line="57" char="5" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="    for (var key in value) {" />
+		<issue line="175" char="33" reason="Missing space after &apos;function&apos;." evidence="exports.stringIsFloat = function(value) {" />
+		<issue line="191" char="34" reason="Missing space after &apos;function&apos;." evidence="exports.stringIsNumber = function(value) {" />
+		<issue line="201" char="32" reason="Missing space after &apos;function&apos;." evidence="exports.stringIsDate = function(date) {" />
+		<issue line="202" char="49" reason="Strings must use singlequote." evidence="  if (Object.prototype.toString.call(date) !== &quot;[object Date]&quot;) {" />
+		<issue line="222" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="225" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="227" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="242" char="2" reason="Trailing whitespace." evidence="* " />
+		<issue line="244" char="2" reason="Trailing whitespace." evidence="* " />
+	</file>
+</jslint>
