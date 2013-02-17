@@ -12,46 +12,38 @@
 		<issue line="500" char="65" reason="Cyclomatic complexity is too high per function (24)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
 	</file>
 	<file name="lib/services/blob/blobservice.js">
-		<issue line="55" char="27" reason="Strings must use singlequote." evidence="BlobService.needCntErr = &quot;Container name must be specified in the &apos;name&apos; parameter.&quot;;" />
-		<issue line="56" char="31" reason="Strings must use singlequote." evidence="BlobService.needCntBlobErr = &quot;Container and blob name must be specified in the &apos;name&apos; parameter, separated with a forward slash.&quot;;" />
-		<issue line="57" char="31" reason="Strings must use singlequote." evidence="BlobService.needBlobValErr = &quot;Blob value must be specified in the &apos;data&apos; parameter.&quot;;" />
-		<issue line="80" char="21" reason="&apos;BlobService&apos; was used before it was defined." evidence="function BlobService(storageAccountOrConnectionString, storageAccessKey, host, authenticationProvider) {" />
-		<issue line="83" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
-		<issue line="436" char="119" reason="Trailing whitespace." evidence="* Calling the Set Container Metadata operation overwrites all existing metadata that is associated with the container. " />
-		<issue line="585" char="46" reason="Trailing whitespace." evidence="* Marks the specified container for deletion. " />
-		<issue line="749" char="4" reason="Trailing whitespace." evidence="/** " />
-		<issue line="750" char="91" reason="Trailing whitespace." evidence="* Creates a new block blob or page blob, or updates the content of an existing block blob. " />
-		<issue line="792" char="28" reason="Cyclomatic complexity is too high per function (6)." evidence="  var operation = function (length, md5) {" />
-		<issue line="1645" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.renewLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
-		<issue line="1693" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.breakLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
-		<issue line="1771" char="55" reason="Trailing whitespace." evidence="    (rangeEnd - rangeStart) + 1, rangeStart, rangeEnd, " />
-		<issue line="1853" char="50" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype.listBlobRegions = function (container, blob, rangeStart, rangeEnd, optionsOrCallback, callback) {" />
-		<issue line="2024" char="75" reason="Trailing whitespace." evidence="* Writes a blob by specifying the list of block IDs that make up the blob. " />
-		<issue line="2025" char="113" reason="Trailing whitespace." evidence="* In order to be written as part of a blob, a block must have been successfully written to the server in a prior " />
-		<issue line="2256" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.ACQUIRE:" />
-		<issue line="2258" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.CREATED_CODE;" />
-		<issue line="2259" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2260" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RENEW:" />
-		<issue line="2262" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
-		<issue line="2263" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2264" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RELEASE:" />
-		<issue line="2266" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
-		<issue line="2267" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2268" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.BREAK:" />
-		<issue line="2270" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.ACCEPTED_CODE;" />
-		<issue line="2271" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2242" char="49" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype._leaseBlobImpl = function (container, blob, leaseId, leaseAction, optionsOrCallback, callback) {" />
-		<issue line="2302" char="54" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._setHeadersFromBlob = function (webResource, blob) {" />
-		<issue line="2381" char="59" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._updatePageBlobPagesImpl = function (container, blob, length, rangeStart, rangeEnd, writeMethod, options) {" />
-		<issue line="2462" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
-		<issue line="2500" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
-		<issue line="2500" char="31" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateContainerName(containerName) {" />
-		<issue line="2533" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
-		<issue line="2549" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="66" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
+		<issue line="789" char="28" reason="Cyclomatic complexity is too high per function (6)." evidence="  var operation = function (length, md5) {" />
+		<issue line="1642" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.renewLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
+		<issue line="1690" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.breakLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
+		<issue line="1768" char="55" reason="Trailing whitespace." evidence="    (rangeEnd - rangeStart) + 1, rangeStart, rangeEnd, " />
+		<issue line="1850" char="50" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype.listBlobRegions = function (container, blob, rangeStart, rangeEnd, optionsOrCallback, callback) {" />
+		<issue line="2021" char="75" reason="Trailing whitespace." evidence="* Writes a blob by specifying the list of block IDs that make up the blob. " />
+		<issue line="2022" char="113" reason="Trailing whitespace." evidence="* In order to be written as part of a blob, a block must have been successfully written to the server in a prior " />
+		<issue line="2253" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.ACQUIRE:" />
+		<issue line="2255" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.CREATED_CODE;" />
+		<issue line="2256" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2257" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RENEW:" />
+		<issue line="2259" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
+		<issue line="2260" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2261" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RELEASE:" />
+		<issue line="2263" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
+		<issue line="2264" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2265" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.BREAK:" />
+		<issue line="2267" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.ACCEPTED_CODE;" />
+		<issue line="2268" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
+		<issue line="2239" char="49" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype._leaseBlobImpl = function (container, blob, leaseId, leaseAction, optionsOrCallback, callback) {" />
+		<issue line="2299" char="54" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._setHeadersFromBlob = function (webResource, blob) {" />
+		<issue line="2378" char="59" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._updatePageBlobPagesImpl = function (container, blob, length, rangeStart, rangeEnd, writeMethod, options) {" />
+		<issue line="2459" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
+		<issue line="2497" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
+		<issue line="2497" char="31" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateContainerName(containerName) {" />
+		<issue line="2530" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
+		<issue line="2546" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 		<issue line="20" char="9" reason="&apos;path&apos; is defined but never used." evidence="var path = require(&apos;path&apos;);" />
 		<issue line="23" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
 		<issue line="33" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
-		<issue line="2483" char="25" reason="&apos;generateBlockId&apos; is defined but never used." evidence="function generateBlockId(part) {" />
+		<issue line="2480" char="25" reason="&apos;generateBlockId&apos; is defined but never used." evidence="function generateBlockId(part) {" />
 	</file>
 	<file name="lib/services/blob/hmacsha256sign.js">
 		<issue line="30" char="24" reason="&apos;HmacSha256Sign&apos; was used before it was defined." evidence="function HmacSha256Sign(accessKey) {" />
