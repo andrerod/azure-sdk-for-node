@@ -6,10 +6,6 @@
 <jslint>
 	<file name="lib/services/blob/blobservice.js">
 		<issue line="63" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
-		<issue line="2456" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
-		<issue line="2477" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
-		<issue line="2510" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
-		<issue line="2526" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
 	<file name="lib/services/core/servicebusserviceclient.js">
 		<issue line="36" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
@@ -20,47 +16,11 @@
 	<file name="lib/services/core/servicemanagementclient.js">
 		<issue line="39" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementClient.super_.call(this);" />
 	</file>
-	<file name="lib/services/core/servicesettings.js">
-		<issue line="37" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="39" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="49" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="51" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="61" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="63" char="51" reason="Trailing whitespace." evidence="* @param {array}  validKeys        The valid keys. " />
-		<issue line="64" char="56" reason="Trailing whitespace." evidence="* @return {array} The tokenized connection string keys. " />
-		<issue line="83" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="85" char="80" reason="Trailing whitespace." evidence="* @param boolean {isRequired}   Either these conditions are all required or all " />
-		<issue line="89" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="137" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="139" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="169" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="179" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="189" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="199" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="202" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="203" char="18" reason="Trailing whitespace." evidence="* @return {array} " />
-		<issue line="216" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="218" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="219" char="79" reason="Trailing whitespace." evidence="* @return boolean If any filter returns null, false. If there are any settings " />
-		<issue line="18" char="6" reason="&apos;_&apos; is defined but never used." evidence="var _ = require(&apos;underscore&apos;);" />
-	</file>
 	<file name="lib/services/core/sqlserviceclient.js">
-		<issue line="43" char="26" reason="&apos;SqlServiceClient&apos; was used before it was defined." evidence="function SqlServiceClient(serverName, administratorLogin, administratorLoginPassword, host, acsHost, authenticationProvider) {" />
-		<issue line="44" char="20" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlServiceClient.super_.call(this, host, authenticationProvider);" />
-		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
-		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
-		<issue line="27" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
+		<issue line="37" char="20" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  SqlServiceClient.super_.call(this, host, authenticationProvider);" />
 	</file>
 	<file name="lib/services/core/storageserviceclient.js">
-		<issue line="52" char="30" reason="&apos;StorageServiceClient&apos; was used before it was defined." evidence="function StorageServiceClient(storageAccount, storageAccessKey, host, usePathStyleUri, authenticationProvider) {" />
-		<issue line="57" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  StorageServiceClient.super_.call(this, host, authenticationProvider);" />
-		<issue line="163" char="12" reason="Missing space after &apos;if&apos;." evidence="  } else if(webResource.headers &amp;&amp; webResource.headers[HeaderConstants.CONTENT_LENGTH] === null) {" />
-		<issue line="17" char="9" reason="&apos;http&apos; is defined but never used." evidence="var http = require(&apos;http&apos;);" />
-		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;querystring&apos;);" />
-		<issue line="21" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-		<issue line="22" char="11" reason="&apos;xml2js&apos; is defined but never used." evidence="var xml2js = require(&apos;xml2js&apos;);" />
-		<issue line="32" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
-		<issue line="33" char="11" reason="&apos;Logger&apos; is defined but never used." evidence="var Logger = require(&apos;../../diagnostics/logger&apos;);" />
+		<issue line="44" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  StorageServiceClient.super_.call(this, host, authenticationProvider);" />
 	</file>
 	<file name="lib/services/core/storageservicesettings.js">
 		<issue line="50" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
