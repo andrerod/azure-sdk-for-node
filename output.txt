@@ -12,64 +12,13 @@
 		<issue line="2526" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
 	<file name="lib/services/core/servicebusserviceclient.js">
-		<issue line="40" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
-		<issue line="20" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
-		<issue line="26" char="25" reason="&apos;QueryStringConstants&apos; is defined but never used." evidence="var QueryStringConstants = Constants.QueryStringConstants;" />
-		<issue line="27" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
-	</file>
-	<file name="lib/services/core/servicebussettings.js">
-		<issue line="33" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
-		<issue line="42" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="49" char="28" reason="&apos;ServiceBusSettings&apos; was used before it was defined." evidence="function ServiceBusSettings(serviceBusEndpointUri, wrapEndpointUri, namespace, wrapName, wrapPassword) {" />
-		<issue line="65" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="67" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="124" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="126" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="20" char="27" reason="&apos;ConnectionStringParser&apos; is defined but never used." evidence="var ConnectionStringParser = require(&apos;./connectionstringparser&apos;);" />
+		<issue line="36" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceBusServiceClient.super_.call(this, host, authenticationProvider);" />
 	</file>
 	<file name="lib/services/core/serviceclient.js">
-		<issue line="23" char="23" reason="Strings must use singlequote." evidence="var events = require(&quot;events&quot;);" />
-		<issue line="108" char="23" reason="&apos;ServiceClient&apos; was used before it was defined." evidence="function ServiceClient(host, authenticationProvider) {" />
-		<issue line="220" char="48" reason="Strings must use singlequote." evidence="      self.logger.log(Logger.LogLevels.DEBUG, &quot;REQUEST OPTIONS:\n&quot; + util.inspect(requestOptions));" />
-		<issue line="223" char="50" reason="Strings must use singlequote." evidence="        self.logger.log(Logger.LogLevels.DEBUG, &quot;FINAL REQUEST OPTIONS:\n&quot; + util.inspect(finalRequestOptions));" />
-		<issue line="279" char="49" reason="Missing space after &apos;function&apos;." evidence="          body.outputStream.on(&apos;error&apos;, function(error) {" />
-		<issue line="329" char="46" reason="Trailing whitespace." evidence="      this.logger.log(Logger.LogLevels.DEBUG, " />
-		<issue line="337" char="44" reason="Strings must use singlequote." evidence="  this.logger.log(Logger.LogLevels.DEBUG, &quot;RESPONSE:\n&quot; + util.inspect(responseObject));" />
-		<issue line="370" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var property in this) {" />
-		<issue line="385" char="75" reason="Trailing whitespace." evidence="          // The parentFilterNext is the filter next to the merged filter. " />
-		<issue line="443" char="62" reason="Missing space after &apos;function&apos;." evidence="ServiceClient.prototype._loadEnvironmentProxyValue = function() {" />
-		<issue line="465" char="57" reason="Missing space after &apos;function&apos;." evidence="ServiceClient.prototype._loadEnvironmentProxy = function() {" />
-		<issue line="583" char="57" reason="Strings must use singlequote." evidence="  webResource.requestUrl = this.protocol + this.host + &quot;:&quot; + this.port + webResource.path + queryString;" />
-		<issue line="20" char="7" reason="&apos;qs&apos; is defined but never used." evidence="var qs = require(&apos;querystring&apos;);" />
-		<issue line="21" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-		<issue line="30" char="18" reason="&apos;HttpConstants&apos; is defined but never used." evidence="var HttpConstants = Constants.HttpConstants;" />
-		<issue line="225" char="78" reason="&apos;responseBody&apos; is defined but never used." evidence="        var processResponseCallback = function (error, response, responseBody) {" />
-		<issue line="637" char="42" reason="&apos;host&apos; is defined but never used." evidence="ServiceClient.isEmulated = function (host) {" />
+		<issue line="102" char="23" reason="&apos;ServiceClient&apos; was used before it was defined." evidence="function ServiceClient(host, authenticationProvider) {" />
 	</file>
 	<file name="lib/services/core/servicemanagementclient.js">
-		<issue line="55" char="33" reason="&apos;ServiceManagementClient&apos; was used before it was defined." evidence="function ServiceManagementClient(authentication, hostOptions) {" />
-		<issue line="56" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementClient.super_.call(this);" />
-		<issue line="70" char="64" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setAuthentication = function(authentication) {" />
-		<issue line="117" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setServiceHost = function(hostOptions) {" />
-		<issue line="148" char="61" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._getContentType = function() {" />
-		<issue line="161" char="60" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._getAcceptType = function() {" />
-		<issue line="177" char="66" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._buildRequestOptions = function(webResource, options, callback) {" />
-		<issue line="214" char="62" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setDefaultProxy = function() {" />
-		<issue line="225" char="58" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setProxyUrl = function(proxyurl) {" />
-		<issue line="257" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setProxy = function(proxy, isHTTPS) {" />
-		<issue line="275" char="55" reason="Missing space after &apos;function&apos;." evidence="ServiceManagementClient.prototype._setAgent = function(self, reqopts, isHTTPS) {" />
-		<issue line="22" char="16" reason="&apos;WebResource&apos; is defined but never used." evidence="var WebResource = require(&apos;../../http/webresource&apos;);" />
-	</file>
-	<file name="lib/services/core/servicemanagementsettings.js">
-		<issue line="36" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
-		<issue line="44" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="49" char="35" reason="&apos;ServiceManagementSettings&apos; was used before it was defined." evidence="function ServiceManagementSettings(subscriptionId, endpointUri, certificatePath) {" />
-		<issue line="57" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="59" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="103" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="105" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="16" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
-		<issue line="20" char="27" reason="&apos;ConnectionStringParser&apos; is defined but never used." evidence="var ConnectionStringParser = require(&apos;./connectionstringparser&apos;);" />
+		<issue line="39" char="27" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  ServiceManagementClient.super_.call(this);" />
 	</file>
 	<file name="lib/services/core/servicesettings.js">
 		<issue line="37" char="2" reason="Trailing whitespace." evidence="* " />
