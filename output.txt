@@ -12,60 +12,23 @@
 		<issue line="500" char="65" reason="Cyclomatic complexity is too high per function (24)." evidence="  RoleEnvironment.runtimeClient.getRoleEnvironmentData(function (getRoleEnvironmentDataError, environmentData) {" />
 	</file>
 	<file name="lib/services/blob/blobservice.js">
-		<issue line="66" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
-		<issue line="789" char="28" reason="Cyclomatic complexity is too high per function (6)." evidence="  var operation = function (length, md5) {" />
-		<issue line="1642" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.renewLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
-		<issue line="1690" char="44" reason="Missing space after &apos;function&apos;." evidence="BlobService.prototype.breakLease = function(container, blob, leaseId, optionsOrCallback, callback) {" />
-		<issue line="1768" char="55" reason="Trailing whitespace." evidence="    (rangeEnd - rangeStart) + 1, rangeStart, rangeEnd, " />
-		<issue line="1850" char="50" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype.listBlobRegions = function (container, blob, rangeStart, rangeEnd, optionsOrCallback, callback) {" />
-		<issue line="2021" char="75" reason="Trailing whitespace." evidence="* Writes a blob by specifying the list of block IDs that make up the blob. " />
-		<issue line="2022" char="113" reason="Trailing whitespace." evidence="* In order to be written as part of a blob, a block must have been successfully written to the server in a prior " />
-		<issue line="2253" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.ACQUIRE:" />
-		<issue line="2255" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.CREATED_CODE;" />
-		<issue line="2256" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2257" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RENEW:" />
-		<issue line="2259" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
-		<issue line="2260" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2261" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.RELEASE:" />
-		<issue line="2263" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.OK_CODE;" />
-		<issue line="2264" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2265" char="5" reason="Expected &apos;case&apos; to have an indentation at 3 instead at 5." evidence="    case BlobConstants.LeaseOperation.BREAK:" />
-		<issue line="2267" char="7" reason="Expected &apos;expectedResponseCode&apos; to have an indentation at 5 instead at 7." evidence="      expectedResponseCode = HttpConstants.HttpResponseCodes.ACCEPTED_CODE;" />
-		<issue line="2268" char="7" reason="Expected &apos;break&apos; to have an indentation at 5 instead at 7." evidence="      break;" />
-		<issue line="2239" char="49" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype._leaseBlobImpl = function (container, blob, leaseId, leaseAction, optionsOrCallback, callback) {" />
-		<issue line="2299" char="54" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._setHeadersFromBlob = function (webResource, blob) {" />
-		<issue line="2378" char="59" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._updatePageBlobPagesImpl = function (container, blob, length, rangeStart, rangeEnd, writeMethod, options) {" />
-		<issue line="2459" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
-		<issue line="2497" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
-		<issue line="2497" char="31" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateContainerName(containerName) {" />
-		<issue line="2530" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
-		<issue line="2546" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
-		<issue line="20" char="9" reason="&apos;path&apos; is defined but never used." evidence="var path = require(&apos;path&apos;);" />
-		<issue line="23" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
-		<issue line="33" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
-		<issue line="2480" char="25" reason="&apos;generateBlockId&apos; is defined but never used." evidence="function generateBlockId(part) {" />
-	</file>
-	<file name="lib/services/blob/hmacsha256sign.js">
-		<issue line="30" char="24" reason="&apos;HmacSha256Sign&apos; was used before it was defined." evidence="function HmacSha256Sign(accessKey) {" />
-		<issue line="19" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../util/util&apos;);" />
-		<issue line="20" char="20" reason="&apos;HeaderConstants&apos; is defined but never used." evidence="var HeaderConstants = require(&apos;../../util/constants&apos;).HeaderConstants;" />
-	</file>
-	<file name="lib/services/blob/models/blobresult.js">
-		<issue line="25" char="20" reason="&apos;BlobResult&apos; was used before it was defined." evidence="function BlobResult(container, blob) {" />
-		<issue line="40" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var subPropertyName in blobXml[propertyName]) {" />
-		<issue line="17" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
-	</file>
-	<file name="lib/services/blob/models/blocklistresult.js">
-		<issue line="25" char="25" reason="&apos;BlockListResult&apos; was used before it was defined." evidence="function BlockListResult(committedBlocks, uncommittedBlocks, latestBlocks) {" />
-		<issue line="18" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../../util/util&apos;);" />
+		<issue line="63" char="15" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  BlobService.super_.call(this," />
+		<issue line="786" char="28" reason="Cyclomatic complexity is too high per function (6)." evidence="  var operation = function (length, md5) {" />
+		<issue line="1847" char="50" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype.listBlobRegions = function (container, blob, rangeStart, rangeEnd, optionsOrCallback, callback) {" />
+		<issue line="2236" char="49" reason="Cyclomatic complexity is too high per function (6)." evidence="BlobService.prototype._leaseBlobImpl = function (container, blob, leaseId, leaseAction, optionsOrCallback, callback) {" />
+		<issue line="2296" char="54" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._setHeadersFromBlob = function (webResource, blob) {" />
+		<issue line="2375" char="59" reason="Cyclomatic complexity is too high per function (7)." evidence="BlobService.prototype._updatePageBlobPagesImpl = function (container, blob, length, rangeStart, rangeEnd, writeMethod, options) {" />
+		<issue line="2456" char="28" reason="&apos;createResourceName&apos; was used before it was defined." evidence="function createResourceName(containerName, blobName) {" />
+		<issue line="2477" char="31" reason="&apos;validateContainerName&apos; was used before it was defined." evidence="function validateContainerName(containerName) {" />
+		<issue line="2477" char="31" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateContainerName(containerName) {" />
+		<issue line="2510" char="26" reason="&apos;validateBlobName&apos; was used before it was defined." evidence="function validateBlobName(containerName, blobName) {" />
+		<issue line="2526" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
 	<file name="lib/services/blob/models/containeraclresult.js">
-		<issue line="27" char="28" reason="&apos;ContainerAclResult&apos; was used before it was defined." evidence="function ContainerAclResult(signedIdentifiers) {" />
-		<issue line="44" char="42" reason="Cyclomatic complexity is too high per function (6)." evidence="    signedIdentifiersJs.forEach(function (signedIdentifier) {" />
+		<issue line="41" char="42" reason="Cyclomatic complexity is too high per function (6)." evidence="    signedIdentifiersJs.forEach(function (signedIdentifier) {" />
 	</file>
 	<file name="lib/services/blob/models/containerresult.js">
-		<issue line="26" char="25" reason="&apos;ContainerResult&apos; was used before it was defined." evidence="function ContainerResult(name, publicAccessLevel) {" />
-		<issue line="41" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var subPropertyName in containerXml[propertyName]) {" />
+		<issue line="38" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var subPropertyName in containerXml[propertyName]) {" />
 		<issue line="17" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
 	</file>
 	<file name="lib/services/blob/models/leaseresult.js">
