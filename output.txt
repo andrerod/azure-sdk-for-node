@@ -28,31 +28,11 @@
 		<issue line="41" char="42" reason="Cyclomatic complexity is too high per function (6)." evidence="    signedIdentifiersJs.forEach(function (signedIdentifier) {" />
 	</file>
 	<file name="lib/services/blob/models/containerresult.js">
-		<issue line="38" char="7" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="      for (var subPropertyName in containerXml[propertyName]) {" />
-		<issue line="17" char="15" reason="&apos;xmlbuilder&apos; is defined but never used." evidence="var xmlbuilder = require(&apos;xmlbuilder&apos;);" />
-	</file>
-	<file name="lib/services/blob/models/leaseresult.js">
-		<issue line="23" char="21" reason="&apos;LeaseResult&apos; was used before it was defined." evidence="function LeaseResult(container, blob, id, time) {" />
-	</file>
-	<file name="lib/services/blob/models/listblobsresultcontinuation.js">
-		<issue line="27" char="37" reason="&apos;ListBlobsResultContinuation&apos; was used before it was defined." evidence="function ListBlobsResultContinuation(blobService, container, options, nextMarker) {" />
-		<issue line="19" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
-	</file>
-	<file name="lib/services/blob/models/listcontainersresultcontinuation.js">
-		<issue line="27" char="42" reason="&apos;ListContainersResultContinuation&apos; was used before it was defined." evidence="function ListContainersResultContinuation(blobService, options, nextMarker) {" />
-		<issue line="19" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
+		<issue line="31" char="34" reason="Cyclomatic complexity is too high per function (6)." evidence="ContainerResult.parse = function (containerXml) {" />
 	</file>
 	<file name="lib/services/blob/models/servicepropertiesresult.js">
-		<issue line="24" char="33" reason="Unexpected space after &apos;ServicePropertiesResult&apos;." evidence="function ServicePropertiesResult () {}" />
-		<issue line="24" char="34" reason="&apos;ServicePropertiesResult&apos; was used before it was defined." evidence="function ServicePropertiesResult () {}" />
-		<issue line="26" char="46" reason="Cyclomatic complexity is too high per function (17)." evidence="ServicePropertiesResult.serialize = function (servicePropertiesJs) {" />
-		<issue line="125" char="42" reason="Cyclomatic complexity is too high per function (17)." evidence="ServicePropertiesResult.parse = function (servicePropertiesXml) {" />
-	</file>
-	<file name="lib/services/blob/sharedaccesssignature.js">
-		<issue line="39" char="31" reason="&apos;SharedAccessSignature&apos; was used before it was defined." evidence="function SharedAccessSignature(storageAccount, storageAccessKey, permissionSet) {" />
-		<issue line="88" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var permission in this.permissionSet) {" />
-		<issue line="17" char="11" reason="&apos;crypto&apos; is defined but never used." evidence="var crypto = require(&apos;crypto&apos;);" />
-		<issue line="22" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+		<issue line="23" char="30" reason="Cyclomatic complexity is too high per function (17)." evidence="exports.serialize = function (servicePropertiesJs) {" />
+		<issue line="122" char="26" reason="Cyclomatic complexity is too high per function (17)." evidence="exports.parse = function (servicePropertiesXml) {" />
 	</file>
 	<file name="lib/services/blob/sharedkey.js">
 		<issue line="34" char="19" reason="&apos;SharedKey&apos; was used before it was defined." evidence="function SharedKey(storageAccount, storageAccessKey, usePathStyleUri) {" />
@@ -261,8 +241,11 @@
 		<issue line="712" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
 		<issue line="712" char="27" reason="Cyclomatic complexity is too high per function (7)." evidence="function validateQueueName(queue) {" />
 		<issue line="745" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
+		<issue line="97" char="48" reason="&apos;ServicePropertiesResult&apos; is not defined." evidence="      responseObject.servicePropertiesResult = ServicePropertiesResult.parse(responseObject.response.body.StorageServiceProperties);" />
+		<issue line="131" char="30" reason="&apos;ServicePropertiesResult&apos; is not defined." evidence="  var servicePropertiesXml = ServicePropertiesResult.serialize(serviceProperties);" />
 		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
 		<issue line="24" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
+		<issue line="36" char="28" reason="&apos;servicePropertiesResult&apos; is defined but never used." evidence="var servicePropertiesResult = require(&apos;./models/servicepropertiesresult&apos;);" />
 	</file>
 	<file name="lib/services/serviceBus/models/acstokenresult.js">
 		<issue line="26" char="24" reason="&apos;AcsTokenResult&apos; was used before it was defined." evidence="function AcsTokenResult() {" />
