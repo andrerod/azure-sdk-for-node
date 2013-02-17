@@ -22,53 +22,10 @@
 	<file name="lib/services/core/storageserviceclient.js">
 		<issue line="44" char="24" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  StorageServiceClient.super_.call(this, host, authenticationProvider);" />
 	</file>
-	<file name="lib/services/core/storageservicesettings.js">
-		<issue line="50" char="18" reason="Trailing whitespace." evidence="var validKeys = [ " />
-		<issue line="63" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="71" char="32" reason="&apos;StorageServiceSettings&apos; was used before it was defined." evidence="function StorageServiceSettings(name, key, blobEndpointUri, queueEndpointUri, tableEndpointUri, usePathStyleUri) {" />
-		<issue line="87" char="78" reason="Trailing whitespace." evidence="* Returns a StorageServiceSettings with development storage credentials using " />
-		<issue line="89" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="91" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="115" char="79" reason="Trailing whitespace." evidence="* Gets a StorageServiceSettings object that references the development storage " />
-		<issue line="117" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="129" char="77" reason="Trailing whitespace." evidence="* Gets the default service endpoint using the specified protocol and account " />
-		<issue line="131" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="134" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="154" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="159" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="202" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="204" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="279" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="281" char="2" reason="Trailing whitespace." evidence="* " />
-		<issue line="20" char="27" reason="&apos;ConnectionStringParser&apos; is defined but never used." evidence="var ConnectionStringParser = require(&apos;./connectionstringparser&apos;);" />
-	</file>
-	<file name="lib/services/queue/models/listqueuesresultcontinuation.js">
-		<issue line="27" char="38" reason="&apos;ListQueuesResultContinuation&apos; was used before it was defined." evidence="function ListQueuesResultContinuation(queueService, options, nextMarker) {" />
-		<issue line="19" char="14" reason="&apos;Constants&apos; is defined but never used." evidence="var Constants = require(&apos;../../../util/constants&apos;);" />
-	</file>
-	<file name="lib/services/queue/models/queuemessageresult.js">
-		<issue line="26" char="28" reason="&apos;QueueMessageResult&apos; was used before it was defined." evidence="function QueueMessageResult(queue, messageid, popreceipt, metadata) {" />
-		<issue line="18" char="14" reason="&apos;azureutil&apos; is defined but never used." evidence="var azureutil = require(&apos;../../../util/util&apos;);" />
-	</file>
-	<file name="lib/services/queue/models/queueresult.js">
-		<issue line="23" char="21" reason="&apos;QueueResult&apos; was used before it was defined." evidence="function QueueResult(name, metadata) {" />
-		<issue line="35" char="3" reason="The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype." evidence="  for (var property in messageXml) {" />
-	</file>
-	<file name="lib/services/queue/models/servicepropertiesresult.js">
-		<issue line="24" char="33" reason="&apos;ServicePropertiesResult&apos; was used before it was defined." evidence="function ServicePropertiesResult() { }" />
-	</file>
 	<file name="lib/services/queue/queueservice.js">
-		<issue line="43" char="112" reason="Trailing whitespace." evidence="* If no storageAccount or storageAccessKey are provided, the AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY " />
-		<issue line="54" char="22" reason="&apos;QueueService&apos; was used before it was defined." evidence="function QueueService(storageAccountOrConnectionString, storageAccessKey, host, authenticationProvider) {" />
-		<issue line="57" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  QueueService.super_.call(this," />
-		<issue line="597" char="22" reason="Strings must use singlequote." evidence="    throw new Error(&quot;A message retrieved using &apos;peekMessages&apos; can not be deleted! Use &apos;getMessages&apos; instead.&quot;);" />
-		<issue line="712" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
-		<issue line="745" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
-		<issue line="97" char="48" reason="&apos;ServicePropertiesResult&apos; is not defined." evidence="      responseObject.servicePropertiesResult = ServicePropertiesResult.parse(responseObject.response.body.StorageServiceProperties);" />
-		<issue line="131" char="30" reason="&apos;ServicePropertiesResult&apos; is not defined." evidence="  var servicePropertiesXml = ServicePropertiesResult.serialize(serviceProperties);" />
-		<issue line="18" char="8" reason="&apos;url&apos; is defined but never used." evidence="var url = require(&apos;url&apos;);" />
-		<issue line="24" char="18" reason="&apos;ServiceClient&apos; is defined but never used." evidence="var ServiceClient = require(&apos;../core/serviceclient&apos;);" />
-		<issue line="36" char="28" reason="&apos;servicePropertiesResult&apos; is defined but never used." evidence="var servicePropertiesResult = require(&apos;./models/servicepropertiesresult&apos;);" />
+		<issue line="52" char="16" reason="Identifier &apos;super_&apos; is not in camel case." evidence="  QueueService.super_.call(this," />
+		<issue line="707" char="27" reason="&apos;validateQueueName&apos; was used before it was defined." evidence="function validateQueueName(queue) {" />
+		<issue line="740" char="26" reason="&apos;validateCallback&apos; was used before it was defined." evidence="function validateCallback(callback) {" />
 	</file>
 	<file name="lib/services/serviceBus/models/acstokenresult.js">
 		<issue line="26" char="24" reason="&apos;AcsTokenResult&apos; was used before it was defined." evidence="function AcsTokenResult() {" />
