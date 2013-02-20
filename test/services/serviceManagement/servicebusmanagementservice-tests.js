@@ -230,13 +230,11 @@ describe('Service Bus Management', function () {
     if (namespaces.length === 0) { return callback(); }
     var numDeleted = 0;
     namespaces.forEach(function (namespaceName) {
-      waitForNamespaceToActivate(namespaceName, function () {
-        service.deleteNamespace(namespaceName, function () {
-          ++numDeleted;
-          if (numDeleted === namespaces.length) {
-            waitForNamespacesToBeDeleted(namespaces, callback);
-          }
-        });
+      service.deleteNamespace(namespaceName, function () {
+        ++numDeleted;
+        if (numDeleted === namespaces.length) {
+          callback();
+        }
       });
     });
   }
@@ -257,39 +255,5 @@ describe('Service Bus Management', function () {
     };
 
     poll();
-  }
-
-  function waitForNamespacesToBeDeleted(namespaces, callback) {
-    if (!namespaces) { return callback(); }
-
-    if (!_.isArray(namespaces)) {
-      namespaces = [ namespaces ];
-    }
-
-    var numNamespaces = namespaces.length;
-
-    if (numNamespaces === 0) {
-      return callback();
-    }
-
-    function poll(namespace) {
-      service.getNamespace(namespace, function (err, result) {
-        // If we get an error, the namespace is gone
-        if (err) {
-          --numNamespaces;
-          if (numNamespaces === 0) {
-            callback();
-          }
-        } else {
-          // Try again. Spread out the polling a little randomly so we don't
-          // hammer the server all at once
-          setTimeout(poll(namespace), 2000 + (Math.floor(Math.random() * 10)) * 1000);
-        }
-      });
-    }
-
-    namespaces.forEach(function (namespace) {
-      poll(namespace);
-    });
   }
 });
