@@ -15,13 +15,8 @@
 
 // Test includes
 var fs = require('fs');
-var nock = require('nock');
 
-var testutil = require('./util');
 var nockHelper = require('./nock-helper');
-
-// Lib includes
-var azure = testutil.libRequire('azure');
 
 exports = module.exports = StorageTestUtils;
 
@@ -85,7 +80,9 @@ StorageTestUtils.prototype.baseTeardownTest = function (callback) {
     var lineWritten;
     nockHelper.nock.recorder.play().forEach(function (line) {
       if (line.indexOf('nock') >= 0) {
-        // TODO: any recording filtering happens here
+        // apply fixups of nock generated mocks
+
+
 
         scope += (lineWritten ? ',\n' : '') + 'function (nock) { var result = ' + line + ' return result; }';
         lineWritten = true;
