@@ -112,7 +112,7 @@ suite('tableservice-tests', function () {
       });
     });
   });
-
+/*
   test('CreateTable', function (done) {
     var tableName = testutil.generateId(tablePrefix, tableNames, suiteUtil.isMocked);
 
@@ -878,4 +878,5 @@ suite('tableservice-tests', function () {
 
     done();
   });
+*/
 });
