@@ -27,7 +27,7 @@ function QueueTestUtils(service, testPrefix) {
   QueueTestUtils.super_.call(this, service, testPrefix);
 }
 
-util.inherits(QueueTestUtils, StorageTestUtils);
+util.inherits(QueueTestUtils, MockedTestUtils);
 
 QueueTestUtils.prototype.teardownTest = function (callback) {
   var self = this;
