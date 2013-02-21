@@ -21,7 +21,7 @@ var testutil = require('./util');
 // Lib includes
 var azure = testutil.libRequire('azure');
 
-var StorageTestUtils = require('./storage-test-utils');
+var MockedTestUtils = require('./mocked-test-utils');
 
 function QueueTestUtils(service, testPrefix) {
   QueueTestUtils.super_.call(this, service, testPrefix);

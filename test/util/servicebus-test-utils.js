@@ -13,30 +13,15 @@
 * limitations under the License.
 */
 
-var assert = require('assert');
+var MockedTestUtils = require('./mocked-test-utils');
 
-// Test includes
-var testutil = require('./util');
+function ServiceBusTestUtils(service, testPrefix) {
+  ServiceBusTestUtils.super_.call(this, service, testPrefix);
+}
 
-// Lib includes
-var azure = testutil.libRequire('azure');
+util.inherits(ServiceBusTestUtils, MockedTestUtils);
 
-var exports = module.exports;
-
-exports.isMocked = MockServerClient.isEnabled();
-exports.isRecording = MockServerClient.isRecording();
-
-var mockServerClient;
-var currentTest = 0;
-
-exports.setUpTest = function (testPrefix, callback) {
-  var serviceBusService;
-
-  serviceBusService = azure.createServiceBusService();
-  callback(null, serviceBusService);
-};
-
-exports.tearDownTest = function (serviceBusService, testPrefix, callback) {
+TableTestUtils.prototype.teardownTest = function (callback) {
   var endTest = function () {
     callback();
   };
