@@ -13,6 +13,9 @@
 * limitations under the License.
 */
 
+var util = require('util');
+var assert = require('assert');
+
 var MockedTestUtils = require('./mocked-test-utils');
 
 function ServiceBusTestUtils(service, testPrefix) {
@@ -21,17 +24,19 @@ function ServiceBusTestUtils(service, testPrefix) {
 
 util.inherits(ServiceBusTestUtils, MockedTestUtils);
 
-TableTestUtils.prototype.teardownTest = function (callback) {
+ServiceBusTestUtils.prototype.teardownTest = function (callback) {
+  var self = this;
+
   var endTest = function () {
-    callback();
+    self.baseTeardownTest(callback);
   };
 
   var deleteTopics = function () {
-    serviceBusService.listTopics(function (queryError, topics) {
+    self.service.listTopics(function (queryError, topics) {
       if (!queryError && topics.length > 0) {
         var topicCount = 0;
         topics.forEach(function (topic) {
-          serviceBusService.deleteTopic(topic.TopicName, function () {
+          self.service.deleteTopic(topic.TopicName, function () {
             topicCount++;
 
             if (topicCount === topics.length) {
@@ -46,11 +51,11 @@ TableTestUtils.prototype.teardownTest = function (callback) {
     });
   };
 
-  serviceBusService.listQueues(function (queryError, queues) {
+  self.service.listQueues(function (queryError, queues) {
     if (!queryError && queues.length > 0) {
       var queueCount = 0;
       queues.forEach(function (queue) {
-        serviceBusService.deleteQueue(queue.QueueName, function () {
+        self.service.deleteQueue(queue.QueueName, function () {
           queueCount++;
 
           if (queueCount === queues.length) {
@@ -63,6 +68,10 @@ TableTestUtils.prototype.teardownTest = function (callback) {
       deleteTopics();
     }
   });
+};
+
+exports.createServiceBusTestUtils = function (service, testPrefix) {
+  return new ServiceBusTestUtils(service, testPrefix);
 };
 
 var checkValue = function(test, value, optionValue) {
