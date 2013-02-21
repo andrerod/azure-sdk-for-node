@@ -19,19 +19,19 @@ services/queue/queueservice-tests.js
 services/table/batchserviceclient-tests.js
 services/table/sharedkeytable-tests.js
 services/table/sharedkeylitetable-tests.js
-services/serviceBus/notificationhubs-tests.js
-services/serviceBus/servicebusservice-tests.js
-services/serviceBus/wrapservice-tests.js
-services/serviceBus/wraptokenmanager-tests.js
-services/serviceManagement/affinitygroup-tests.js
-services/serviceManagement/servicebusmanagementservice-tests.js
-services/serviceManagement/servicemanagementservice-tests.js
-services/serviceManagement/sqlmanagementservice-tests.js
+# services/serviceBus/notificationhubs-tests.js
+# services/serviceBus/servicebusservice-tests.js
+# services/serviceBus/wrapservice-tests.js
+# services/serviceBus/wraptokenmanager-tests.js
+# services/serviceManagement/affinitygroup-tests.js
+# services/serviceManagement/servicebusmanagementservice-tests.js
+# services/serviceManagement/servicemanagementservice-tests.js
+# services/serviceManagement/sqlmanagementservice-tests.js
 services/table/tablequery-tests.js
 services/table/tableservice-batch-tests.js
 services/table/tableservice-tablequery-tests.js
 services/table/tableservice-tests.js
-services/sqlAzure/sqlservice-tests.js
+# services/sqlAzure/sqlservice-tests.js
 util/date-tests.js
 util/iso8061date-tests.js
 util/odatahandler-tests.js

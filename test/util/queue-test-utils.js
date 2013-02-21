@@ -14,7 +14,6 @@
 */
 
 var util = require('util');
-var MockServerClient = require('http-mock');
 
 // Test includes
 var testutil = require('./util');

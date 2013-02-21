@@ -17,7 +17,6 @@ var assert = require('assert');
 
 // Test includes
 var testutil = require('./util');
-var MockServerClient = require('http-mock');
 
 // Lib includes
 var azure = testutil.libRequire('azure');
