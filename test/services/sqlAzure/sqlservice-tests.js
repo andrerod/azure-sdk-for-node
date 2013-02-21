@@ -19,6 +19,8 @@ var uuid = require('node-uuid');
 
 var testutil = require('../../util/util');
 
+var mockedtestutil = require('../../util/mocked-test-utils');
+
 var azure = testutil.libRequire('azure');
 
 var SERVER_ADMIN_USERNAME = 'azuresdk';
@@ -32,73 +34,87 @@ describe('SQL Azure Database', function () {
 
   var service;
   var serviceManagement;
+  var suiteUtil;
 
-  before(function (done) {
+  beforeAll(function (done) {
     var subscriptionId = process.env['AZURE_SUBSCRIPTION_ID'];
     var auth = { keyvalue: testutil.getCertificateKey(), certvalue: testutil.getCertificate() };
     serviceManagement = azure.createSqlManagementService(
       subscriptionId, auth,
       { serializetype: 'XML'});
 
-    serviceManagement.createServer(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, function (err, name) {
-      should.not.exist(err);
+    suiteUtil = new mockedtestutil.StorageTestUtils(serviceManagement, testPrefix);
+    suiteUtil.setupSuite(function () {
+      serviceManagement.createServer(SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD, SERVER_LOCATION, function (err, name) {
+        should.not.exist(err);
 
-      serverName = name;
+        serverName = name;
 
-      // Create the SQL Azure service to test
-      service = azure.createSqlService(serverName, SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD);
+        // Create the SQL Azure service to test
+        service = azure.createSqlService(serverName, SERVER_ADMIN_USERNAME, SERVER_ADMIN_PASSWORD);
 
-      // add firewall rule for all the ip range
-      serviceManagement.createServerFirewallRule(serverName, 'rule1', '0.0.0.0', '255.255.255.255', function () {
+        // add firewall rule for all the ip range
+        serviceManagement.createServerFirewallRule(serverName, 'rule1', '0.0.0.0', '255.255.255.255', function () {
 
-        // Wait for the firewall rule to be added (test different operations needed as it seems they dont go valid at the same time)
-        var checkIfRuleAdded = function () {
-          setTimeout(function () {
-            var databaseId;
+          // Wait for the firewall rule to be added (test different operations needed as it seems they dont go valid at the same time)
+          var checkIfRuleAdded = function () {
+            setTimeout(function () {
+              var databaseId;
 
-            service.createServerDatabase(DATABASE_NAME, function (err, db) {
-              if (err) {
-                checkIfRuleAdded();
-              } else {
-                databaseId = db.Id;
+              service.createServerDatabase(DATABASE_NAME, function (err, db) {
+                if (err) {
+                  checkIfRuleAdded();
+                } else {
+                  databaseId = db.Id;
 
-                var checkIfRuleDeleted = function () {
-                  setTimeout(function () {
-                    service.deleteServerDatabase(databaseId, function (err) {
-                      if (err) {
-                        checkIfRuleDeleted();
-                      } else {
-                        var checkIfRuleLists = function () {
-                          setTimeout(function () {
-                            service.listServerDatabases(function (err) {
-                              if (err) {
-                                checkIfRuleLists();
-                              } else {
-                                done();
-                              }
-                            })
-                          }, 2000);
-                        };
+                  var checkIfRuleDeleted = function () {
+                    setTimeout(function () {
+                      service.deleteServerDatabase(databaseId, function (err) {
+                        if (err) {
+                          checkIfRuleDeleted();
+                        } else {
+                          var checkIfRuleLists = function () {
+                            setTimeout(function () {
+                              service.listServerDatabases(function (err) {
+                                if (err) {
+                                  checkIfRuleLists();
+                                } else {
+                                  done();
+                                }
+                              })
+                            }, 2000);
+                          };
 
-                        checkIfRuleLists();
-                      }
-                    });
-                  }, 2000);
-                };
+                          checkIfRuleLists();
+                        }
+                      });
+                    }, 2000);
+                  };
 
-                checkIfRuleDeleted();
-              }
-            });
-          }, 2000);
-        };
+                  checkIfRuleDeleted();
+                }
+              });
+            }, 2000);
+          };
 
-        checkIfRuleAdded();
+          checkIfRuleAdded();
+        });
       });
     });
   });
 
+  afterAll(function (done) {
+    serviceManagement.deleteServer(serverName, function () {
+      suiteUtil.teardownSuite(done);
+    });
+  });
+
+  before(function (done) {
+    suiteUtil.setupTest(done);
+  });
+
   after(function (done) {
-    serviceManagement.deleteServer(serverName, done);
+    suiteUtil.baseTeardownTest(done);
   });
 
   describe('list SQL databases', function () {

@@ -28,6 +28,7 @@ function StorageTestUtils(service, testPrefix) {
   this.scopeWritten;
   this.recordingsFile = __dirname + '/../recordings/' + this.testPrefix + '.nock.js';
   this.isMocked = !process.env.AZURE_NOCK_OFF;
+  this.isRecording = process.env.AZURE_NOCK_RECORD;
 }
 
 StorageTestUtils.prototype.setupSuite = function (callback) {
