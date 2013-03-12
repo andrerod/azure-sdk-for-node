@@ -886,7 +886,8 @@ suite('servicebusservice-tests', function () {
       RequiresSession: true,
       DefaultMessageTimeToLive: 'PT5S',
       DeadLetteringOnMessageExpiration: true,
-      DeadLetteringOnFilterEvaluationExceptions: true
+      DeadLetteringOnFilterEvaluationExceptions: true,
+      AutoDeleteOnIdle: 'PT5M'
     };
 
     // Invalid topic name
@@ -911,7 +912,8 @@ suite('servicebusservice-tests', function () {
             assert.equal(subscription2.DefaultMessageTimeToLive, subscriptionOptions.DefaultMessageTimeToLive.toString());
             assert.equal(subscription2.DeadLetteringOnMessageExpiration, subscriptionOptions.DeadLetteringOnMessageExpiration.toString());
             assert.equal(subscription2.DeadLetteringOnFilterEvaluationExceptions, subscriptionOptions.DeadLetteringOnFilterEvaluationExceptions.toString());
-
+            assert.equal(subscription2.AutoDeleteOnIdle, subscriptionOptions.AutoDeleteOnIdle.toString());
+            
             // duplicate subscription
             serviceBusService.createSubscription(topicName, subscriptionName1, function (subscriptionError, duplicateSubscription) {
               assert.notEqual(subscriptionError, null);
