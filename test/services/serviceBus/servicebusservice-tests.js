@@ -50,8 +50,7 @@ var testPrefix = 'servicebusservice-tests';
 
 suite('servicebusservice-tests', function () {
   suiteSetup(function (done) {
-    serviceBusService = azure.createServiceBusService()
-      .withFilter(new azure.ExponentialRetryPolicyFilter(3, 1000));
+    serviceBusService = azure.createServiceBusService();
     suiteUtil = servicebustestutil.createServiceBusTestUtils(serviceBusService, testPrefix);
     suiteUtil.setupSuite(done);
   });
