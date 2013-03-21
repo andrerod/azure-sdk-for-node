@@ -1,5 +1,5 @@
 ﻿/**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -18,10 +18,11 @@ var assert = require('assert');
 var fs = require('fs');
 var path = require("path");
 var util = require('util');
+var sinon = require('sinon');
 
 // Test includes
 var testutil = require('../../util/util');
-var blobtestutil = require('../../util/blob-test-utils');
+var blobtestutil = require('../../framework/blob-test-utils');
 
 // Lib includes
 var azureutil = testutil.libRequire('util/util');
@@ -31,11 +32,12 @@ var WebResource = testutil.libRequire('http/webresource');
 var SharedAccessSignature = azure.SharedAccessSignature;
 var BlobService = azure.BlobService;
 var ServiceClient = azure.ServiceClient;
+var ExponentialRetryPolicyFilter = azure.ExponentialRetryPolicyFilter;
 var Constants = azure.Constants;
 var BlobConstants = Constants.BlobConstants;
 var HttpConstants = Constants.HttpConstants;
+var QueryStringConstants = Constants.QueryStringConstants;
 
-var blobService;
 var containerNames = [];
 var containerNamesPrefix = 'cont';
 
@@ -43,18 +45,27 @@ var blobNames = [];
 var blobNamesPrefix = 'blob';
 
 var testPrefix = 'blobservice-tests';
-var numberTests = 32;
+
+var blobService;
+var suiteUtil;
 
 suite('blobservice-tests', function () {
+  suiteSetup(function (done) {
+    blobService = azure.createBlobService();
+    suiteUtil = blobtestutil.createBlobTestUtils(blobService, testPrefix);
+    suiteUtil.setupSuite(done);
+  });
+
+  suiteTeardown(function (done) {
+    suiteUtil.teardownSuite(done);
+  });
+
   setup(function (done) {
-    blobtestutil.setUpTest(testPrefix, function (err, newBlobService) {
-      blobService = newBlobService;
-      done();
-    });
+    suiteUtil.setupTest(done);
   });
 
   teardown(function (done) {
-    blobtestutil.tearDownTest(numberTests, blobService, testPrefix, done);
+    suiteUtil.teardownTest(done);
   });
 
   test('IncorrectContainerNames', function (done) {
@@ -133,28 +144,28 @@ suite('blobservice-tests', function () {
   });
 
   test('ListContainers', function (done) {
-    var containerName1 = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName1 = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var metadata1 = {
       color: 'orange',
       containernumber: '01',
       somemetadataname: 'SomeMetadataValue'
     };
 
-    var containerName2 = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName2 = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var metadata2 = {
       color: 'pink',
       containernumber: '02',
       somemetadataname: 'SomeMetadataValue'
     };
 
-    var containerName3 = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName3 = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var metadata3 = {
       color: 'brown',
       containernumber: '03',
       somemetadataname: 'SomeMetadataValue'
     };
 
-    var containerName4 = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName4 = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var metadata4 = {
       color: 'blue',
       containernumber: '04',
@@ -250,7 +261,7 @@ suite('blobservice-tests', function () {
   });
 
   test('CreateContainer', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError, container1, createContainerResponse) {
       assert.equal(createError, null);
@@ -261,7 +272,7 @@ suite('blobservice-tests', function () {
         assert.notEqual(container1.lastModified, null);
       }
 
-      assert.equal(createContainerResponse.statusCode, HttpConstants.HttpResponseCodes.CREATED_CODE);
+      assert.equal(createContainerResponse.statusCode, HttpConstants.HttpResponseCodes.Created);
 
       // creating again will result in a duplicate error
       blobService.createContainer(containerName, function (createError2, container2) {
@@ -274,7 +285,7 @@ suite('blobservice-tests', function () {
   });
 
   test('CreateContainerIfNotExists', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError, container1, createContainerResponse) {
       assert.equal(createError, null);
@@ -285,7 +296,7 @@ suite('blobservice-tests', function () {
         assert.notEqual(container1.lastModified, null);
       }
 
-      assert.equal(createContainerResponse.statusCode, HttpConstants.HttpResponseCodes.CREATED_CODE);
+      assert.equal(createContainerResponse.statusCode, HttpConstants.HttpResponseCodes.Created);
 
       // creating again will result in a duplicate error
       blobService.createContainerIfNotExists(containerName, function (createError2, isCreated) {
@@ -297,8 +308,16 @@ suite('blobservice-tests', function () {
     });
   });
 
+  test('CreateContainerIfNotExistsNoCallback', function (done) {
+    assert.throws(function () { blobService.createContainerIfNotExists('name'); },
+      Error
+    );
+
+    done();
+  });
+
   test('GetContainerProperties', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var metadata = {
       color: 'blue'
     };
@@ -324,7 +343,7 @@ suite('blobservice-tests', function () {
   });
 
   test('SetContainerMetadata', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var metadata = { 'class': 'test' };
 
     blobService.createContainer(containerName, function (createError, createContainer, createContainerResponse) {
@@ -353,7 +372,7 @@ suite('blobservice-tests', function () {
   });
 
   test('GetContainerAcl', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError, container1, createContainerResponse) {
       assert.equal(createError, null);
@@ -375,7 +394,7 @@ suite('blobservice-tests', function () {
   });
 
   test('SetContainerAcl', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError, container1, createContainerResponse) {
       assert.equal(createError, null);
@@ -392,6 +411,78 @@ suite('blobservice-tests', function () {
           assert.notEqual(getAclContainer1, null);
           if (getAclContainer1) {
             assert.equal(getAclContainer1.publicAccessLevel, BlobConstants.BlobContainerPublicAccessType.BLOB);
+          }
+
+          assert.ok(getResponse1.isSuccessful);
+
+          blobService.setContainerAcl(containerName, BlobConstants.BlobContainerPublicAccessType.CONTAINER, function (setAclError2, setAclContainer2, setResponse2) {
+            assert.equal(setAclError2, null);
+            assert.notEqual(setAclContainer2, null);
+            assert.ok(setResponse2.isSuccessful);
+
+            setTimeout(function () {
+              blobService.getContainerAcl(containerName, function (getAclError2, getAclContainer2, getResponse3) {
+                assert.equal(getAclError2, null);
+                assert.notEqual(getAclContainer2, null);
+                if (getAclContainer2) {
+                  assert.equal(getAclContainer2.publicAccessLevel, BlobConstants.BlobContainerPublicAccessType.CONTAINER);
+                }
+
+                assert.ok(getResponse3.isSuccessful);
+
+                done();
+              });
+            }, (suiteUtil.isMocked && !suiteUtil.isRecording) ? 0 : 5000);
+          });
+        });
+      });
+    });
+  });
+
+  test('SetContainerAclWithPolicies', function (done) {
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+
+    var readWriteStartDate = new Date(2012, 10, 10);
+    var readWriteExpiryDate = new Date(readWriteStartDate);
+    readWriteExpiryDate.setMinutes(readWriteStartDate.getMinutes() + 10);
+    readWriteExpiryDate.setMilliseconds(999);
+
+    var readWriteSharedAccessPolicy = {
+      Id: 'readwrite',
+      AccessPolicy: {
+        Start: readWriteStartDate,
+        Expiry: readWriteExpiryDate,
+        Permissions: 'rw'
+      }
+    };
+
+    var readSharedAccessPolicy = {
+      Id: 'read',
+      AccessPolicy: {
+        Expiry: readWriteStartDate,
+        Permissions: 'r'
+      }
+    };
+
+    var options = {};
+    options.signedIdentifiers = [readWriteSharedAccessPolicy, readSharedAccessPolicy];
+
+    blobService.createContainer(containerName, function (createError, container1, createContainerResponse) {
+      assert.equal(createError, null);
+      assert.notEqual(container1, null);
+      assert.ok(createContainerResponse.isSuccessful);
+
+      blobService.setContainerAcl(containerName, BlobConstants.BlobContainerPublicAccessType.BLOB, options, function (setAclError, setAclContainer1, setResponse1) {
+        assert.equal(setAclError, null);
+        assert.notEqual(setAclContainer1, null);
+        assert.ok(setResponse1.isSuccessful);
+
+        blobService.getContainerAcl(containerName, function (getAclError, getAclContainer1, getResponse1) {
+          assert.equal(getAclError, null);
+          assert.notEqual(getAclContainer1, null);
+          if (getAclContainer1) {
+            assert.equal(getAclContainer1.publicAccessLevel, BlobConstants.BlobContainerPublicAccessType.BLOB);
+            assert.equal(getAclContainer1.signedIdentifiers[0].AccessPolicy.Expiry.getTime(), readWriteExpiryDate.getTime());
           }
 
           assert.ok(getResponse1.isSuccessful);
@@ -419,7 +510,7 @@ suite('blobservice-tests', function () {
   });
 
   test('SetContainerAclSignedIdentifiers', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createContainerError, container1, createContainerResponse) {
       assert.equal(createContainerError, null);
@@ -430,15 +521,15 @@ suite('blobservice-tests', function () {
       options.signedIdentifiers = [
         { Id: 'id1',
           AccessPolicy: {
-            Start: '2009-10-10',
-            Expiry: '2009-10-11',
+            Start: '2009-10-10T00:00:00.123Z',
+            Expiry: '2009-10-11T00:00:00.456Z',
             Permissions: 'r'
           }
         },
         { Id: 'id2',
           AccessPolicy: {
-            Start: '2009-11-10',
-            Expiry: '2009-11-11',
+            Start: '2009-11-10T00:00:00.006Z',
+            Expiry: '2009-11-11T00:00:00.4Z',
             Permissions: 'w'
           }
         }];
@@ -462,14 +553,16 @@ suite('blobservice-tests', function () {
             if (containerAcl.signedIdentifiers) {
               containerAcl.signedIdentifiers.forEach(function (identifier) {
                 if (identifier.Id === 'id1') {
-                  assert.equal(identifier.AccessPolicy.Start, '2009-10-10T00:00:00.0000000Z');
-                  assert.equal(identifier.AccessPolicy.Expiry, '2009-10-11T00:00:00.0000000Z');
+                  assert.equal(identifier.AccessPolicy.Start.getTime(), new Date('2009-10-10T00:00:00.123Z').getTime());
+                  assert.equal(identifier.AccessPolicy.Expiry.getTime(), new Date('2009-10-11T00:00:00.456Z').getTime());
                   assert.equal(identifier.AccessPolicy.Permission, 'r');
                   entries += 1;
                 }
                 else if (identifier.Id === 'id2') {
-                  assert.equal(identifier.AccessPolicy.Start, '2009-11-10T00:00:00.0000000Z');
-                  assert.equal(identifier.AccessPolicy.Expiry, '2009-11-11T00:00:00.0000000Z');
+                  assert.equal(identifier.AccessPolicy.Start.getTime(), new Date('2009-11-10T00:00:00.006Z').getTime());
+                  assert.equal(identifier.AccessPolicy.Start.getMilliseconds(), 6);
+                  assert.equal(identifier.AccessPolicy.Expiry.getTime(), new Date('2009-11-11T00:00:00.4Z').getTime());
+                  assert.equal(identifier.AccessPolicy.Expiry.getMilliseconds(), 400);
                   assert.equal(identifier.AccessPolicy.Permission, 'w');
                   entries += 2;
                 }
@@ -486,15 +579,15 @@ suite('blobservice-tests', function () {
   });
 
   test('CreateBlockBlobFromText', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var blobText = 'Hello World';
 
     blobService.createContainer(containerName, function (createError1, container1, createResponse1) {
       assert.equal(createError1, null);
       assert.notEqual(container1, null);
       assert.ok(createResponse1.isSuccessful);
-      assert.equal(createResponse1.statusCode, HttpConstants.HttpResponseCodes.CREATED_CODE);
+      assert.equal(createResponse1.statusCode, HttpConstants.HttpResponseCodes.Created);
 
       blobService.createBlockBlobFromText(containerName, blobName, blobText, function (uploadError, blob, uploadResponse) {
         assert.equal(uploadError, null);
@@ -511,8 +604,8 @@ suite('blobservice-tests', function () {
   });
 
   test('SnapshotBlob', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var blobText = 'Hello World';
 
     blobService.createContainer(containerName, function (createError, container1, createResponse) {
@@ -556,11 +649,11 @@ suite('blobservice-tests', function () {
   });
 
   test('CopyBlob', function (done) {
-    var sourceContainerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var targetContainerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
+    var sourceContainerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var targetContainerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
 
-    var sourceBlobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
-    var targetBlobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var sourceBlobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+    var targetBlobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
     var blobText = 'hi there';
 
@@ -589,8 +682,8 @@ suite('blobservice-tests', function () {
   });
 
   test('LeaseBlob', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var blobText = 'hello';
 
     blobService.createContainer(containerName, function (createError, container1, createResponse) {
@@ -636,8 +729,8 @@ suite('blobservice-tests', function () {
   });
 
   test('GetBlobProperties', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var metadata = {
       color: 'blue'
     };
@@ -666,8 +759,8 @@ suite('blobservice-tests', function () {
   });
 
   test('SetBlobProperties', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var text = "hello";
 
     blobService.createContainer(containerName, function (err) {
@@ -705,8 +798,8 @@ suite('blobservice-tests', function () {
   });
 
   test('GetBlobMetadata', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var metadata = { color: 'blue' };
 
     blobService.createContainer(containerName, function (err) {
@@ -733,9 +826,9 @@ suite('blobservice-tests', function () {
   });
 
   test('ListBlobs', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName1 = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
-    var blobName2 = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName1 = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+    var blobName2 = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var blobText1 = 'hello1';
     var blobText2 = 'hello2';
 
@@ -815,8 +908,8 @@ suite('blobservice-tests', function () {
   });
 
   test('PageBlob', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError) {
       assert.equal(createError, null);
@@ -864,8 +957,8 @@ suite('blobservice-tests', function () {
   });
 
   test('GetPageRegions', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError) {
       assert.equal(createError, null);
@@ -914,8 +1007,8 @@ suite('blobservice-tests', function () {
   });
 
   test('UploadBlobAccessCondition', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var blobText = 'hello';
 
     blobService.createContainer(containerName, function (error) {
@@ -940,15 +1033,15 @@ suite('blobservice-tests', function () {
   });
 
   test('SmallUploadBlobFromFileWithSpace', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked) + ' a';
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked) + ' a';
     var blobText = 'Hello World';
 
     blobService.createContainer(containerName, function (createError1, container1, createResponse1) {
       assert.equal(createError1, null);
       assert.notEqual(container1, null);
       assert.ok(createResponse1.isSuccessful);
-      assert.equal(createResponse1.statusCode, HttpConstants.HttpResponseCodes.CREATED_CODE);
+      assert.equal(createResponse1.statusCode, HttpConstants.HttpResponseCodes.Created);
 
       blobService.createBlockBlobFromText(containerName, blobName, blobText, function (uploadError, blobResponse, uploadResponse) {
         assert.equal(uploadError, null);
@@ -966,8 +1059,8 @@ suite('blobservice-tests', function () {
   });
 
   test('GetBlobRange', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError) {
       assert.equal(createError, null);
@@ -991,8 +1084,8 @@ suite('blobservice-tests', function () {
   });
 
   test('GetBlobRangeOpenEnded', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (createError) {
       assert.equal(createError, null);
@@ -1016,8 +1109,8 @@ suite('blobservice-tests', function () {
   });
 
   test('SetBlobMime', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var fileNameSource = testutil.generateId('file') + '.bmp'; // fake bmp file with text...
     var blobText = 'Hello World!';
 
@@ -1034,7 +1127,7 @@ suite('blobservice-tests', function () {
 
             // get the last bytes from the message
             assert.equal(content1, 'llo World!');
-            assert.equal(blob.contentType, 'image/bmp');
+            assert.ok(blob.contentType === 'image/bmp' || blob.contentType === 'image/x-ms-bmp');
 
             fs.unlink(fileNameSource, function () {
               done();
@@ -1046,8 +1139,8 @@ suite('blobservice-tests', function () {
   });
 
   test('SetBlobMimeSkip', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var fileNameSource = testutil.generateId('prefix') + '.bmp'; // fake bmp file with text...
     var blobText = 'Hello World!';
 
@@ -1075,9 +1168,34 @@ suite('blobservice-tests', function () {
     });
   });
 
+  test('GenerateSharedAccessSignature', function (done) {
+    var containerName = 'images';
+    var blobName = 'pic1.png';
+
+    var devStorageBlobService = azure.createBlobService(ServiceClient.DEVSTORE_STORAGE_ACCOUNT, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+
+    var sharedAccessPolicy = {
+      AccessPolicy: {
+        Permissions: BlobConstants.SharedAccessPermissions.READ,
+        Start: new Date('October 11, 2011 11:03:40 am GMT'),
+        Expiry: new Date('October 12, 2011 11:53:40 am GMT')
+      }
+    };
+
+    var sharedAccessSignature = devStorageBlobService.generateSharedAccessSignature(containerName, blobName, sharedAccessPolicy);
+
+    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_START], '2011-10-11T11:03:40Z');
+    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_EXPIRY], '2011-10-12T11:53:40Z');
+    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_RESOURCE], BlobConstants.ResourceTypes.BLOB);
+    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_PERMISSIONS], BlobConstants.SharedAccessPermissions.READ);
+    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNATURE], '7NIEip+VOrQ5ZV80pORPK1MOsJc62wwCNcbMvE+lQ0s=');
+
+    done();
+  });
+
   test('CreateBlobWithBars', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = 'blobs/' + testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = 'blobs/' + testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
     var blobText = 'Hello World!';
 
     blobService.createContainer(containerName, function (createError) {
@@ -1099,8 +1217,8 @@ suite('blobservice-tests', function () {
   });
 
   test('CommitBlockList', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
     blobService.createContainer(containerName, function (error) {
       assert.equal(error, null);
@@ -1134,24 +1252,173 @@ suite('blobservice-tests', function () {
   });
 
   test('GetBlobUrl', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, blobtestutil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, blobtestutil.isMocked);
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
-    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host:80');
-    blobServiceassert.usePathStyleUri = false;
+    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
 
-    var urlParts = blobServiceassert.getBlobUrl(containerName);
-    assert.equal(urlParts.url(), 'http://storageAccount.host:80/' + containerName);
+    var blobUrl = blobServiceassert.getBlobUrl(containerName);
+    assert.equal(blobUrl, 'https://host.com:80/' + containerName);
 
-    urlParts = blobServiceassert.getBlobUrl(containerName, blobName);
-    assert.equal(urlParts.url(), 'http://storageAccount.host:80/' + containerName + '/' + blobName);
+    blobUrl = blobServiceassert.getBlobUrl(containerName, blobName);
+    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName);
 
-    blobServiceassert.usePathStyleUri = true;
-    urlParts = blobServiceassert.getBlobUrl(containerName);
-    assert.equal(urlParts.url(), 'http://host:80/storageAccount/' + containerName);
+    done();
+  });
 
-    urlParts = blobServiceassert.getBlobUrl(containerName, blobName);
-    assert.equal(urlParts.url(), 'http://host:80/storageAccount/' + containerName + '/' + blobName);
+  test('GetBlobSharedUrl', function (done) {
+    var containerName = 'container';
+    var blobName = 'blob';
+
+    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
+
+    var sharedAccessPolicy = {
+      AccessPolicy: {
+        Expiry: new Date('October 12, 2011 11:53:40 am GMT')
+      }
+    };
+
+    var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
+    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sp=r&sig=eVkH%2BFxxShel2hcN50ZUmgPAHk%2FmqRVeaBfyry%2BVacw%3D');
+
+    done();
+  });
+
+  test('GetBlobSharedUrlWithDuration', function (done) {
+    var containerName = 'container';
+    var blobName = 'blob';
+
+    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
+
+    // Mock Date just to ensure a fixed signature
+    this.clock = sinon.useFakeTimers(0, 'Date');
+
+    var sharedAccessPolicy = {
+      AccessPolicy: {
+        Expiry: azure.date.minutesFromNow(10)
+      }
+    };
+
+    this.clock.restore();
+
+    var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
+    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sp=r&sig=LofuDUzdHPpiteauMetANWzDpzd0Vw%2BVMOHyXYCipAM%3D');
+
+    done();
+  });
+
+  test('responseEmits', function (done) {
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+
+    var responseReceived = false;
+    blobService.on('response', function (response) {
+      assert.notEqual(response, null);
+      responseReceived = true;
+      blobService.removeAllListeners('response');
+    });
+
+    blobService.createContainer(containerName, function (error) {
+      assert.equal(error, null);
+
+      blobService.createBlobBlockFromText('id1', containerName, blobName, 'id1', function (error2) {
+        assert.equal(error2, null);
+        // By the time the complete callback is processed the response header callback must have been called before
+        assert.equal(responseReceived, true);
+
+        done();
+      });
+    });
+  });
+
+  test('GetBlobToStream', function (done) {
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+    var fileNameTarget = testutil.generateId('getBlobFile', [], suiteUtil.isMocked) + '.test';
+    var blobText = 'Hello World';
+
+    blobService.createContainer(containerName, function (createError1, container1) {
+      assert.equal(createError1, null);
+      assert.notEqual(container1, null);
+
+      blobService.createBlockBlobFromText(containerName, blobName, blobText, function (error1) {
+        assert.equal(error1, null);
+
+        blobService.getBlobToFile(containerName, blobName, fileNameTarget, function (error2) {
+          assert.equal(error2, null);
+
+          var exists = azureutil.pathExistsSync(fileNameTarget);
+          assert.equal(exists, true);
+
+          var fileText = fs.readFileSync(fileNameTarget);
+          assert.equal(blobText, fileText);
+
+          done();
+        });
+      });
+    });
+  });
+
+  test('SmallUploadBlobFromFile', function (done) {
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+    var fileNameSource = testutil.generateId('getBlobFile', [], suiteUtil.isMocked) + '.test';
+    var blobText = 'Hello World';
+
+    fs.writeFile(fileNameSource, blobText, function () {
+      blobService.createContainer(containerName, function (createError1, container1, createResponse1) {
+        assert.equal(createError1, null);
+        assert.notEqual(container1, null);
+        assert.ok(createResponse1.isSuccessful);
+        assert.equal(createResponse1.statusCode, HttpConstants.HttpResponseCodes.Created);
+
+        var blobOptions = { contentType: 'text' };
+        blobService.createBlockBlobFromFile(containerName, blobName, fileNameSource, blobOptions, function (uploadError, blobResponse, uploadResponse) {
+          assert.equal(uploadError, null);
+          assert.notEqual(blobResponse, null);
+          assert.ok(uploadResponse.isSuccessful);
+
+          blobService.getBlobToText(containerName, blobName, function (downloadErr, blobTextResponse) {
+            assert.equal(downloadErr, null);
+            assert.equal(blobTextResponse, blobText);
+
+            blobService.getBlobProperties(containerName, blobName, function (getBlobPropertiesErr, blobGetResponse) {
+              assert.equal(getBlobPropertiesErr, null);
+              assert.notEqual(blobGetResponse, null);
+              if (blobGetResponse) {
+                assert.equal(blobOptions.contentType, blobGetResponse.contentType);
+              }
+
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  test('storageConnectionStrings', function (done) {
+    var key = 'AhlzsbLRkjfwObuqff3xrhB2yWJNh1EMptmcmxFJ6fvPTVX3PZXwrG2YtYWf5DPMVgNsteKStM5iBLlknYFVoA==';
+    var connectionString = 'DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=' + key;
+    var blobService = azure.createBlobService(connectionString);
+
+    assert.equal(blobService.storageAccount, 'myaccount');
+    assert.equal(blobService.storageAccessKey, key);
+    assert.equal(blobService.protocol, 'https:');
+    assert.equal(blobService.host, 'myaccount.blob.core.windows.net');
+
+    done();
+  });
+
+  test('storageConnectionStringsDevStore', function (done) {
+    var connectionString = 'UseDevelopmentStorage=true';
+    var blobService = azure.createBlobService(connectionString);
+
+    assert.equal(blobService.storageAccount, ServiceClient.DEVSTORE_STORAGE_ACCOUNT);
+    assert.equal(blobService.storageAccessKey, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+    assert.equal(blobService.protocol, 'http:');
+    assert.equal(blobService.host, '127.0.0.1');
+    assert.equal(blobService.port, '10000');
 
     done();
   });

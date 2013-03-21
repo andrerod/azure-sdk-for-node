@@ -1,5 +1,5 @@
 /**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ suite('iso8061date-tests', function () {
 
   test('Format', function (done) {
     var datetime = Date.UTC(2011, 6, 17, 14, 0, 23, 270);
-    var datetimeAtom = "2011-07-17T14:00:23.270Z";
+    var datetimeAtom = "2011-07-17T14:00:23.2700000Z";
     var strdate = ISO8061Date.format(new Date(datetime));
     assert.equal(strdate, datetimeAtom);
     done();

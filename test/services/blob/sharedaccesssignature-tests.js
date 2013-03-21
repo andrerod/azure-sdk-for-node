@@ -1,5 +1,5 @@
 ﻿/**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 
 var assert = require('assert');
 
-var qs = require('qs');
+var qs = require('querystring');
 
 // Test includes
 var testutil = require('../../util/util');

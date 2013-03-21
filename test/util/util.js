@@ -1,5 +1,5 @@
 /**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -12,6 +12,8 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
+var fs = require('fs');
 
 var exports = module.exports;
 
@@ -58,4 +60,24 @@ exports.libFolder = function () {
 
 exports.libRequire = function (path) {
   return require('../../' + exports.libFolder() + '/' + path);
+};
+
+exports.getCertificateKey = function () {
+  if (process.env['AZURE_CERTIFICATE_KEY']) {
+    return process.env['AZURE_CERTIFICATE_KEY'];
+  } else if (process.env['AZURE_CERTIFICATE_KEY_FILE']) {
+    return fs.readFileSync(process.env['AZURE_CERTIFICATE_KEY_FILE']).toString();
+  }
+
+  return null;
+};
+
+exports.getCertificate = function () {
+  if (process.env['AZURE_CERTIFICATE']) {
+    return process.env['AZURE_CERTIFICATE'];
+  } else if (process.env['AZURE_CERTIFICATE_FILE']) {
+    return fs.readFileSync(process.env['AZURE_CERTIFICATE_FILE']).toString();
+  }
+
+  return null;
 };

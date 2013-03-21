@@ -1,5 +1,5 @@
 /**
-* Copyright 2011 Microsoft Corporation
+* Copyright (c) Microsoft.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -163,6 +163,25 @@ suite('util-tests', function() {
     assert.equal(util.objectFirstKey(null), null);
     assert.equal(util.objectFirstKey({ prop1: 1 }), 'prop1');
     assert.equal(util.objectFirstKey({ prop1: 1, prop2: 2 }), 'prop1');
+
+    done();
+  });
+
+  test('In array case insensitive', function (done) {
+    // int positives
+    assert.ok(util.inArrayInsensitive('a', [ 'a', 'b', 'c']));
+    assert.ok(util.inArrayInsensitive('A', [ 'a', 'b', 'c']));
+    assert.ok(!util.inArrayInsensitive('d', [ 'a', 'b', 'c']));
+
+    done();
+  });
+
+  test('Get value case insensitive', function (done) {
+    // int positives
+    assert.equal(util.tryGetValueInsensitive('B', { 'a': 'a1', 'b': 'b1', 'c': 'c1' }), 'b1');
+    assert.equal(util.tryGetValueInsensitive('b', { 'a': 'a1', 'b': 'b1', 'c': 'c1' }), 'b1');
+    assert.equal(util.tryGetValueInsensitive('D', { 'a': 'a1', 'b': 'b1', 'c': 'c1' }), undefined);
+    assert.equal(util.tryGetValueInsensitive('D', { 'a': 'a1', 'b': 'b1', 'c': 'c1' }, 'something'), 'something');
 
     done();
   });
