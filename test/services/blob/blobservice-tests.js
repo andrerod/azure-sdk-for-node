@@ -1350,10 +1350,12 @@ suite('blobservice-tests', function () {
           var exists = azureutil.pathExistsSync(fileNameTarget);
           assert.equal(exists, true);
 
-          var fileText = fs.readFileSync(fileNameTarget);
-          assert.equal(blobText, fileText);
+          fs.readFile(fileNameTarget, function (err, fileText) {
+            assert.equal(err, null);
+            assert.equal(blobText, fileText);
 
-          done();
+            done();
+          });
         });
       });
     });
