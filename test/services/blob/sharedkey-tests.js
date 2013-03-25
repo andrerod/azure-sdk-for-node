@@ -20,7 +20,7 @@ var testutil = require('../../util/util');
 
 // Lib includes
 var azure = testutil.libRequire('azure');
-var WebResource = testutil.libRequire('http/webresource');
+var WebResource = testutil.libRequire('http/request');
 var SharedKey = azure.SharedKey;
 var ServiceClient = azure.ServiceClient;
 var Constants = azure.Constants;

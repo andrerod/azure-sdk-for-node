@@ -27,7 +27,7 @@ var blobtestutil = require('../../framework/blob-test-utils');
 // Lib includes
 var azureutil = testutil.libRequire('util/util');
 var azure = testutil.libRequire('azure');
-var WebResource = testutil.libRequire('http/webresource');
+var WebResource = testutil.libRequire('http/request');
 
 var SharedAccessSignature = azure.SharedAccessSignature;
 var BlobService = azure.BlobService;
@@ -1305,30 +1305,6 @@ suite('blobservice-tests', function () {
     assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sp=r&sig=LofuDUzdHPpiteauMetANWzDpzd0Vw%2BVMOHyXYCipAM%3D');
 
     done();
-  });
-
-  test('responseEmits', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
-
-    var responseReceived = false;
-    blobService.on('response', function (response) {
-      assert.notEqual(response, null);
-      responseReceived = true;
-      blobService.removeAllListeners('response');
-    });
-
-    blobService.createContainer(containerName, function (error) {
-      assert.equal(error, null);
-
-      blobService.createBlobBlockFromText('id1', containerName, blobName, 'id1', function (error2) {
-        assert.equal(error2, null);
-        // By the time the complete callback is processed the response header callback must have been called before
-        assert.equal(responseReceived, true);
-
-        done();
-      });
-    });
   });
 
   test('GetBlobToStream', function (done) {
