@@ -15,7 +15,7 @@
 
 var should = require('should');
 var testutil = require('../util/util');
-var WebResource = require('../../lib/http/webresource');
+var WebResource = require('../../lib/http/request');
 var azure = testutil.libRequire('azure');
 var Constants = azure.Constants;
 var HeaderConstants = Constants.HeaderConstants;
