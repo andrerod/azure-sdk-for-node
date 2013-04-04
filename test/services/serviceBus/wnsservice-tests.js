@@ -33,11 +33,14 @@ describe('WNS notifications', function () {
   var service;
   var suiteUtil;
   var sandbox;
+  var key = process.env.AZURE_SERVICEBUS_ACCESS_KEY;
+  var connectionString = 'Endpoint=sb://nodejstest-0-0e8a1-1.servicebus.int7.windows-int.net/;StsEndpoint=https://nodejstest-0-0e8a1-1-sb.accesscontrol.aadint.windows-int.net/;SharedSecretIssuer=owner;SharedSecretValue=' + key;
+
 
   before(function (done) {
     sandbox = sinon.sandbox.create();
 
-    service = azure.createServiceBusService();
+    service = azure.createServiceBusService(connectionString);
     suiteUtil = notificationhubstestutil.createNotificationHubsTestUtils(service, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -49,7 +52,7 @@ describe('WNS notifications', function () {
 
   beforeEach(function (done) {
     suiteUtil.setupTest(function () {
-      service.listNotificationHubs(function (err, hubs) {
+      service.listNotificationHubs(function (err, hubs, rsp) {
         var xplatHubs = hubs.filter(function (hub) {
           return hub.NotificationHubName.substr(0, hubNamePrefix.length) === hubNamePrefix;
         });
@@ -71,7 +74,7 @@ describe('WNS notifications', function () {
 
     suiteUtil.baseTeardownTest(done);
   });
-
+/*
   describe('Send notification', function () {
     var hubName;
     var notificationHubService;
@@ -218,6 +221,29 @@ describe('WNS notifications', function () {
           done();
         }
       );
+    });
+  });
+*/
+  describe('registrations', function () {
+    var hubName;
+    var notificationHubService;
+
+    beforeEach(function (done) {
+      hubName = testutil.generateId(hubNamePrefix, hubNames, suiteUtil.isMocked);
+
+      notificationHubService = azure.createNotificationHubService(hubName, connectionString);
+      suiteUtil.setupService(notificationHubService);
+      service.createNotificationHub(hubName, done);
+    });
+
+    describe('native', function () {
+      it('should create', function (done) {
+        notificationHubService.wns.createNativeRegistration('https://myfakechannel', function (error, rsp) {
+          should.not.exist(error);
+
+          done();
+        });
+      });
     });
   });
 });
