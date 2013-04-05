@@ -74,7 +74,7 @@ describe('WNS notifications', function () {
 
     suiteUtil.baseTeardownTest(done);
   });
-/*
+
   describe('Send notification', function () {
     var hubName;
     var notificationHubService;
@@ -223,7 +223,7 @@ describe('WNS notifications', function () {
       );
     });
   });
-*/
+
   describe('registrations', function () {
     var hubName;
     var notificationHubService;
@@ -237,11 +237,40 @@ describe('WNS notifications', function () {
     });
 
     describe('native', function () {
-      it('should create', function (done) {
-        notificationHubService.wns.createNativeRegistration('https://myfakechannel', function (error, rsp) {
-          should.not.exist(error);
+      describe('create', function () {
+        var registrationId;
 
-          done();
+        afterEach(function (done) {
+          notificationHubService.deleteRegistration(registrationId, done);
+        });
+
+        it('should work', function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (error, registration) {
+            should.not.exist(error);
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+      });
+
+      describe('delete', function () {
+        var registrationId;
+
+        beforeEach(function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (err, registration) {
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+
+        it('should work', function (done) {
+          notificationHubService.deleteRegistration(registrationId, function (err) {
+            should.not.exist(err);
+
+            done();
+          });
         });
       });
     });
