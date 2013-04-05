@@ -308,12 +308,18 @@ describe('WNS notifications', function () {
           });
         });
 
-        it('should work', function (done) {
+        it('should work without filtering', function (done) {
           notificationHubService.listRegistrations(function (err, list) {
             should.not.exist(err);
             should.exist(list);
             list.length.should.equal(1);
 
+            done();
+          });
+        });
+
+        it('should work with tag filtering', function (done) {
+          notificationHubService.listRegistrationsByTag(function (err, list) {
             done();
           });
         });
