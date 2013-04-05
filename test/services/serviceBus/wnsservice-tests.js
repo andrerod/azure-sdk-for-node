@@ -74,7 +74,7 @@ describe('WNS notifications', function () {
 
     suiteUtil.baseTeardownTest(done);
   });
-
+/*
   describe('Send notification', function () {
     var hubName;
     var notificationHubService;
@@ -223,7 +223,7 @@ describe('WNS notifications', function () {
       );
     });
   });
-
+*/
   describe('registrations', function () {
     var hubName;
     var notificationHubService;
@@ -268,6 +268,51 @@ describe('WNS notifications', function () {
         it('should work', function (done) {
           notificationHubService.deleteRegistration(registrationId, function (err) {
             should.not.exist(err);
+
+            done();
+          });
+        });
+      });
+
+      describe('get', function () {
+        var registrationId;
+
+        beforeEach(function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (err, registration) {
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+
+        it('should work', function (done) {
+          notificationHubService.getRegistration(registrationId, function (err, registration) {
+            should.not.exist(err);
+            should.exist(registration);
+            registration['ExpirationTime'].should.not.be.null;
+            registration['ETag'].should.not.be.null;
+
+            done();
+          });
+        });
+      });
+
+      describe('list', function () {
+        var registrationId;
+
+        beforeEach(function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (err, registration) {
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+
+        it('should work', function (done) {
+          notificationHubService.listRegistrations(function (err, list) {
+            should.not.exist(err);
+            should.exist(list);
+            list.length.should.equal(1);
 
             done();
           });
