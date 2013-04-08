@@ -33,11 +33,14 @@ describe('WNS notifications', function () {
   var service;
   var suiteUtil;
   var sandbox;
+  var key = process.env.AZURE_SERVICEBUS_ACCESS_KEY;
+  var connectionString = 'Endpoint=sb://nodejstest-0-0e8a1-1.servicebus.int7.windows-int.net/;StsEndpoint=https://nodejstest-0-0e8a1-1-sb.accesscontrol.aadint.windows-int.net/;SharedSecretIssuer=owner;SharedSecretValue=' + key;
+
 
   before(function (done) {
     sandbox = sinon.sandbox.create();
 
-    service = azure.createServiceBusService();
+    service = azure.createServiceBusService(connectionString);
     suiteUtil = notificationhubstestutil.createNotificationHubsTestUtils(service, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -49,7 +52,7 @@ describe('WNS notifications', function () {
 
   beforeEach(function (done) {
     suiteUtil.setupTest(function () {
-      service.listNotificationHubs(function (err, hubs) {
+      service.listNotificationHubs(function (err, hubs, rsp) {
         var xplatHubs = hubs.filter(function (hub) {
           return hub.NotificationHubName.substr(0, hubNamePrefix.length) === hubNamePrefix;
         });
@@ -71,7 +74,7 @@ describe('WNS notifications', function () {
 
     suiteUtil.baseTeardownTest(done);
   });
-
+/*
   describe('Send notification', function () {
     var hubName;
     var notificationHubService;
@@ -218,6 +221,109 @@ describe('WNS notifications', function () {
           done();
         }
       );
+    });
+  });
+*/
+  describe('registrations', function () {
+    var hubName;
+    var notificationHubService;
+
+    beforeEach(function (done) {
+      hubName = testutil.generateId(hubNamePrefix, hubNames, suiteUtil.isMocked);
+
+      notificationHubService = azure.createNotificationHubService(hubName, connectionString);
+      suiteUtil.setupService(notificationHubService);
+      service.createNotificationHub(hubName, done);
+    });
+
+    describe('native', function () {
+      describe('create', function () {
+        var registrationId;
+
+        afterEach(function (done) {
+          notificationHubService.deleteRegistration(registrationId, done);
+        });
+
+        it('should work', function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (error, registration) {
+            should.not.exist(error);
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+      });
+
+      describe('delete', function () {
+        var registrationId;
+
+        beforeEach(function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (err, registration) {
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+
+        it('should work', function (done) {
+          notificationHubService.deleteRegistration(registrationId, function (err) {
+            should.not.exist(err);
+
+            done();
+          });
+        });
+      });
+
+      describe('get', function () {
+        var registrationId;
+
+        beforeEach(function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (err, registration) {
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+
+        it('should work', function (done) {
+          notificationHubService.getRegistration(registrationId, function (err, registration) {
+            should.not.exist(err);
+            should.exist(registration);
+            registration['ExpirationTime'].should.not.be.null;
+            registration['ETag'].should.not.be.null;
+
+            done();
+          });
+        });
+      });
+
+      describe('list', function () {
+        var registrationId;
+
+        beforeEach(function (done) {
+          notificationHubService.wns.createNativeRegistration('http://db3.notify.windows.com/fake/superfake', function (err, registration) {
+            registrationId = registration.RegistrationId;
+
+            done();
+          });
+        });
+
+        it('should work without filtering', function (done) {
+          notificationHubService.listRegistrations(function (err, list) {
+            should.not.exist(err);
+            should.exist(list);
+            list.length.should.equal(1);
+
+            done();
+          });
+        });
+
+        it('should work with tag filtering', function (done) {
+          notificationHubService.listRegistrationsByTag(function (err, list) {
+            done();
+          });
+        });
+      });
     });
   });
 });
