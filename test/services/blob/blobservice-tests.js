@@ -1315,6 +1315,30 @@ describe('BlobService', function () {
     });
   });
 
+  it('GetBlob', function (done) {
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+    var fileNameTarget = testutil.generateId('getBlob', [], suiteUtil.isMocked) + '.test';
+    var blobText = 'Hello World';
+
+    blobService.createContainer(containerName, function (createError1, container1) {
+      assert.equal(createError1, null);
+      assert.notEqual(container1, null);
+
+      blobService.createBlockBlobFromText(containerName, blobName, blobText, function (error1) {
+        assert.equal(error1, null);
+
+        blobService.getBlob(containerName, blobName).pipe(fs.createWriteStream(fileNameTarget));
+
+        fs.readFile(fileNameTarget, function (err, fileText) {
+          assert.equal(blobText, fileText);
+
+          done();
+        });
+      });
+    });
+  });
+
   it('SmallUploadBlobFromFile', function (done) {
     var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
