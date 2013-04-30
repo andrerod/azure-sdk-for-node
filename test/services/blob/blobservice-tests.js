@@ -1123,31 +1123,6 @@ describe('BlobService', function () {
     });
   });
 
-  it('GenerateSharedAccessSignature', function (done) {
-    var containerName = 'images';
-    var blobName = 'pic1.png';
-
-    var devStorageBlobService = azure.createBlobService(ServiceClient.DEVSTORE_STORAGE_ACCOUNT, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
-
-    var sharedAccessPolicy = {
-      AccessPolicy: {
-        Permissions: BlobConstants.SharedAccessPermissions.READ,
-        Start: new Date('October 11, 2011 11:03:40 am GMT'),
-        Expiry: new Date('October 12, 2011 11:53:40 am GMT')
-      }
-    };
-
-    var sharedAccessSignature = devStorageBlobService.generateSharedAccessSignature(containerName, blobName, sharedAccessPolicy);
-
-    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_START], '2011-10-11T11:03:40Z');
-    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_EXPIRY], '2011-10-12T11:53:40Z');
-    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_RESOURCE], BlobConstants.ResourceTypes.BLOB);
-    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_PERMISSIONS], BlobConstants.SharedAccessPermissions.READ);
-    assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNATURE], '7NIEip+VOrQ5ZV80pORPK1MOsJc62wwCNcbMvE+lQ0s=');
-
-    done();
-  });
-
   it('CreateBlobWithBars', function (done) {
     var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var blobName = 'blobs/' + testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
@@ -1206,60 +1181,113 @@ describe('BlobService', function () {
     });
   });
 
-  it('GetBlobUrl', function (done) {
-    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
-    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+  describe('shared access signature', function () {
+    describe('getBlobUrl', function () {
+      it('should work', function (done) {
+        var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+        var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
-    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
+        var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
 
-    var blobUrl = blobServiceassert.getBlobUrl(containerName);
-    assert.equal(blobUrl, 'https://host.com:80/' + containerName);
+        var blobUrl = blobServiceassert.getBlobUrl(containerName);
+        assert.equal(blobUrl, 'https://host.com:80/' + containerName);
 
-    blobUrl = blobServiceassert.getBlobUrl(containerName, blobName);
-    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName);
+        blobUrl = blobServiceassert.getBlobUrl(containerName, blobName);
+        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName);
 
-    done();
-  });
+        done();
+      });
 
-  it('GetBlobSharedUrl', function (done) {
-    var containerName = 'container';
-    var blobName = 'blob';
+      it('should work with shared access policy', function (done) {
+        var containerName = 'container';
+        var blobName = 'blob';
 
-    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
+        var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
 
-    var sharedAccessPolicy = {
-      AccessPolicy: {
-        Expiry: new Date('October 12, 2011 11:53:40 am GMT')
-      }
-    };
+        var sharedAccessPolicy = {
+          AccessPolicy: {
+            Expiry: new Date('October 12, 2011 11:53:40 am GMT')
+          }
+        };
 
-    var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
-    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sp=r&sig=eVkH%2BFxxShel2hcN50ZUmgPAHk%2FmqRVeaBfyry%2BVacw%3D');
+        var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
+        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sp=r&sig=eVkH%2BFxxShel2hcN50ZUmgPAHk%2FmqRVeaBfyry%2BVacw%3D');
 
-    done();
-  });
+        done();
+      });
 
-  it('GetBlobSharedUrlWithDuration', function (done) {
-    var containerName = 'container';
-    var blobName = 'blob';
+      it('should work with container acl permissions', function (done) {
+        var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+        var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
 
-    var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
+        blobService.createContainer(containerName, function (error) {
+          assert.equal(error, null);
 
-    // Mock Date just to ensure a fixed signature
-    this.clock = sinon.useFakeTimers(0, 'Date');
+          var readWriteSharedAccessPolicy = {
+            Id: 'readwrite',
+            AccessPolicy: {
+              Start: new Date(),
+              Permissions: 'rw'
+            }
+          };
 
-    var sharedAccessPolicy = {
-      AccessPolicy: {
-        Expiry: azure.date.minutesFromNow(10)
-      }
-    };
+          blobService.setContainerAcl(containerName, BlobConstants.BlobContainerPublicAccessType.CONTAINER, { signedIdentifiers: readWriteSharedAccessPolicy }, function (err) {
+            var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, { Id: 'readwrite', AccessPolicy: { Expiry: azure.date.minutesFromNow(10) } });
+            console.log(blobUrl);
 
-    this.clock.restore();
+            done();
+          });
+        });
+      });
 
-    var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
-    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sp=r&sig=LofuDUzdHPpiteauMetANWzDpzd0Vw%2BVMOHyXYCipAM%3D');
+      it('should work with duration', function (done) {
+        var containerName = 'container';
+        var blobName = 'blob';
 
-    done();
+        var blobServiceassert = azure.createBlobService('storageAccount', 'storageAccessKey', 'host.com:80');
+
+        // Mock Date just to ensure a fixed signature
+        this.clock = sinon.useFakeTimers(0, 'Date');
+
+        var sharedAccessPolicy = {
+          AccessPolicy: {
+            Expiry: azure.date.minutesFromNow(10)
+          }
+        };
+
+        this.clock.restore();
+
+        var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
+        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sp=r&sig=LofuDUzdHPpiteauMetANWzDpzd0Vw%2BVMOHyXYCipAM%3D');
+
+        done();
+      });
+    });
+
+    it('GenerateSharedAccessSignature', function (done) {
+      var containerName = 'images';
+      var blobName = 'pic1.png';
+
+      var devStorageBlobService = azure.createBlobService(ServiceClient.DEVSTORE_STORAGE_ACCOUNT, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+
+      var sharedAccessPolicy = {
+        AccessPolicy: {
+          Permissions: BlobConstants.SharedAccessPermissions.READ,
+          Start: new Date('October 11, 2011 11:03:40 am GMT'),
+          Expiry: new Date('October 12, 2011 11:53:40 am GMT')
+        }
+      };
+
+      var sharedAccessSignature = devStorageBlobService.generateSharedAccessSignature(containerName, blobName, sharedAccessPolicy);
+
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_START], '2011-10-11T11:03:40Z');
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_EXPIRY], '2011-10-12T11:53:40Z');
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_RESOURCE], BlobConstants.ResourceTypes.BLOB);
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_PERMISSIONS], BlobConstants.SharedAccessPermissions.READ);
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNATURE], '7NIEip+VOrQ5ZV80pORPK1MOsJc62wwCNcbMvE+lQ0s=');
+
+      done();
+    });
   });
 
   it('responseEmits', function (done) {
@@ -1381,9 +1409,9 @@ describe('BlobService', function () {
 });
 
 function repeat(s, n) {
-  var ret = "";
+  var ret = '';
   for (var i = 0; i < n; i++) {
     ret += s;
   }
   return ret;
-};
+}
