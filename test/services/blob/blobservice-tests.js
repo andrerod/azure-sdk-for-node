@@ -1234,7 +1234,7 @@ describe('BlobService', function () {
     };
 
     var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
-    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sp=r&sig=eVkH%2BFxxShel2hcN50ZUmgPAHk%2FmqRVeaBfyry%2BVacw%3D');
+    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sig=P5rp4qr5wWJdT3%2Fpys210lFcBzamGwjEYXaN2sf%2FHss%3D');
 
     done();
   });
@@ -1257,7 +1257,7 @@ describe('BlobService', function () {
     this.clock.restore();
 
     var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
-    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sp=r&sig=LofuDUzdHPpiteauMetANWzDpzd0Vw%2BVMOHyXYCipAM%3D');
+    assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sig=78rp23g%2FozomP%2FwwJHZ8BpyLIj0t%2B97oZgzFl1w3OAU%3D');
 
     done();
   });
