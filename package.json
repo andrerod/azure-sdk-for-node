@@ -12,13 +12,26 @@
   ],
   "version": "0.7.11",
   "description": "Windows Azure Client Library for node",
-  "tags" : ["azure", "sdk"],
-  "keywords": [ "node", "azure" ],
+  "tags": [
+    "azure",
+    "sdk"
+  ],
+  "keywords": [
+    "node",
+    "azure"
+  ],
   "main": "./lib/azure.js",
-  "engines": { "node": ">= 0.6.15" },
-  "licenses": [ { "type": "Apache 2.0", "url": "http://www.apache.org/licenses/LICENSE-2.0" } ],
+  "engines": {
+    "node": ">= 0.6.15"
+  },
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "dependencies": {
-    "xml2js" : " >= 0.2.x",
+    "xml2js": " >= 0.2.x",
     "xmlbuilder": ">= 0.3.1",
     "mime": ">= 1.2.4",
     "dateformat": "1.0.2-1.2.3",
@@ -29,7 +42,8 @@
     "validator": ">= 0.4.12",
     "wns": ">= 0.5.3",
     "mpns": ">= 2.0.0",
-    "envconf": ">= 0.0.2"
+    "envconf": ">= 0.0.2",
+    "pause-stream": 0.0.10"
   },
   "devDependencies": {
     "mocha": ">= 1.12.0",
@@ -43,8 +57,8 @@
     "type": "git",
     "url": "git@github.com:WindowsAzure/azure-sdk-for-node.git"
   },
-  "bugs" : {
-    "url" : "http://github.com/WindowsAzure/azure-sdk-for-node/issues"
+  "bugs": {
+    "url": "http://github.com/WindowsAzure/azure-sdk-for-node/issues"
   },
   "scripts": {
     "test": "npm -s run-script jshint && npm -s run-script unit",
