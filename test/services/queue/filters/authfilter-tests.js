@@ -88,7 +88,6 @@ describe('authFilter', function () {
       baseFilterBehavior.testStream.write({
         value: 'an arbitrary value',
         received: function () {
-          console.log('data is sent');
           receivedFromSink.should.equal('an arbitrary value');
           done();
         }
