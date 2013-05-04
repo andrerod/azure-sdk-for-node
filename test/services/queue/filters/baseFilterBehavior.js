@@ -15,9 +15,14 @@
 
 'use strict';
 var should = require('should');
-var duplex = require('duplex');
+var duplexer = require('duplexer');
+var through = require('through');
 
-var expectedReturn = duplex();
+var topStream = through();
+var bottomStream = through();
+
+var expectedReturn = duplexer(bottomStream, topStream);
+exports.testStream = duplexer(topStream, bottomStream);
 
 exports.verifyFilter = function () {
   it('should return value from sink', function () {

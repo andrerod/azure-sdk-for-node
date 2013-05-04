@@ -19,8 +19,6 @@ var should = require('should');
 var testutil = require('../../../util/util');
 var baseFilterBehavior = require('./baseFilterBehavior');
 
-var duplex = require('duplex');
-
 var azure = testutil.libRequire('azure');
 var WebResource = testutil.libRequire('http/webresource');
 var authFilter = testutil.libRequire('services/queue/filters/authfilter');
@@ -56,8 +54,8 @@ describe('authFilter', function () {
         filterErrResult = err;
         done();
       });
-      baseFilterBehavior.returnStream.on('data', onSinkData);
       returnedStream.on('data', onReceivedData);
+      baseFilterBehavior.testStream.on('data', onSinkData);
     });
 
     it('should not return error', function () {
@@ -73,57 +71,38 @@ describe('authFilter', function () {
     var receivedFromSink;
 
     function onSinkData(data) {
-      console.log('recieved data from client', data.value);
       writtenToSink = data.value;
-      data.done();
+      data.received();
     }
 
     function onReceivedData(data) {
-      console.log('received data from sink', data.value);
       receivedFromSink = data.value;
-      data.done();
+      data.received();
     }
 
     after(function () {
-      baseFilterBehavior.returnStream.removeListener('data', onSinkData);
       returnedStream.removeListener('data', onReceivedData);
     });
 
-    it('should return a writable stream through to result' //, function (done) {
-      // baseFilterBehavior.returnStream.write({
-      //   value: 'an arbitrary value',
-      //   done: function () {
-      //     console.log('data is sent');
-      //     receivedFromSink.should.equal('an arbitrary value');
-      //     done();
-      //   }
-      // }
-    );
-  });
-});
+    it('should return from filter result stream when sink writes data', function (done) {
+      baseFilterBehavior.testStream.write({
+        value: 'an arbitrary value',
+        received: function () {
+          console.log('data is sent');
+          receivedFromSink.should.equal('an arbitrary value');
+          done();
+        }
+      });
+    });
 
-describe('exploring duplex', function () {
-  var stream;
-  var received;
-
-  function onStreamData(data) {
-    console.log('received data', data.value);
-    received = data.value;
-    data.received();
-  }
-
-  beforeEach(function () {
-    stream = duplex(function (data) { stream._data(data); });
-    stream.on('data', onStreamData);
-  });
-
-  it('should receive when written to', function (done) {
-    stream.write({
-      value: 'a value',
-      received: function () {
-        received.should.equal('a value');
-        done();
-      }
+    it('should pass data to sink when writing to filter result stream', function (done) {
+      returnedStream.write({
+        value: 'another arbitrary value',
+        received: function () {
+          writtenToSink.should.equal('another arbitrary value');
+          done();
+        }
+      });
     });
   });
 });

@@ -43,8 +43,8 @@
     "wns": ">= 0.5.3",
     "mpns": ">= 2.0.0",
     "envconf": ">= 0.0.2",
-    "pause-stream": 0.0.10",
-    "duplex": "~1.0.0"
+    "duplexer": "~0.1.1",
+    "through": "~2.3.4"
   },
   "devDependencies": {
     "mocha": ">= 1.12.0",
