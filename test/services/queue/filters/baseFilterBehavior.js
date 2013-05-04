@@ -15,8 +15,9 @@
 
 'use strict';
 var should = require('should');
+var duplex = require('duplex');
 
-var expectedReturn = { a: 'value' };
+var expectedReturn = duplex();
 
 exports.verifyFilter = function () {
   it('should return value from sink', function () {
@@ -28,3 +29,5 @@ exports.sink = function (options, callback) {
   process.nextTick(function () { callback(null, null, null, null); });
   return expectedReturn;
 }
+
+exports.returnStream = expectedReturn;
