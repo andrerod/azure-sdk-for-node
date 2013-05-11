@@ -38,7 +38,8 @@ describe('Service Management', function () {
       subscriptionId, auth,
       { serializetype: 'XML'});
 
-    suiteUtil = new MockedTestUtils(service, testPrefix);
+    suiteUtil = new MockedTestUtils(testPrefix);
+    suiteUtil.setupService(service);
     suiteUtil.setupSuite(done);
   });
 

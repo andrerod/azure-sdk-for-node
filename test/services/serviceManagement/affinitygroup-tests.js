@@ -42,7 +42,8 @@ describe('Affinity Group Management', function () {
       subscriptionId, auth,
       { serializetype: 'XML'});
 
-    suiteUtil = new MockedTestUtils(service, testPrefix);
+    suiteUtil = new MockedTestUtils(testPrefix);
+    suiteUtil.setupService(service);
     affinityGroupName = testutil.generateId(affinityGroupNamePrefix, affinityGroups, suiteUtil.isMocked);
     suiteUtil.setupSuite(done);
   });

@@ -24,7 +24,10 @@ var azure = testutil.libRequire('azure');
 var MockedTestUtils = require('./mocked-test-utils');
 
 function QueueTestUtils(service, testPrefix) {
-  QueueTestUtils.super_.call(this, service, testPrefix);
+  QueueTestUtils.super_.call(this, testPrefix);
+
+  this.service = service;
+  this.setupService(service);
 }
 
 util.inherits(QueueTestUtils, MockedTestUtils);

@@ -18,7 +18,10 @@ var util = require('util');
 var MockedTestUtils = require('./mocked-test-utils');
 
 function WrapServiceUtils(service, testPrefix) {
-  WrapServiceUtils.super_.call(this, service, testPrefix);
+  WrapServiceUtils.super_.call(this, testPrefix);
+
+  this.service = service;
+  this.setupService(service);
 }
 
 util.inherits(WrapServiceUtils, MockedTestUtils);

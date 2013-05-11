@@ -19,7 +19,10 @@ var util = require('util');
 var MockedTestUtils = require('./mocked-test-utils');
 
 function BlobTestUtils(service, testPrefix) {
-  BlobTestUtils.super_.call(this, service, testPrefix);
+  BlobTestUtils.super_.call(this, testPrefix);
+
+  this.service = service;
+  this.setupService(service);
 }
 
 util.inherits(BlobTestUtils, MockedTestUtils);
