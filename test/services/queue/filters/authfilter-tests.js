@@ -44,7 +44,7 @@ describe('authFilter', function () {
     var webResource;
 
     before(function (done) {
-      webResource = WebResource.get('container')
+      webResource = WebResource.put('container')
         .withQueryOption(QueryStringConstants.RESTYPE, 'container')
         .withHeader(HeaderConstants.CONTENT_TYPE, '')
         .withHeader(HeaderConstants.STORAGE_VERSION_HEADER, HeaderConstants.TARGET_STORAGE_VERSION)
@@ -64,7 +64,7 @@ describe('authFilter', function () {
 
     it('should add authentication header', function () {
       webResource.headers[HeaderConstants.AUTHORIZATION].should.equal(
-        'SharedKey devstoreaccount1:Y5R86+6XE5MH602SIyjeTwlJuQjbawv20PT4kb/F/04=');
+        'SharedKey devstoreaccount1:L+SN11Iy1kir8wy8UGN+61DjbkBe2gkST4AJ65jbN00=');
     });
 
     var writtenToSink;
