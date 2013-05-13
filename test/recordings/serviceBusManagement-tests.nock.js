@@ -4,670 +4,671 @@ exports.scopes = [[function (nock) {
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/')
-  .reply(200, "<feed xmlns=\"http://www.w3.org/2005/Atom\"><title type=\"text\">ServiceBus Namespaces</title><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954974</id><updated>2013-03-19T20:14:45Z</updated><entry><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954975</id><title type=\"text\">andrerod</title><updated>2013-02-10T23:41:46Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>andrerod</Name><Region>West Europe</Region><DefaultKey>8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-10T23:41:46.413Z</CreatedAt><AcsManagementEndpoint>https://andrerod-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://andrerod.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://andrerod.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954976</id><title type=\"text\">ciserversb</title><updated>2013-02-09T20:00:11Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>ciserversb</Name><Region>West US</Region><DefaultKey>PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-09T20:00:11.423Z</CreatedAt><AcsManagementEndpoint>https://ciserversb-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://ciserversb.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://ciserversb.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954977</id><title type=\"text\">nodesdk-2037</title><updated>2013-03-15T00:09:46Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-2037</Name><Region>West US</Region><DefaultKey>nHUU8Gl6kbzNhjD5q+tcJSArcAIS/2RI/qrVsPS3hio=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-15T00:09:46.15Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-2037-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-2037.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-2037.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=nHUU8Gl6kbzNhjD5q+tcJSArcAIS/2RI/qrVsPS3hio=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954978</id><title type=\"text\">nodesdk-3937</title><updated>2013-03-15T00:09:56Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-3937</Name><Region>South Central US</Region><DefaultKey>aIOx1oDko7BB+tqHVWPChXHiRXRtftV5FtyIo+i1FFQ=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-15T00:09:56.367Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-3937-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-3937.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-3937.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=aIOx1oDko7BB+tqHVWPChXHiRXRtftV5FtyIo+i1FFQ=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954979</id><title type=\"text\">nodesdk-415</title><updated>2013-03-16T01:18:32Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-415</Name><Region>West US</Region><DefaultKey>ek6lUzz+TcEiwHDifcZ+NJoxiafs9Hda4BdEsQl8Xqs=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-16T01:18:32.427Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-415-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-415.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-415.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=ek6lUzz+TcEiwHDifcZ+NJoxiafs9Hda4BdEsQl8Xqs=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2954980</id><title type=\"text\">nodesdk-6013</title><updated>2013-03-12T00:11:43Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-6013</Name><Region>West US</Region><DefaultKey>A8MDIe8EVxRxCoTLLZ/IyNuwW4QgQYytBHLtpkbhIKA=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-12T00:11:43.327Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-6013-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-6013.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-6013.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=A8MDIe8EVxRxCoTLLZ/IyNuwW4QgQYytBHLtpkbhIKA=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry></feed>", { 'cache-control': 'no-cache',
-  'content-length': '6186',
+  .reply(200, "<feed xmlns=\"http://www.w3.org/2005/Atom\"><title type=\"text\">ServiceBus Namespaces</title><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965708</id><updated>2013-05-12T01:05:47Z</updated><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965709</id><title type=\"text\">andrerod</title><updated>2013-02-10T23:41:46Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>andrerod</Name><Region>West Europe</Region><DefaultKey>8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-10T23:41:46.413Z</CreatedAt><AcsManagementEndpoint>https://andrerod-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://andrerod.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://andrerod.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965710</id><title type=\"text\">ciserversb</title><updated>2013-02-09T20:00:11Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>ciserversb</Name><Region>West US</Region><DefaultKey>PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-09T20:00:11.423Z</CreatedAt><AcsManagementEndpoint>https://ciserversb-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://ciserversb.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://ciserversb.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965711</id><title type=\"text\">nodesdk1</title><updated>2013-05-12T01:04:14Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk1</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:04:14.84Z</CreatedAt><AcsManagementEndpoint>https://nodesdk1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk1.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965712</id><title type=\"text\">nodesdk-1</title><updated>2013-05-12T00:35:03Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-1</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T00:35:03.57Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-1.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965713</id><title type=\"text\">nodesdk-2</title><updated>2013-05-12T00:35:13Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-2</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T00:35:13.887Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-2-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-2.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry></feed>", { 'cache-control': 'no-cache',
+  'content-length': '4419',
   'content-type': 'application/atom+xml; type=feed; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '02f4dd9104c4484385e749cc798ae89b',
-  date: 'Tue, 19 Mar 2013 20:14:46 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'd13c2dd1c4264ec28505382b72eb29be',
+  date: 'Sun, 12 May 2013 01:05:46 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .filteringRequestBody(function (path) { return '*';})
-.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1', '*')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002180</id><title type=\"text\">nodesdk-1</title><updated>2013-03-19T20:14:48Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-1</Name><Region>West US</Region><DefaultKey>nLvxjF57ZrNpJ1EUml5BH5pWu4QlbQGlSqrR58CCfak=</DefaultKey><Status>Activating</Status><CreatedAt>2013-03-19T20:14:48.447Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-1.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-1.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=nLvxjF57ZrNpJ1EUml5BH5pWu4QlbQGlSqrR58CCfak=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '1027',
+.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1', '*')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:85619e63-9059-4e68-8173-7d7fb76d85ae;id=1947406</id><title type=\"text\">nodesdksb-1</title><updated>2013-05-12T01:05:49Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-1</Name><Region>West US</Region><DefaultKey>0D4DhSwgDTxBkLZGWMMDfC0HT4Brjp1tE2M5y8aJTVE=</DefaultKey><Status>Activating</Status><CreatedAt>2013-05-12T01:05:49.57Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-1.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdksb-1.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=0D4DhSwgDTxBkLZGWMMDfC0HT4Brjp1tE2M5y8aJTVE=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '1036',
   'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'ae9649cc4462444d9ac48e9601e489b7',
-  date: 'Tue, 19 Mar 2013 20:14:49 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'cb2dcda5fc7846c3a48d08b5510b573b',
+  date: 'Sun, 12 May 2013 01:05:49 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/')
-  .reply(200, "<feed xmlns=\"http://www.w3.org/2005/Atom\"><title type=\"text\">ServiceBus Namespaces</title><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002205</id><updated>2013-03-19T20:14:54Z</updated><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002206</id><title type=\"text\">andrerod</title><updated>2013-02-10T23:41:46Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>andrerod</Name><Region>West Europe</Region><DefaultKey>8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-10T23:41:46.413Z</CreatedAt><AcsManagementEndpoint>https://andrerod-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://andrerod.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://andrerod.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002207</id><title type=\"text\">ciserversb</title><updated>2013-02-09T20:00:11Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>ciserversb</Name><Region>West US</Region><DefaultKey>PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-09T20:00:11.423Z</CreatedAt><AcsManagementEndpoint>https://ciserversb-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://ciserversb.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://ciserversb.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002208</id><title type=\"text\">nodesdk-1</title><updated>2013-03-19T20:14:48Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-1</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-03-19T20:14:48.447Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-1.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002209</id><title type=\"text\">nodesdk-2037</title><updated>2013-03-15T00:09:46Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-2037</Name><Region>West US</Region><DefaultKey>nHUU8Gl6kbzNhjD5q+tcJSArcAIS/2RI/qrVsPS3hio=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-15T00:09:46.15Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-2037-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-2037.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-2037.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=nHUU8Gl6kbzNhjD5q+tcJSArcAIS/2RI/qrVsPS3hio=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002210</id><title type=\"text\">nodesdk-3937</title><updated>2013-03-15T00:09:56Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-3937</Name><Region>South Central US</Region><DefaultKey>aIOx1oDko7BB+tqHVWPChXHiRXRtftV5FtyIo+i1FFQ=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-15T00:09:56.367Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-3937-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-3937.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-3937.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=aIOx1oDko7BB+tqHVWPChXHiRXRtftV5FtyIo+i1FFQ=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002211</id><title type=\"text\">nodesdk-415</title><updated>2013-03-16T01:18:32Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-415</Name><Region>West US</Region><DefaultKey>ek6lUzz+TcEiwHDifcZ+NJoxiafs9Hda4BdEsQl8Xqs=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-16T01:18:32.427Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-415-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-415.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-415.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=ek6lUzz+TcEiwHDifcZ+NJoxiafs9Hda4BdEsQl8Xqs=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002212</id><title type=\"text\">nodesdk-6013</title><updated>2013-03-12T00:11:43Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-6013</Name><Region>West US</Region><DefaultKey>A8MDIe8EVxRxCoTLLZ/IyNuwW4QgQYytBHLtpkbhIKA=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-12T00:11:43.327Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-6013-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-6013.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-6013.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=A8MDIe8EVxRxCoTLLZ/IyNuwW4QgQYytBHLtpkbhIKA=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry></feed>", { 'cache-control': 'no-cache',
-  'content-length': '6936',
+  .reply(200, "<feed xmlns=\"http://www.w3.org/2005/Atom\"><title type=\"text\">ServiceBus Namespaces</title><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965723</id><updated>2013-05-12T01:05:53Z</updated><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965724</id><title type=\"text\">andrerod</title><updated>2013-02-10T23:41:46Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>andrerod</Name><Region>West Europe</Region><DefaultKey>8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-10T23:41:46.413Z</CreatedAt><AcsManagementEndpoint>https://andrerod-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://andrerod.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://andrerod.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=8TWXTQQnfRoL+akrDi0/4y0RvWViwhmbB8o/X48MFcY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965725</id><title type=\"text\">ciserversb</title><updated>2013-02-09T20:00:11Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>ciserversb</Name><Region>West US</Region><DefaultKey>PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</DefaultKey><Status>Active</Status><CreatedAt>2013-02-09T20:00:11.423Z</CreatedAt><AcsManagementEndpoint>https://ciserversb-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://ciserversb.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://ciserversb.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=PS6ni/49tEqwDQ2QyqpKh4QPcyrOI80RqrNL6dRrfqw=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965726</id><title type=\"text\">nodesdk1</title><updated>2013-05-12T01:04:14Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk1</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:04:14.84Z</CreatedAt><AcsManagementEndpoint>https://nodesdk1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk1.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965727</id><title type=\"text\">nodesdk-1</title><updated>2013-05-12T00:35:03Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-1</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T00:35:03.57Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-1.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965728</id><title type=\"text\">nodesdk-2</title><updated>2013-05-12T00:35:13Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-2</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T00:35:13.887Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-2-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-2.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965729</id><title type=\"text\">nodesdksb-1</title><updated>2013-05-12T01:05:49Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-1</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:05:49.57Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-1-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-1.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry></feed>", { 'cache-control': 'no-cache',
+  'content-length': '5176',
   'content-type': 'application/atom+xml; type=feed; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'ffd439ecab1144998eb4349fadcf4578',
-  date: 'Tue, 19 Mar 2013 20:14:53 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '4161ddc6b08345f185bfb66b5f426d5d',
+  date: 'Sun, 12 May 2013 01:05:53 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '501c4dc7025245598ca15fc67dfaa1ef',
-  date: 'Tue, 19 Mar 2013 20:14:58 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:05:55 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .filteringRequestBody(function (path) { return '*';})
-.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2', '*')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:e4a71af7-59c9-4161-96db-8c5c4f68a195;id=2955049</id><title type=\"text\">nodesdk-2</title><updated>2013-03-19T20:15:00Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-2</Name><Region>West US</Region><DefaultKey>hQcY+8ARTIoXOXkgeT5V8kKKfctGfvim+pR4covTlOQ=</DefaultKey><Status>Activating</Status><CreatedAt>2013-03-19T20:15:00.137Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-2-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-2.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-2.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=hQcY+8ARTIoXOXkgeT5V8kKKfctGfvim+pR4covTlOQ=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '1027',
+.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2', '*')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:d7cd5a7f-0fb2-48f4-bb70-59d124f98f1b;id=1901094</id><title type=\"text\">nodesdksb-2</title><updated>2013-05-12T01:06:01Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-2</Name><Region>West US</Region><DefaultKey>FPSm6nq2j2KpKSptHcoAUtd/upc+ThdUMDWofaYMB10=</DefaultKey><Status>Activating</Status><CreatedAt>2013-05-12T01:06:01.667Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-2-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-2.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdksb-2.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=FPSm6nq2j2KpKSptHcoAUtd/upc+ThdUMDWofaYMB10=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '1037',
   'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '08aa6cf7562e4d6492d1ca6f9f453130',
-  date: 'Tue, 19 Mar 2013 20:14:59 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '8c277a964d1e401fa3a93eb3e0dcb582',
+  date: 'Sun, 12 May 2013 01:06:03 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002273</id><title type=\"text\">nodesdk-2</title><updated>2013-03-19T20:15:00Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-2</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-03-19T20:15:00.137Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-2-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-2.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '786',
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:85619e63-9059-4e68-8173-7d7fb76d85ae;id=1947465</id><title type=\"text\">nodesdksb-2</title><updated>2013-05-12T01:06:01Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-2</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:06:01.667Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-2-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-2.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '794',
   'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'ac712c9c03d14eefa96dbc2b218f4818',
-  date: 'Tue, 19 Mar 2013 20:15:02 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'ceea92b0c70a426a8c23f6db6c57b551',
+  date: 'Sun, 12 May 2013 01:06:07 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '56a638d91a7143419b1dbf52f6a1169d',
-  date: 'Tue, 19 Mar 2013 20:15:06 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:09 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '80a2c04d33444d9e89cf96b5bfa0ce53',
-  date: 'Tue, 19 Mar 2013 20:15:07 GMT' });
- return result; }],
-[function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '6795ab070bde4fb581d3baa815f12b6f',
-  date: 'Tue, 19 Mar 2013 20:15:10 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
   .reply(200, "", { 'cache-control': 'no-cache',
   'transfer-encoding': 'chunked',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'd98e602cd6094fb08332ed9ad5b4ea50',
-  date: 'Tue, 19 Mar 2013 20:15:10 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '27eabd3a951b457690a33e3f3f39864f',
+  date: 'Sun, 12 May 2013 01:06:10 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .filteringRequestBody(function (path) { return '*';})
-.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3', '*')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:2771d0f8-ea48-4a39-967d-c4d3a893ce9a;id=2950594</id><title type=\"text\">nodesdk-3</title><updated>2013-03-19T20:15:12Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-3</Name><Region>South Central US</Region><DefaultKey>G1KrhNaOk8Vj0tCpVhrOn3iXo2yvJ0PhnmiOc64tYEc=</DefaultKey><Status>Activating</Status><CreatedAt>2013-03-19T20:15:12.357Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-3-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-3.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-3.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=G1KrhNaOk8Vj0tCpVhrOn3iXo2yvJ0PhnmiOc64tYEc=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '1036',
-  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '37fe1a4a3f9640daafa4b6b9ca462fc4',
-  date: 'Tue, 19 Mar 2013 20:15:13 GMT' });
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:12 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '10a944510ee548219c816cbb0c4c82e3',
-  date: 'Tue, 19 Mar 2013 20:15:15 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '160c4d89dd744acabf8e2af2cbeeff00',
-  date: 'Tue, 19 Mar 2013 20:15:14 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '5e01ceaac86c47cabb48ae05255e4fb4',
-  date: 'Tue, 19 Mar 2013 20:15:18 GMT' });
- return result; }],
-[function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'd38c78b9b4694f7cb75f7dea028ddfbf',
-  date: 'Tue, 19 Mar 2013 20:15:19 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '8b341ba3e42045b38b79618b075c5ca5',
-  date: 'Tue, 19 Mar 2013 20:15:22 GMT' });
- return result; },
-function (nock) { 
-var result = 
-nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(200, "", { 'cache-control': 'no-cache',
-  'transfer-encoding': 'chunked',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '2ed12635ac3046f09b8145c30312309e',
-  date: 'Tue, 19 Mar 2013 20:15:22 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:13 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .filteringRequestBody(function (path) { return '*';})
-.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4', '*')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002423</id><title type=\"text\">nodesdk-4</title><updated>2013-03-19T20:15:24Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-4</Name><Region>West US</Region><DefaultKey>vvDAZO4GkL60k/Ip2gaausbBE5l6X5pbKemRIIxmZMg=</DefaultKey><Status>Activating</Status><CreatedAt>2013-03-19T20:15:24.61Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-4.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-4.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=vvDAZO4GkL60k/Ip2gaausbBE5l6X5pbKemRIIxmZMg=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '1026',
+.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3', '*')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:85619e63-9059-4e68-8173-7d7fb76d85ae;id=1947501</id><title type=\"text\">nodesdksb-3</title><updated>2013-05-12T01:06:14Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-3</Name><Region>South Central US</Region><DefaultKey>5g7vsjRTCV8iAusZv6AOxqLrBPm2/nO+Ty7lb1x8bbY=</DefaultKey><Status>Activating</Status><CreatedAt>2013-05-12T01:06:14.783Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-3-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-3.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdksb-3.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=5g7vsjRTCV8iAusZv6AOxqLrBPm2/nO+Ty7lb1x8bbY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '1046',
   'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'b3f40125dd6e47fc8590562d3a3573f2',
-  date: 'Tue, 19 Mar 2013 20:15:26 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '37011021519a45599d5eb5ce10aa082b',
+  date: 'Sun, 12 May 2013 01:06:15 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:13966b25-f54b-4e3f-9fd9-27b0c81a428b;id=3038477</id><title type=\"text\">nodesdk-4</title><updated>2013-03-19T20:15:24Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-03-19T20:15:24.61Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '785',
-  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '4279a306ed3649809f8ee1af709b4802',
-  date: 'Tue, 19 Mar 2013 20:15:27 GMT' });
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:17 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:2771d0f8-ea48-4a39-967d-c4d3a893ce9a;id=2950722</id><title type=\"text\">nodesdk-4</title><updated>2013-03-19T20:15:24Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-03-19T20:15:24.61Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '785',
-  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '0094bb3fa2214e99bb08b8e10c21a760',
-  date: 'Tue, 19 Mar 2013 20:15:33 GMT' });
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:17 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002498</id><title type=\"text\">nodesdk-4</title><updated>2013-03-19T20:15:24Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-03-19T20:15:24.61Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '785',
-  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'fc18e75e4658488683a03a7841271f8b',
-  date: 'Tue, 19 Mar 2013 20:15:37 GMT' });
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:16 GMT' });
+ return result; }],
+[function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:19 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:2771d0f8-ea48-4a39-967d-c4d3a893ce9a;id=2950815</id><title type=\"text\">nodesdk-4</title><updated>2013-03-19T20:15:24Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdk-4</Name><Region>West US</Region><DefaultKey>vvDAZO4GkL60k/Ip2gaausbBE5l6X5pbKemRIIxmZMg=</DefaultKey><Status>Active</Status><CreatedAt>2013-03-19T20:15:24.61Z</CreatedAt><AcsManagementEndpoint>https://nodesdk-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdk-4.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdk-4.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=vvDAZO4GkL60k/Ip2gaausbBE5l6X5pbKemRIIxmZMg=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '1022',
-  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'e34d1430c1d04d3283cd2e645e454541',
-  date: 'Tue, 19 Mar 2013 20:15:44 GMT' });
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:06:19 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
   .reply(200, "", { 'cache-control': 'no-cache',
   'transfer-encoding': 'chunked',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '1044a08a87f04165abb72d7d561b5944',
-  date: 'Tue, 19 Mar 2013 20:15:52 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'a0f598b3409f40f6bce44029feab9b42',
+  date: 'Sun, 12 May 2013 01:06:22 GMT' });
+ return result; }],
+[function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .filteringRequestBody(function (path) { return '*';})
+.put('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4', '*')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:5f0faa81-7f9d-4779-a8b5-27f416077e1b;id=1918720</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><DefaultKey>xTEbNP0R1VsQh03Y49xXyFyNOqDEcE2b8PyjxzLdknY=</DefaultKey><Status>Activating</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdksb-4.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=xTEbNP0R1VsQh03Y49xXyFyNOqDEcE2b8PyjxzLdknY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '1035',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'ed4efe93681b4c4cb760f75092e4e8ea',
+  date: 'Sun, 12 May 2013 01:06:25 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965782</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '792',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'e1eccc1db68b497d9483c1e8042f0c5a',
+  date: 'Sun, 12 May 2013 01:06:28 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:d7cd5a7f-0fb2-48f4-bb70-59d124f98f1b;id=1901153</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '792',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'ee7699bee70c48d8975e8bac6b99f08a',
+  date: 'Sun, 12 May 2013 01:06:32 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:85619e63-9059-4e68-8173-7d7fb76d85ae;id=1947522</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '792',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '5c171739ae2a4c38a73969fa844b17c6',
+  date: 'Sun, 12 May 2013 01:06:37 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:d7cd5a7f-0fb2-48f4-bb70-59d124f98f1b;id=1901154</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '792',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '03993083a15b425e837f84af656b5ba6',
+  date: 'Sun, 12 May 2013 01:06:41 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:5f0faa81-7f9d-4779-a8b5-27f416077e1b;id=1918780</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><Status>Activating</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '792',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '467c8a38400f4c0fb3b3de1ad93797cd',
+  date: 'Sun, 12 May 2013 01:06:46 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(200, "<entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:5f0faa81-7f9d-4779-a8b5-27f416077e1b;id=1918793</id><title type=\"text\">nodesdksb-4</title><updated>2013-05-12T01:06:25Z</updated><content type=\"application/xml\"><NamespaceDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Name>nodesdksb-4</Name><Region>West US</Region><DefaultKey>xTEbNP0R1VsQh03Y49xXyFyNOqDEcE2b8PyjxzLdknY=</DefaultKey><Status>Active</Status><CreatedAt>2013-05-12T01:06:25.5Z</CreatedAt><AcsManagementEndpoint>https://nodesdksb-4-sb.accesscontrol.windows.net/</AcsManagementEndpoint><ServiceBusEndpoint>https://nodesdksb-4.servicebus.windows.net/</ServiceBusEndpoint><ConnectionString>Endpoint=sb://nodesdksb-4.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=xTEbNP0R1VsQh03Y49xXyFyNOqDEcE2b8PyjxzLdknY=</ConnectionString><SubscriptionId>279b0675cf67467f98f067ae31eb540f</SubscriptionId><Enabled>true</Enabled></NamespaceDescription></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '1031',
+  'content-type': 'application/atom+xml; type=entry; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'decbc997e3ef4f8d83e15ab49d7398f0',
+  date: 'Sun, 12 May 2013 01:06:51 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
   .reply(200, "", { 'cache-control': 'no-cache',
   'transfer-encoding': 'chunked',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'c697fcb63c33496b8ebe9d71ddcd7f19',
-  date: 'Tue, 19 Mar 2013 20:15:55 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'e4d98c6378254a77826806029b1c2f02',
+  date: 'Sun, 12 May 2013 01:06:59 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '7c848dfde30e42588e54903d270ee464',
-  date: 'Tue, 19 Mar 2013 20:15:54 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:02 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'bd8b41a5ea52413cb37b57a5af0d41f6',
-  date: 'Tue, 19 Mar 2013 20:15:54 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:02 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(200, "", { 'cache-control': 'no-cache',
+  'transfer-encoding': 'chunked',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '9188c997ee734fc9aac8c260ef5487df',
+  date: 'Sun, 12 May 2013 01:07:04 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '750fd8d56d7c4e3683d48687c870036b',
-  date: 'Tue, 19 Mar 2013 20:15:55 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:03 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
   .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Regions/')
-  .reply(200, "<?xml version=\"1.0\" encoding=\"utf-8\"?><feed xmlns=\"http://www.w3.org/2005/Atom\"><title type=\"text\"></title><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002670</id><updated>2013-03-19T20:16:00Z</updated><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002671</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>East Asia</Code><FullName>East Asia</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002672</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>West Europe</Code><FullName>West Europe</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002673</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>North Europe</Code><FullName>North Europe</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002674</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>East US</Code><FullName>East US</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002675</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>Southeast Asia</Code><FullName>Southeast Asia</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002676</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>North Central US</Code><FullName>North Central US</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002677</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>West US</Code><FullName>West US</FullName></RegionCodeDescription></content></entry><entry><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002678</id><title type=\"text\"></title><updated>2013-03-19T20:16:00Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>South Central US</Code><FullName>South Central US</FullName></RegionCodeDescription></content></entry></feed>", { 'cache-control': 'no-cache',
+  .reply(200, "<?xml version=\"1.0\" encoding=\"utf-8\"?><feed xmlns=\"http://www.w3.org/2005/Atom\"><title type=\"text\"></title><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965825</id><updated>2013-05-12T01:07:08Z</updated><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965826</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>East Asia</Code><FullName>East Asia</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965827</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>West Europe</Code><FullName>West Europe</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965828</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>North Europe</Code><FullName>North Europe</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965829</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>East US</Code><FullName>East US</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965830</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>Southeast Asia</Code><FullName>Southeast Asia</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965831</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>North Central US</Code><FullName>North Central US</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965832</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>West US</Code><FullName>West US</FullName></RegionCodeDescription></content></entry><entry><id>uuid:f78cedf4-5761-4531-ac0a-1bf6bb4c29b5;id=1965833</id><title type=\"text\"></title><updated>2013-05-12T01:07:08Z</updated><content type=\"application/xml\"><RegionCodeDescription xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>South Central US</Code><FullName>South Central US</FullName></RegionCodeDescription></content></entry></feed>", { 'cache-control': 'no-cache',
   'content-length': '3542',
   'content-type': 'application/atom+xml; type=feed; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '8690a006bcdd437781a04db8a3e02ef6',
-  date: 'Tue, 19 Mar 2013 20:15:59 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': 'c934e44fd8e8490d85a763476b317e65',
+  date: 'Sun, 12 May 2013 01:07:08 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '83d88bc30cbc4ae782a2e394bee6af2f',
-  date: 'Tue, 19 Mar 2013 20:16:03 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:09 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '1bb9da98d9844b2db3fb0736775afcb3',
-  date: 'Tue, 19 Mar 2013 20:16:03 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:09 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(400, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '585a7f985718407f85a36bd3c8ae0825',
-  date: 'Tue, 19 Mar 2013 20:16:01 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:10 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '880340563fee41a3878a49092c488e52',
-  date: 'Tue, 19 Mar 2013 20:16:07 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:10 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
-  'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '55df8d6b5a1542a8a652644ed1c370de',
-  date: 'Tue, 19 Mar 2013 20:16:11 GMT' });
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Regions/')
+  .reply(200, "[{\"Code\":\"East Asia\",\"FullName\":\"East Asia\"},{\"Code\":\"West Europe\",\"FullName\":\"West Europe\"},{\"Code\":\"North Europe\",\"FullName\":\"North Europe\"},{\"Code\":\"East US\",\"FullName\":\"East US\"},{\"Code\":\"Southeast Asia\",\"FullName\":\"Southeast Asia\"},{\"Code\":\"North Central US\",\"FullName\":\"North Central US\"},{\"Code\":\"West US\",\"FullName\":\"West US\"},{\"Code\":\"South Central US\",\"FullName\":\"South Central US\"}]", { 'cache-control': 'no-cache',
+  'content-length': '393',
+  'content-type': 'application/json; charset=utf-8',
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '5e5fc403ce5e4158aad16a8b9be07082',
+  date: 'Sun, 12 May 2013 01:07:15 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '223f2e33cb4049459564ddba67f76bd7',
-  date: 'Tue, 19 Mar 2013 20:16:10 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:17 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '8aa7a04d7a5549a193808e70dd970f6f',
-  date: 'Tue, 19 Mar 2013 20:16:13 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:17 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '9ad6ad5ebcca4cc285672d4a8f120fb6',
-  date: 'Tue, 19 Mar 2013 20:16:10 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:16 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:18 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/CheckNamespaceAvailability/?namespace=nodesdk-5')
-  .reply(200, "<?xml version=\"1.0\" encoding=\"utf-8\"?><entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:6ae65aa2-5867-43a3-904c-80a0be3bf0a4;id=3002870</id><title type=\"text\"></title><updated>2013-03-19T20:16:18Z</updated><content type=\"application/xml\"><NamespaceAvailability xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Result>true</Result></NamespaceAvailability></content></entry>", { 'cache-control': 'no-cache',
-  'content-length': '454',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:19 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:19 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:19 GMT' });
+ return result; },
+function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
+  'content-type': 'application/xml; charset=utf-8',
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:20 GMT' });
+ return result; }],
+[function (nock) { 
+var result = 
+nock('https://management.core.windows.net:443')
+  .get('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/CheckNamespaceAvailability/?namespace=nodesdksb-5')
+  .reply(200, "<?xml version=\"1.0\" encoding=\"utf-8\"?><entry xmlns=\"http://www.w3.org/2005/Atom\"><id>uuid:5f0faa81-7f9d-4779-a8b5-27f416077e1b;id=1918877</id><title type=\"text\"></title><updated>2013-05-12T01:07:22Z</updated><content type=\"application/xml\"><NamespaceAvailability xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Result>true</Result><ReasonDetail i:nil=\"true\"/></NamespaceAvailability></content></entry>", { 'cache-control': 'no-cache',
+  'content-length': '482',
   'content-type': 'application/atom+xml; type=entry; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '578a103f142e4d3887d74703a0b8dcd5',
-  date: 'Tue, 19 Mar 2013 20:16:17 GMT' });
+  server: '33.0.6198.30 (rd_rdfe_stable.130419-2156) Microsoft-HTTPAPI/2.0',
+  'x-ms-servedbyregion': 'ussouth',
+  'x-ms-request-id': '51eb459844054e579c16ce776a96998b',
+  date: 'Sun, 12 May 2013 01:07:22 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'aced1ad0e4de4ac7a111bd839fe6a5b6',
-  date: 'Tue, 19 Mar 2013 20:16:22 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:24 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'b013f16385244ce3ab72517608fd3554',
-  date: 'Tue, 19 Mar 2013 20:16:22 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:24 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '42235ee5536a495185edea467b53633d',
-  date: 'Tue, 19 Mar 2013 20:16:21 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:24 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '8cacafe15960430f8aec608bc1143fa6',
-  date: 'Tue, 19 Mar 2013 20:16:26 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:25 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '4d6bea2d185343febcba0eb627e49534',
-  date: 'Tue, 19 Mar 2013 20:16:28 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:27 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '88e705396de64c5ab6b1c5c8c43614b9',
-  date: 'Tue, 19 Mar 2013 20:16:29 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:27 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '33f2e39884e5410090357528f5e9433d',
-  date: 'Tue, 19 Mar 2013 20:16:31 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:28 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'e453026cb47b4edda52f7b20fd62c254',
-  date: 'Tue, 19 Mar 2013 20:16:37 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:28 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'c5a982702b76465db297ad4b20e72b25',
-  date: 'Tue, 19 Mar 2013 20:16:39 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:30 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '1b5a07c723984c299cd966485b2a95ec',
-  date: 'Tue, 19 Mar 2013 20:16:40 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:30 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'be3e0e4881324500b5076018a9072fd3',
-  date: 'Tue, 19 Mar 2013 20:16:40 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:31 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'b35a7f2b066d4116a7115605db9b650e',
-  date: 'Tue, 19 Mar 2013 20:16:40 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:31 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '45062213b71b472091c847343e34e204',
-  date: 'Tue, 19 Mar 2013 20:16:41 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:33 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'a96fd0720b01461bb5d63679cc955616',
-  date: 'Tue, 19 Mar 2013 20:16:42 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:33 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '64084ef68ec249fca9d0b7176b5c646c',
-  date: 'Tue, 19 Mar 2013 20:16:44 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:33 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '44ad0dcdd5d94344aae8bd2124c6e1e1',
-  date: 'Tue, 19 Mar 2013 20:16:44 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:34 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'be28f53551fb45d5b5405979c0ad2c59',
-  date: 'Tue, 19 Mar 2013 20:16:45 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:36 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '378d8bcce4d64a35ab29d826a0885a0b',
-  date: 'Tue, 19 Mar 2013 20:16:46 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:36 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '2946f86dfd5d40b1a9d159d78f1d39db',
-  date: 'Tue, 19 Mar 2013 20:16:45 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:36 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': 'fd0d367ddb03416383fd29699224b11b',
-  date: 'Tue, 19 Mar 2013 20:16:46 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:36 GMT' });
  return result; }],
 [function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-2')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-4')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '6c490d2dcfee43b4a41b896290158718',
-  date: 'Tue, 19 Mar 2013 20:16:49 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:40 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-1')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-2')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '9abcf004cfd84a3fb2077898a19053a0',
-  date: 'Tue, 19 Mar 2013 20:16:49 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:41 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-3')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-3')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '5c2590874ee0445985e484ab970677d2',
-  date: 'Tue, 19 Mar 2013 20:16:49 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:40 GMT' });
  return result; },
 function (nock) { 
 var result = 
 nock('https://management.core.windows.net:443')
-  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdk-4')
-  .reply(500, "<Error xmlns=\"http://schemas.microsoft.com/windowsazure\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"><Code>InternalError</Code><Message>The server encountered an internal error. Please retry the request.</Message></Error>", { 'cache-control': 'no-cache',
-  'content-length': '229',
+  .delete('/279b0675-cf67-467f-98f0-67ae31eb540f/services/ServiceBus/Namespaces/nodesdksb-1')
+  .reply(404, "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">Request to a downlevel service failed.</string>", { 'content-length': '115',
   'content-type': 'application/xml; charset=utf-8',
-  server: '33.0.6198.18 (rd_rdfe_stable.130314-1521) Microsoft-HTTPAPI/2.0',
-  'x-ms-request-id': '25d611fe40024830845176a2c30a218c',
-  date: 'Tue, 19 Mar 2013 20:16:49 GMT' });
+  server: 'Microsoft-HTTPAPI/2.0',
+  date: 'Sun, 12 May 2013 01:07:40 GMT' });
  return result; }]];

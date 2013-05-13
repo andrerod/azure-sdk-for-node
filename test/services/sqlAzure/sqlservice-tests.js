@@ -50,7 +50,8 @@ describe('SQL Azure Database', function () {
     serviceManagement = azure.createSqlManagementService(
       subscriptionId, auth, hostOptions);
 
-    suiteUtil = new MockedTestUtils(serviceManagement, testPrefix);
+    suiteUtil = new MockedTestUtils(testPrefix);
+    suiteUtil.setupService(serviceManagement);
     suiteUtil.setupSuite(done);
   });
 

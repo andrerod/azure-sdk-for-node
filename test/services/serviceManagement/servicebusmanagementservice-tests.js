@@ -44,7 +44,13 @@ describe('Service Bus Management', function () {
       subscriptionId, auth,
       { serializetype: 'XML'});
 
-    suiteUtil = new MockedTestUtils(service, testPrefix);
+    jsonService = azure.createServiceBusManagementService(
+      subscriptionId, auth,
+      { serializetype: 'JSON'});
+
+    suiteUtil = new MockedTestUtils(testPrefix);
+    suiteUtil.setupService(service);
+    suiteUtil.setupService(jsonService);
     suiteUtil.setupSuite(done);
   });
 
@@ -63,7 +69,7 @@ describe('Service Bus Management', function () {
   });
 
   function newName() {
-    return testutil.generateId('nodesdk-', namespacesToClean, suiteUtil.isMocked);
+    return testutil.generateId('nodesdksb-', namespacesToClean, suiteUtil.isMocked);
   }
 
   describe('List Namespaces', function () {
@@ -168,8 +174,21 @@ describe('Service Bus Management', function () {
   });
 
   describe('Get regions', function() {
-    it('should return array of available regions', function (done) {
+    it('when using XML it should return array of available regions', function (done) {
       service.getRegions(function (err, result) {
+        should.exist(result);
+        result.should.be.an.instanceOf(Array);
+        result.length.should.be.above(0);
+        _.each(result, function (region) {
+          should.exist(region.Code);
+          should.exist(region.FullName);
+        });
+        done(err);
+      });
+    });
+
+    it('when using JSON it should return array of available regions', function (done) {
+      jsonService.getRegions(function (err, result) {
         should.exist(result);
         result.should.be.an.instanceOf(Array);
         result.length.should.be.above(0);

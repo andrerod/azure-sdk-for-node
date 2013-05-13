@@ -19,7 +19,10 @@ var assert = require('assert');
 var MockedTestUtils = require('./mocked-test-utils');
 
 function NotificationHubsTestUtils(service, testPrefix) {
-  NotificationHubsTestUtils.super_.call(this, service, testPrefix);
+  NotificationHubsTestUtils.super_.call(this, testPrefix);
+
+  this.service = service;
+  this.setupService(service);
 }
 
 util.inherits(NotificationHubsTestUtils, MockedTestUtils);

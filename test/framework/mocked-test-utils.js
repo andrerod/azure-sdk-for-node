@@ -20,8 +20,7 @@ var nockHelper = require('./nock-helper');
 
 exports = module.exports = MockedTestUtils;
 
-function MockedTestUtils(service, testPrefix) {
-  this.service = service;
+function MockedTestUtils(testPrefix) {
   this.testPrefix = testPrefix;
   this.mockServerClient;
   this.currentTest = 0;
@@ -29,8 +28,6 @@ function MockedTestUtils(service, testPrefix) {
   this.recordingsFile = __dirname + '/../recordings/' + this.testPrefix + '.nock.js';
   this.isMocked = !process.env.NOCK_OFF;
   this.isRecording = process.env.AZURE_NOCK_RECORD;
-
-  this.setupService(service);
 }
 
 MockedTestUtils.prototype.setupService = function (service) {

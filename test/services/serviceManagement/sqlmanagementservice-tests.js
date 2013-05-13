@@ -50,7 +50,8 @@ describe('SQL Server Management', function () {
     service = azure.createSqlManagementService(
       subscriptionId, auth, hostOptions);
 
-    suiteUtil = new MockedTestUtils(service, testPrefix);
+    suiteUtil = new MockedTestUtils(testPrefix);
+    suiteUtil.setupService(service);
     suiteUtil.setupSuite(done);
   });
 
