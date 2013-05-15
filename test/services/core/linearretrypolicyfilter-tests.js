@@ -147,7 +147,7 @@ suite('linearretrypolicyfilter-newfilter-tests', function () {
   }
 
   test('no retry on success', function (done) {
-    var filter = new LinearRetryPolicyFilter();
+    var filter = LinearRetryPolicyFilter();
     var next = sinkReturning(null, Constants.HttpConstants.HttpResponseCodes.Ok);
 
     filter({uri: 'doesntMatter'}, next, function (err, result, response, body) {
@@ -157,7 +157,7 @@ suite('linearretrypolicyfilter-newfilter-tests', function () {
   });
 
   test('retries on failure until count', function (done) {
-    var filter = new LinearRetryPolicyFilter(3, 5);
+    var filter = LinearRetryPolicyFilter(3, 5);
     var next = sinkReturning(new Error('failed'), 500);
 
     filter({uri: 'doesntMatter'}, next, function (err, result, response, body) {
@@ -168,7 +168,7 @@ suite('linearretrypolicyfilter-newfilter-tests', function () {
   });
 
   test('fail then succeeds', function (done) {
-    var filter = new LinearRetryPolicyFilter(3, 5);
+    var filter = LinearRetryPolicyFilter(3, 5);
     var count = 0;
     var next = sinon.spy(function (options, callback) {
       ++count;
