@@ -14,6 +14,7 @@
 */
 
 var assert = require('assert');
+var sinon = require('sinon');
 
 // Test includes
 var testutil = require('../../util/util');
@@ -133,6 +134,29 @@ suite('linearretrypolicyfilter-tests', function () {
       assert.equal(err.code, Constants.StorageErrorCodeStrings.RESOURCE_NOT_FOUND);
       assert.equal(table, null);
 
+      done();
+    });
+  });
+});
+
+suite('linearretrypolicyfilter-newfilter-tests', function () {
+  var filter;
+
+  setup(function () {
+    filter = new LinearRetryPolicyFilter();
+  });
+
+  function sinkReturning(err, code) {
+    return sinon.spy(function (options, callback) {
+      callback(err, 'result', { statusCode: code}, null);
+    });
+  }
+
+  test('no retry on success', function (done) {
+    var next = sinkReturning(null, Constants.HttpConstants.HttpResponseCodes.Ok);
+
+    filter({uri: 'doesntMatter'}, next, function (err, result, response, body) {
+      assert.equal(1, next.callCount);
       done();
     });
   });
