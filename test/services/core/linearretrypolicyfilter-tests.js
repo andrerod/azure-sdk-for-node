@@ -14,6 +14,7 @@
 */
 
 var assert = require('assert');
+var sinon = require('sinon');
 
 // Test includes
 var testutil = require('../../util/util');
@@ -133,6 +134,54 @@ suite('linearretrypolicyfilter-tests', function () {
       assert.equal(err.code, Constants.StorageErrorCodeStrings.RESOURCE_NOT_FOUND);
       assert.equal(table, null);
 
+      done();
+    });
+  });
+});
+
+suite('linearretrypolicyfilter-newfilter-tests', function () {
+  function sinkReturning(err, code) {
+    return sinon.spy(function (options, callback) {
+      callback(err, 'result', { statusCode: code}, null);
+    });
+  }
+
+  test('no retry on success', function (done) {
+    var filter = LinearRetryPolicyFilter();
+    var next = sinkReturning(null, Constants.HttpConstants.HttpResponseCodes.Ok);
+
+    filter({uri: 'doesntMatter'}, next, function (err, result, response, body) {
+      assert.equal(1, next.callCount);
+      done();
+    });
+  });
+
+  test('retries on failure until count', function (done) {
+    var filter = LinearRetryPolicyFilter(3, 5);
+    var next = sinkReturning(new Error('failed'), 500);
+
+    filter({uri: 'doesntMatter'}, next, function (err, result, response, body) {
+      assert.equal(filter.retryCount, next.callCount);
+      assert.notEqual(null, err);
+      done();
+    });
+  });
+
+  test('fail then succeeds', function (done) {
+    var filter = LinearRetryPolicyFilter(3, 5);
+    var count = 0;
+    var next = sinon.spy(function (options, callback) {
+      ++count;
+      if (count < 2) {
+        callback(new Error('failed'), 500, { statusCode: 500}, null);
+      } else {
+        callback(null, 200, { statusCode: 200 }, null);
+      }
+    });
+
+    filter(null, next, function (err, result, response, body) {
+      assert.equal(2, next.callCount);
+      assert.equal(200, response.statusCode);
       done();
     });
   });
