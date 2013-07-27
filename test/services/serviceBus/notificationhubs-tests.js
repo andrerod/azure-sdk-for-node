@@ -17,7 +17,6 @@ var _ = require('underscore');
 
 var should = require('should');
 var sinon = require('sinon');
-var fs = require('fs');
 
 // Test includes
 var testutil = require('../../util/util');
@@ -37,7 +36,9 @@ describe('Notification hubs', function () {
   var suiteUtil;
 
   before(function (done) {
-    service = azure.createServiceBusService();
+    service = azure.createServiceBusService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = notificationhubstestutil.createNotificationHubsTestUtils(service, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -110,7 +111,7 @@ describe('Notification hubs', function () {
           ApnsCertificate: 'secret1',
           CertificateKey: 'secret2'
         }
-      }
+      };
 
       sandbox.stub(service, '_executeRequest', function (webResource, payload, resultHandler, validators, callback) {
         payload.should.include('<WnsCredential><Properties><Property><Name>PackageSid</Name><Value>secret1</Value></Property>' +
@@ -215,7 +216,7 @@ describe('Notification hubs', function () {
           apns: {
             ApnsCertificate: process.env.AZURE_APNS_CERTIFICATE,
             CertificateKey: process.env.AZURE_APNS_CERTIFICATE_KEY,
-            Endpoint: 'gateway.push.apple.com'
+            Endpoint: 'pushtestservice2.cloudapp.net'
           }
         }, done);
     });
@@ -244,38 +245,38 @@ describe('Notification hubs', function () {
           apns: {
             ApnsCertificate: process.env.AZURE_APNS_CERTIFICATE,
             CertificateKey: process.env.AZURE_APNS_CERTIFICATE_KEY,
-            Endpoint: 'gateway.push.apple.com'
+            Endpoint: 'pushtestservice2.cloudapp.net'
           }
         },
         function () {
-        var setupHub = function () {
-          service.getNotificationHub(hubName, function (err, hub) {
-            if (err) {
-              setupHub();
-            } else {
-              var fullRule = hub.AuthorizationRules.AuthorizationRule.filter(function (rule) {
-                return rule.KeyName === 'DefaultFullSharedAccessSignature';
-              })[0];
+          var setupHub = function () {
+            service.getNotificationHub(hubName, function (err, hub) {
+              if (err) {
+                setupHub();
+              } else {
+                var fullRule = hub.AuthorizationRules.AuthorizationRule.filter(function (rule) {
+                  return rule.KeyName === 'DefaultFullSharedAccessSignature';
+                })[0];
 
-              var endpoint = 'https://' + process.env.AZURE_SERVICEBUS_NAMESPACE + '.servicebus.windows.net';
-              notificationHubService = azure.createNotificationHubService(hubName, endpoint, fullRule.KeyName, fullRule.PrimaryKey);
-              suiteUtil.setupService(notificationHubService);
+                var endpoint = 'https://' + process.env.AZURE_SERVICEBUS_NAMESPACE + '.servicebus.windows.net';
+                notificationHubService = azure.createNotificationHubService(hubName, endpoint, fullRule.KeyName, fullRule.PrimaryKey);
+                suiteUtil.setupService(notificationHubService);
 
-              var listenRule = hub.AuthorizationRules.AuthorizationRule.filter(function (rule) {
-                return rule.KeyName === 'DefaultListenSharedAccessSignature';
-              })[0];
+                var listenRule = hub.AuthorizationRules.AuthorizationRule.filter(function (rule) {
+                  return rule.KeyName === 'DefaultListenSharedAccessSignature';
+                })[0];
 
-              var endpoint = 'https://' + process.env.AZURE_SERVICEBUS_NAMESPACE + '.servicebus.windows.net';
-              notificationListenHubService = azure.createNotificationHubService(hubName, endpoint, listenRule.KeyName, listenRule.PrimaryKey);
-              suiteUtil.setupService(notificationListenHubService);
+                endpoint = 'https://' + process.env.AZURE_SERVICEBUS_NAMESPACE + '.servicebus.windows.net';
+                notificationListenHubService = azure.createNotificationHubService(hubName, endpoint, listenRule.KeyName, listenRule.PrimaryKey);
+                suiteUtil.setupService(notificationListenHubService);
 
-              done();
-            }
-          });
-        };
+                done();
+              }
+            });
+          };
 
-        setupHub();
-      });
+          setupHub();
+        });
     });
 
     it('should be able to execute an operation', function (done) {
@@ -325,7 +326,7 @@ describe('Notification hubs', function () {
 
               done();
             });
-        });
+          });
       });
     });
 

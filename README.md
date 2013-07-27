@@ -1,4 +1,4 @@
-# Windows Azure SDK for Node.js [![Build Status](https://travis-ci.org/WindowsAzure/azure-sdk-for-node.png)](https://travis-ci.org/WindowsAzure/azure-sdk-for-node)
+# Windows Azure SDK for Node.js [![Build Status](https://travis-ci.org/WindowsAzure/azure-sdk-for-node.png?branch=master)](https://travis-ci.org/WindowsAzure/azure-sdk-for-node)
 
 This project provides a Node.js package that makes it easy to access Windows Azure Services like Table Storage and Service Bus. 
 
@@ -11,6 +11,8 @@ This project provides a Node.js package that makes it easy to access Windows Azu
     * create, list, and delete containers, work with container metadata and permissions, list blobs in container
     * create block and page blobs (from a stream, a file, or a string), work with blob blocks and pages, delete blobs
     * work with blob properties, metadata, leases, snapshot a blob
+* HD Insight
+    * create, list and delete HDInsight clusters
 * Storage Queues
     * create, list, and delete queues, and work with queue metadata
     * create, get, peek, update, delete messages
@@ -267,7 +269,7 @@ serviceBusService.createSubscription(topic, subscription, function(error1){
 
 ## Notification Hubs
 
-Notification hubs allow you to send notifications to WNS and APNS receivers.
+Notification hubs allow you to send notifications to WNS, APNS, and GCM receivers.
 
 To create a notification hub, use the method **createNotificationHub**.
 
@@ -281,7 +283,7 @@ serviceBusService.createNotificationHub('hubName', function (err) {
 });
 ```
 
-To send messages to the notification hub use the methods of the **wns** or **apns** objects. For a full reference on WNS method templates, check http://msdn.microsoft.com/en-us/library/windows/apps/hh779725.aspx.
+To send messages to the notification hub use the methods of the **wns**, **apns**, or **gcm** objects. For a full reference on WNS method templates, check http://msdn.microsoft.com/en-us/library/windows/apps/hh779725.aspx.
 
 ```JavaScript
 var notificationHubService = azure.createNotificationHubService('hubName');
@@ -311,6 +313,17 @@ notificationHubService.apns.send(
     function (error) {
         if (!error) {
             // message sent successfully
+        }
+    });
+
+notificationHubService.gcm.send(
+    null,
+    {
+        data: { message: 'Here is a message' }
+    },
+    function (error) {
+        if (!error) {
+            //message send successfully
         }
     });
 ```

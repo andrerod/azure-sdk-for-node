@@ -24,6 +24,13 @@ if (coverageOption !== -1) {
   args.splice(coverageOption, 1);
 }
 
+var reporter = 'list';
+var xunitOption = Array.prototype.indexOf.call(args, '-xunit');
+if (xunitOption !== -1) {
+  reporter = 'xunit';
+  args.splice(xunitOption, 1);
+}
+
 var testList = args.pop();
 
 var fileContent;
@@ -67,7 +74,7 @@ if (coverageOption !== -1) {
   args.push('html-cov');
 } else {
   args.push('-R');
-  args.push('list');
+  args.push(reporter);
 }
 
 var defaultStorageAccount = 'ciserversdk';
@@ -82,12 +89,25 @@ if (!process.env.AZURE_APNS_CERTIFICATE_KEY && process.env.AZURE_APNS_CERTIFICAT
   process.env.AZURE_APNS_CERTIFICATE_KEY = fs.readFileSync(process.env['AZURE_APNS_CERTIFICATE_KEY_FILE']).toString();
 }
 
+if (!process.env.AZURE_MPNS_CERTIFICATE && process.env.AZURE_MPNS_CERTIFICATE_FILE) {
+  process.env.AZURE_MPNS_CERTIFICATE = new Buffer(fs.readFileSync(process.env['AZURE_MPNS_CERTIFICATE_FILE'])).toString('base64');
+}
+
+if (!process.env.AZURE_MPNS_CERTIFICATE_KEY && process.env.AZURE_MPNS_CERTIFICATE_KEY_FILE) {
+  process.env.AZURE_MPNS_CERTIFICATE_KEY = fs.readFileSync(process.env['AZURE_MPNS_CERTIFICATE_KEY_FILE']).toString();
+}
+
 if (!process.env.NOCK_OFF && !process.env.AZURE_NOCK_RECORD) {
   process.env.AZURE_APNS_CERTIFICATE = 'fake_certificate';
   process.env.AZURE_APNS_CERTIFICATE_KEY = 'fake_certificate_key';
 
   process.env.AZURE_WNS_PACKAGE_SID = 'sid';
   process.env.AZURE_WNS_SECRET_KEY = 'key';
+
+  process.env.AZURE_GCM_KEY = 'fakekey'.toString('base64');
+
+  process.env.AZURE_MPNS_CERTIFICATE = 'fake_certificate';
+  process.env.AZURE_MPNS_CERTIFICATE_KEY = 'fake_certificate_key';
 
   if (process.env.AZURE_STORAGE_ACCOUNT !== defaultStorageAccount) {
     process.env.AZURE_STORAGE_ACCOUNT = defaultStorageAccount;

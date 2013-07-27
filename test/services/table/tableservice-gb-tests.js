@@ -33,7 +33,9 @@ var suiteUtil;
 
 describe('tableservice', function () {
   before(function (done) {
-    tableService = azure.createTableService();
+    tableService = azure.createTableService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = tabletestutil.createTableTestUtils(tableService, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -80,6 +82,46 @@ describe('tableservice', function () {
         res.Value.should.equal(value);
 
         done();
+      });
+    });
+  });
+
+  describe('inserting entity with gb18030 data', function () {
+    var entity1 = { PartitionKey: 'part1',
+      RowKey: 'row1',
+      field: 'my field',
+      otherfield: 'my other field',
+      otherprops: 'my properties',
+      gb18030: "𡬁𠻝𩂻耨鬲, 㑜䊑㓣䟉䋮䦓, ᡨᠥ᠙ᡰᢇ᠘ᠶ, ࿋ཇ࿂ོ༇ྒ, ꃌꈗꈉꋽ, Uighur, ᥗᥩᥬᥜᥦ "
+    };
+    var tableName;
+
+    beforeEach(function (done) {
+      tableName = testutil.generateId(tablePrefix, tableNames, suiteUtil.isMocked);
+      tableService.createTable(tableName, function (createError, table, createResponse) {
+        should.not.exist(createError);
+        done(createError);
+      });
+    });
+
+    it('should store data with encoded fields', function (done) {
+      tableService.insertEntity(tableName, entity1, function (err) {
+        if (err) { return done(err); }
+        var tableQuery = azure.TableQuery.select().from(tableName);
+
+        tableService.queryEntities(tableQuery, function (err, entries) {
+          if (err) { return done(err); }
+
+          entries.length.should.equal(1);
+          entries[0].PartitionKey.should.equal(entity1.PartitionKey);
+          entries[0].RowKey.should.equal(entity1.RowKey);
+          entries[0].field.should.equal(entity1.field);
+          entries[0].otherfield.should.equal(entity1.otherfield);
+          entries[0].otherprops.should.equal(entity1.otherprops);
+          entries[0].gb18030.should.equal(entity1.gb18030);
+
+          done();
+        });
       });
     });
   });

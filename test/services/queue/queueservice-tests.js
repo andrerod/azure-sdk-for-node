@@ -23,8 +23,8 @@ var queuetestutil = require('../../framework/queue-test-utils');
 var azure = testutil.libRequire('azure');
 var azureutil = testutil.libRequire('util/util');
 
-var ServiceClient = azure.ServiceClient;
 var Constants = azure.Constants;
+var ServiceClientConstants = azure.ServiceClientConstants;
 var HttpConstants = Constants.HttpConstants;
 
 var queueService;
@@ -38,7 +38,9 @@ var suiteUtil;
 
 suite('queueservice-tests', function () {
   suiteSetup(function (done) {
-    queueService = azure.createQueueService();
+    queueService = azure.createQueueService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = queuetestutil.createQueueTestUtils(queueService, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -476,8 +478,8 @@ suite('queueservice-tests', function () {
     var connectionString = 'UseDevelopmentStorage=true';
     var queueService = azure.createQueueService(connectionString);
 
-    assert.equal(queueService.storageAccount, ServiceClient.DEVSTORE_STORAGE_ACCOUNT);
-    assert.equal(queueService.storageAccessKey, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+    assert.equal(queueService.storageAccount, ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT);
+    assert.equal(queueService.storageAccessKey, ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY);
     assert.equal(queueService.protocol, 'http:');
     assert.equal(queueService.host, '127.0.0.1');
     assert.equal(queueService.port, '10001');

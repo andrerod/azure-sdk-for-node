@@ -39,7 +39,9 @@ describe('APNS notifications', function () {
   before(function (done) {
     sandbox = sinon.sandbox.create();
 
-    service = azure.createServiceBusService();
+    service = azure.createServiceBusService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = notificationhubstestutil.createNotificationHubsTestUtils(service, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -52,6 +54,7 @@ describe('APNS notifications', function () {
   beforeEach(function (done) {
     suiteUtil.setupTest(function () {
       service.listNotificationHubs(function (err, hubs) {
+        should.not.exist(err);
         var xplatHubs = hubs.filter(function (hub) {
           return hub.NotificationHubName.substr(0, hubNamePrefix.length) === hubNamePrefix;
         });
@@ -87,13 +90,13 @@ describe('APNS notifications', function () {
           apns: {
             ApnsCertificate: process.env.AZURE_APNS_CERTIFICATE,
             CertificateKey: process.env.AZURE_APNS_CERTIFICATE_KEY,
-            Endpoint: 'gateway.push.apple.com'
+            Endpoint: 'pushtestservice2.cloudapp.net'
           }
         }, done);
     });
 
     it('should send a simple message', function (done) {
-      notificationHubService.apns.send(null, { 
+      notificationHubService.apns.send(null, {
         alert: 'This is my toast message for iOS!'
       }, function (error, result) {
         should.not.exist(error);

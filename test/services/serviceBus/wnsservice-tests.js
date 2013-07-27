@@ -37,7 +37,9 @@ describe('WNS notifications', function () {
   before(function (done) {
     sandbox = sinon.sandbox.create();
 
-    service = azure.createServiceBusService();
+    service = azure.createServiceBusService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = notificationhubstestutil.createNotificationHubsTestUtils(service, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -50,6 +52,7 @@ describe('WNS notifications', function () {
   beforeEach(function (done) {
     suiteUtil.setupTest(function () {
       service.listNotificationHubs(function (err, hubs) {
+        should.not.exist(err);
         var xplatHubs = hubs.filter(function (hub) {
           return hub.NotificationHubName.substr(0, hubNamePrefix.length) === hubNamePrefix;
         });
@@ -84,7 +87,8 @@ describe('WNS notifications', function () {
       service.createNotificationHub(hubName, {
         wns: {
           PackageSid: process.env.AZURE_WNS_PACKAGE_SID,
-          SecretKey: process.env.AZURE_WNS_SECRET_KEY
+          SecretKey: process.env.AZURE_WNS_SECRET_KEY,
+          WindowsLiveEndpoint: 'http://pushtestservice2.cloudapp.net/LiveID/accesstoken.srf'
         }
       }, done);
     });

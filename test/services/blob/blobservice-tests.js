@@ -39,6 +39,7 @@ var ExponentialRetryPolicyFilter = azure.ExponentialRetryPolicyFilter;
 var Constants = azure.Constants;
 var BlobConstants = Constants.BlobConstants;
 var HttpConstants = Constants.HttpConstants;
+var ServiceClientConstants = azure.ServiceClientConstants;
 var QueryStringConstants = Constants.QueryStringConstants;
 
 var containerNames = [];
@@ -54,7 +55,9 @@ var suiteUtil;
 
 describe('BlobService', function () {
   before(function (done) {
-    blobService = azure.createBlobService();
+    blobService = azure.createBlobService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = blobtestutil.createBlobTestUtils(blobService, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -293,6 +296,13 @@ describe('BlobService', function () {
         done();
       });
     });
+
+    it('should work with prefix parameter', function (done) {
+      blobService.listContainers({ prefix : '中文' }, function (err) {
+        assert.equal(err, null);
+        done();
+      });
+    });
   });
 
   describe('createContainerIfNotExists', function() {
@@ -346,6 +356,10 @@ describe('BlobService', function () {
           assert.equal(getError, null);
           assert.notEqual(container2, null);
           if (container2) {
+            assert.equal('unlocked', container2.leaseStatus);
+            assert.equal('available', container2.leaseState);
+            assert.equal(null, container2.leaseDuration);
+            assert.notEqual(null, container2.requestId);
             assert.equal(container2.metadata.color, metadata.color);
           }
 
@@ -671,6 +685,7 @@ describe('BlobService', function () {
             assert.equal(getErr, null);
 
             assert.notEqual(blob, null);
+
             if (blob) {
               assert.notEqual(blob.metadata, null);
               if (blob.metadata) {
@@ -1214,7 +1229,7 @@ describe('BlobService', function () {
         };
 
         var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
-        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sig=P5rp4qr5wWJdT3%2Fpys210lFcBzamGwjEYXaN2sf%2FHss%3D');
+        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=2011-10-12T11%3A53%3A40Z&sr=b&sv=2012-02-12&sig=gDOuwDoa4F7hhQJW9ReCimoHN2qp7NF1Nu3sdHjwIfs%3D');
 
         done();
       });
@@ -1282,7 +1297,7 @@ describe('BlobService', function () {
         this.clock.restore();
 
         var blobUrl = blobServiceassert.getBlobUrl(containerName, blobName, sharedAccessPolicy);
-        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sig=78rp23g%2FozomP%2FwwJHZ8BpyLIj0t%2B97oZgzFl1w3OAU%3D');
+        assert.equal(blobUrl, 'https://host.com:80/' + containerName + '/' + blobName + '?se=1970-01-01T00%3A10%3A00Z&sr=b&sv=2012-02-12&sig=ca700zLsjqapO1sUBVHIBblj2XoJCON1V4gMSfyQZc8%3D');
 
         done();
       });
@@ -1292,7 +1307,7 @@ describe('BlobService', function () {
       var containerName = 'images';
       var blobName = 'pic1.png';
 
-      var devStorageBlobService = azure.createBlobService(ServiceClient.DEVSTORE_STORAGE_ACCOUNT, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+      var devStorageBlobService = azure.createBlobService(ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT, ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY);
 
       var sharedAccessPolicy = {
         AccessPolicy: {
@@ -1308,7 +1323,8 @@ describe('BlobService', function () {
       assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_EXPIRY], '2011-10-12T11:53:40Z');
       assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_RESOURCE], BlobConstants.ResourceTypes.BLOB);
       assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_PERMISSIONS], BlobConstants.SharedAccessPermissions.READ);
-      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNATURE], '7NIEip+VOrQ5ZV80pORPK1MOsJc62wwCNcbMvE+lQ0s=');
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNED_VERSION], '2012-02-12');
+      assert.equal(sharedAccessSignature.queryString[QueryStringConstants.SIGNATURE], 'ju4tX0G79vPxMOkBb7UfNVEgrj9+ZnSMutpUemVYHLY=');
 
       done();
     });
@@ -1422,13 +1438,28 @@ describe('BlobService', function () {
     var connectionString = 'UseDevelopmentStorage=true';
     var blobService = azure.createBlobService(connectionString);
 
-    assert.equal(blobService.storageAccount, ServiceClient.DEVSTORE_STORAGE_ACCOUNT);
-    assert.equal(blobService.storageAccessKey, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+    assert.equal(blobService.storageAccount, ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT);
+    assert.equal(blobService.storageAccessKey, ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY);
     assert.equal(blobService.protocol, 'http:');
     assert.equal(blobService.host, '127.0.0.1');
     assert.equal(blobService.port, '10000');
 
     done();
+  });
+
+  it('should be creatable from config', function () {
+    var key = 'AhlzsbLRkjfwObuqff3xrhB2yWJNh1EMptmcmxFJ6fvPTVX3PZXwrG2YtYWf5DPMVgNsteKStM5iBLlknYFVoA==';
+    var connectionString = 'DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=' + key;
+    var config = azure.configure('testenvironment', function (c) {
+      c.storage(connectionString);
+    });
+
+    var blobService = azure.createBlobService(azure.config('testenvironment'));
+
+    assert.equal(blobService.storageAccount, 'myaccount');
+    assert.equal(blobService.storageAccessKey, key);
+    assert.equal(blobService.protocol, 'https:');
+    assert.equal(blobService.host, 'myaccount.blob.core.windows.net');
   });
 });
 

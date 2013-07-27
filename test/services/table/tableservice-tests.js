@@ -14,6 +14,8 @@
 */
 
 var assert = require('assert');
+var should = require('should');
+var util = require('util');
 
 // Test includes
 var testutil = require('../../util/util');
@@ -23,7 +25,7 @@ var tabletestutil = require('../../framework/table-test-utils');
 var azure = testutil.libRequire('azure');
 var azureutil = testutil.libRequire('util/util');
 
-var ServiceClient = azure.ServiceClient;
+var ServiceClientConstants = azure.ServiceClientConstants;
 var TableQuery = azure.TableQuery;
 var Constants = azure.Constants;
 var HttpConstants = Constants.HttpConstants;
@@ -55,7 +57,9 @@ var suiteUtil;
 
 suite('tableservice-tests', function () {
   suiteSetup(function (done) {
-    tableService = azure.createTableService();
+    tableService = azure.createTableService()
+      .withFilter(new azure.ExponentialRetryPolicyFilter());
+
     suiteUtil = tabletestutil.createTableTestUtils(tableService, testPrefix);
     suiteUtil.setupSuite(done);
   });
@@ -246,6 +250,59 @@ suite('tableservice-tests', function () {
             done();
           });
         });
+      });
+    });
+  });
+
+  test('QueryTableWithPrefix', function (done) {
+    var includedTables = [];
+    var excludedTables = [];
+    var i;
+
+    for(i = 0; i < 3; ++i) {
+      includedTables.push(testutil.generateId(tablePrefix + 'inc', tableNames, suiteUtil.isMocked));
+      excludedTables.push(testutil.generateId(tablePrefix + 'not', tableNames, suiteUtil.isMocked));
+    }
+
+    tableService.queryTables(function (queryErrorEmpty, tablesEmpty) {
+      assert.equal(queryErrorEmpty, null);
+      assert.notEqual(tablesEmpty, null);
+
+      var tablesToCreate = includedTables.concat(excludedTables);
+
+      function makeTables(tablesToCreate, callback) {
+        if (tablesToCreate.length === 0) {
+          callback();
+        } else {
+          tableService.createTable(tablesToCreate[0], function (createError, table, createResponse) {
+            assert.equal(createError, null);
+            assert.notEqual(table, null);
+            assert.equal(createResponse.statusCode, HttpConstants.HttpResponseCodes.Created);
+            makeTables(tablesToCreate.slice(1), callback);
+          });
+        }
+      }
+
+      makeTables(tablesToCreate, function () {
+        tableService.queryTables({ prefix: tablePrefix + 'inc' },
+          function (queryError, tables, tablesContinuation, queryResponse) {
+            assert.equal(queryError, null);
+            assert.notEqual(tables, null);
+            assert.ok(queryResponse.isSuccessful);
+            assert.equal(queryResponse.statusCode, HttpConstants.HttpResponseCodes.Ok);
+
+            var entries = includedTables.length;
+            tables.forEach(function (currentTable) {
+              excludedTables.should.not.include(currentTable.TableName);
+              includedTables.should.include(currentTable.TableName);
+              --entries;
+            });
+
+            assert.equal(entries, 0);
+
+            done();
+          }
+        );
       });
     });
   });
@@ -477,7 +534,7 @@ suite('tableservice-tests', function () {
           assert.notEqual(updateEntity2, null);
           assert.ok(updateResponse2.isSuccessful);
           assert.equal(updateResponse2.statusCode, HttpConstants.HttpResponseCodes.NoContent);
-          assert.notEqual(newEntity1._.etag, originalEtag);
+          assert.notEqual(updateEntity2._.etag, originalEtag);
 
           done();
         });
@@ -810,8 +867,8 @@ suite('tableservice-tests', function () {
     var connectionString = 'UseDevelopmentStorage=true';
     var tableService = azure.createTableService(connectionString);
 
-    assert.equal(tableService.storageAccount, ServiceClient.DEVSTORE_STORAGE_ACCOUNT);
-    assert.equal(tableService.storageAccessKey, ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY);
+    assert.equal(tableService.storageAccount, ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT);
+    assert.equal(tableService.storageAccessKey, ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY);
     assert.equal(tableService.protocol, 'http:');
     assert.equal(tableService.host, '127.0.0.1');
     assert.equal(tableService.port, '10002');
@@ -822,9 +879,17 @@ suite('tableservice-tests', function () {
   test('storageConnectionStringsHttp', function (done) {
     var tableName = testutil.generateId(tablePrefix, tableNames, suiteUtil.isMocked);
     var expectedProtocol = 'http';
-    var expectedName = process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCOUNT];
-    var expectedKey = process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCESS_KEY];
-    var connectionString = 'DefaultEndpointsProtocol=' + expectedProtocol + ';AccountName=' + expectedName + ';AccountKey=' + expectedKey;
+    var expectedName = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCOUNT];
+    var expectedKey = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCESS_KEY];
+    var storageDnsSuffix = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_DNS_SUFFIX];
+    var host;
+    if (storageDnsSuffix) {
+      host = util.format('TableEndpoint=%s://%s.table.%s', expectedProtocol, expectedName, storageDnsSuffix);
+    } else {
+      host = util.format('DefaultEndpointsProtocol=%s', expectedProtocol);
+    }
+    var connectionString = util.format('%s;AccountName=%s;AccountKey=%s', host, expectedName, expectedKey);
+
     tableService = azure.createTableService(connectionString);
 
     tableService.createTable(tableName, function (err) {
@@ -841,9 +906,10 @@ suite('tableservice-tests', function () {
   test('storageConnectionStringsEndpointHttp', function (done) {
     var tableName = testutil.generateId(tablePrefix, tableNames, suiteUtil.isMocked);
     var expectedProtocol = 'http';
-    var expectedName = process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCOUNT];
-    var expectedKey = process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCESS_KEY];
-    var expectedTableEndpoint = 'http://' + process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCOUNT] + '.table.core.windows.net';
+    var expectedName = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCOUNT];
+    var expectedKey = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCESS_KEY];
+    var storageDnsSuffix = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_DNS_SUFFIX] || 'core.windows.net';
+    var expectedTableEndpoint = 'http://' + process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCOUNT] + '.table.' + storageDnsSuffix;
     var connectionString = 'DefaultEndpointsProtocol=' + expectedProtocol + ';AccountName=' + expectedName + ';AccountKey=' + expectedKey + ';TableEndpoint=' + expectedTableEndpoint;
     var tableService = azure.createTableService(connectionString);
 
@@ -862,9 +928,10 @@ suite('tableservice-tests', function () {
 
   test('storageConnectionStringsEndpointHttpExplicit', function (done) {
     var tableName = testutil.generateId(tablePrefix, tableNames, suiteUtil.isMocked);
-    var expectedName = process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCOUNT];
-    var expectedKey = process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCESS_KEY];
-    var expectedTableEndpoint = 'http://' + process.env[ServiceClient.EnvironmentVariables.AZURE_STORAGE_ACCOUNT] + '.table.core.windows.net';
+    var expectedName = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCOUNT];
+    var expectedKey = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCESS_KEY];
+    var storageDnsSuffix = process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_DNS_SUFFIX] || 'core.windows.net';
+    var expectedTableEndpoint = 'http://' + process.env[ServiceClientConstants.EnvironmentVariables.AZURE_STORAGE_ACCOUNT] + '.table.' + storageDnsSuffix;
     var tableService = azure.createTableService(expectedName, expectedKey, expectedTableEndpoint);
 
     tableService.createTable(tableName, function (err) {
@@ -879,9 +946,9 @@ suite('tableservice-tests', function () {
   });
 
   test('storageConnectionStringsEndpointDevStoreExplicit', function (done) {
-    var expectedName = ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
-    var expectedKey = ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
-    var expectedTableEndpoint = ServiceClient.DEVSTORE_TABLE_HOST;
+    var expectedName = ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT;
+    var expectedKey = ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY;
+    var expectedTableEndpoint = ServiceClientConstants.DEVSTORE_TABLE_HOST;
     var tableService = azure.createTableService(expectedName, expectedKey, expectedTableEndpoint);
 
     assert.equal(tableService.storageAccount, expectedName);
@@ -895,9 +962,9 @@ suite('tableservice-tests', function () {
   });
 
   test('storageConnectionStringsEndpointDevStoreExplicitWithProtocol', function (done) {
-    var expectedName = ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
-    var expectedKey = ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
-    var expectedTableEndpoint = 'http://' + ServiceClient.DEVSTORE_TABLE_HOST;
+    var expectedName = ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT;
+    var expectedKey = ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY;
+    var expectedTableEndpoint = 'http://' + ServiceClientConstants.DEVSTORE_TABLE_HOST;
     var tableService = azure.createTableService(expectedName, expectedKey, expectedTableEndpoint);
 
     assert.equal(tableService.storageAccount, expectedName);
@@ -911,9 +978,9 @@ suite('tableservice-tests', function () {
   });
 
   test('storageConnectionStringsEndpointDevStoreExplicitWithWrongProtocol', function (done) {
-    var expectedName = ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
-    var expectedKey = ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
-    var expectedTableEndpoint = 'https://' + ServiceClient.DEVSTORE_TABLE_HOST;
+    var expectedName = ServiceClientConstants.DEVSTORE_STORAGE_ACCOUNT;
+    var expectedKey = ServiceClientConstants.DEVSTORE_STORAGE_ACCESS_KEY;
+    var expectedTableEndpoint = 'https://' + ServiceClientConstants.DEVSTORE_TABLE_HOST;
     var tableService = azure.createTableService(expectedName, expectedKey, expectedTableEndpoint);
 
     assert.equal(tableService.storageAccount, expectedName);
