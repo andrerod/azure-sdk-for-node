@@ -42,7 +42,7 @@
     "validator": ">= 0.4.12",
     "wns": ">= 0.5.3",
     "duplexer": "~0.1.1",
-    "through": "~2.3.4"
+    "through": "~2.3.4",
     "mpns": ">= 2.0.0",
     "envconf": ">= 0.0.2",
     "duplexer": "~0.1.1",
