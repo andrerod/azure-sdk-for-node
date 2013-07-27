@@ -21,7 +21,6 @@ var queuetestutil = require('../../framework/queue-test-utils');
 
 // Lib includes
 var azure = testutil.libRequire('azure');
-var azureutil = testutil.libRequire('util/util');
 
 var Constants = azure.Constants;
 var ServiceClientConstants = azure.ServiceClientConstants;
@@ -33,7 +32,6 @@ var queueNamesPrefix = 'queue';
 
 var testPrefix = 'queueservice-tests';
 
-var tableService;
 var suiteUtil;
 
 suite('queueservice-tests', function () {
