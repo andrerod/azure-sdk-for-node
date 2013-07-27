@@ -21,7 +21,11 @@ var baseFilterBehavior = require('./baseFilterBehavior');
 
 var azure = testutil.libRequire('azure');
 var WebResource = testutil.libRequire('http/webresource');
+<<<<<<< HEAD
 var authFilter = testutil.libRequire('services/queue/filters/authFilter');
+=======
+var authFilter = testutil.libRequire('services/queue/filters/authfilter');
+>>>>>>> chris/request-pipeline-experiment
 
 var SharedKey = azure.SharedKey;
 var ServiceClient = azure.ServiceClient;
