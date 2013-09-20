@@ -15,7 +15,7 @@
 
 'use strict';
 
-var storageFilters = require('../../../../lib/services/queue/filters/storageFilters');
+var storageFilters = require('../../../../lib/services/core/filters/storageFilters');
 var WebResource = require('../../../../lib/http/webresource');
 var HeaderConstants = require('../../../../lib/util/constants').HeaderConstants;
 
