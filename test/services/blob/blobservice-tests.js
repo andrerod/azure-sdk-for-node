@@ -900,7 +900,8 @@ describe('BlobService', function () {
         fs.writeFile(fileNameSource, blobText, function () {
 
           // Create the empty page blob
-          blobService.createBlockBlobFromFile(containerName, blobName, fileNameSource, function (err) {
+          var blobOptions = {blockIdPrefix : 'blockId' };
+          blobService.createBlockBlobFromFile(containerName, blobName, fileNameSource, blobOptions, function (err) {
             assert.equal(err, null);
 
             blobService.getBlobToText(containerName, blobName, { rangeStart: 2 }, function (err3, content1, blob) {
@@ -925,7 +926,7 @@ describe('BlobService', function () {
 
         fs.writeFile(fileNameSource, blobText, function () {
           // Create the empty page blob
-          blobService.createBlockBlobFromFile(containerName, blobName, fileNameSource, { contentType: null, contentTypeHeader: null }, function (err) {
+          blobService.createBlockBlobFromFile(containerName, blobName, fileNameSource, { contentType: null, contentTypeHeader: null, blockIdPrefix : 'blockId' }, function (err) {
             assert.equal(err, null);
 
             blobService.getBlobToText(containerName, blobName, { rangeStart: 2 }, function (err3, content1, blob) {
@@ -1164,6 +1165,34 @@ describe('BlobService', function () {
     });
   });
 
+  it('works with files without specifying content type', function (done) {
+    // This test ensures that blocks can be created from files correctly
+    // and was created to ensure that the request module does not magically add
+    // a content type to the request when the user did not specify one.
+    var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
+    var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
+    var fileName= testutil.generateId('prefix') + '.txt';
+    var blobText = 'Hello World!';
+
+    try { fs.unlinkSync(fileName); } catch (e) {}
+    fs.writeFileSync(fileName, blobText);
+
+    var stream = fs.createReadStream(fileName);
+    var stat = fs.statSync(fileName);
+
+    blobService.createContainer(containerName, function (createErr1) {
+      assert.equal(createErr1, null);
+
+      blobService.createBlobBlockFromStream('test', containerName, blobName, stream, stat.size, function(error) {
+        try { fs.unlinkSync(fileName); } catch (e) {}
+
+        assert.equal(error, null);
+
+        done();
+      });
+    });
+  });
+
   it('CommitBlockList', function (done) {
     var containerName = testutil.generateId(containerNamesPrefix, containerNames, suiteUtil.isMocked);
     var blobName = testutil.generateId(blobNamesPrefix, blobNames, suiteUtil.isMocked);
@@ -1396,7 +1425,7 @@ describe('BlobService', function () {
         assert.ok(createResponse1.isSuccessful);
         assert.equal(createResponse1.statusCode, HttpConstants.HttpResponseCodes.Created);
 
-        var blobOptions = { contentType: 'text' };
+        var blobOptions = { contentType: 'text', blockIdPrefix : 'blockId' };
         blobService.createBlockBlobFromFile(containerName, blobName, fileNameSource, blobOptions, function (uploadError, blobResponse, uploadResponse) {
           assert.equal(uploadError, null);
           assert.notEqual(blobResponse, null);
