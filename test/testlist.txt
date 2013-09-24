@@ -51,6 +51,7 @@ services/sqlAzure/sqlservice-tests.js
 util/date-tests.js
 util/edmtype-tests.js
 util/iso8061date-tests.js
+util/js2xml-tests.js
 util/odatahandler-tests.js
 util/util-tests.js
 util/validate-tests.js

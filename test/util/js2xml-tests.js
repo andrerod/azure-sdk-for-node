@@ -22,5 +22,33 @@ var testutil = require('./util');
 var js2xml = testutil.libRequire('util/js2xml');
 
 describe('js2xml', function() {
+  describe('createElement', function () {
+    it('should work', function (done) {
+      var name = 'name';
+      var namespace = 'namespace';
 
+      var element = js2xml.createElement(name, namespace);
+      element.name.should.equal(name);
+      element.namespace.should.equal(namespace);
+      element.value.should.equal(undefined);
+
+      done();
+    });
+  });
+
+  describe('setElementValue', function () {
+    it('should work', function (done) {
+      var name = 'name';
+      var namespace = 'namespace';
+      var value = 'newvalue';
+
+      var element = js2xml.createElement(name, namespace);
+      element.value.should.equal(undefined);
+
+      js2xml.setElementValue(element, value);
+      element.value.should.equal(value);
+
+      done();
+    });
+  });
 });
