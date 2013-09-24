@@ -30,7 +30,7 @@ describe('js2xml', function() {
       var element = js2xml.createElement(name, namespace);
       element.name.should.equal(name);
       element.namespace.should.equal(namespace);
-      element.value.should.equal(undefined);
+      should.not.exist(element.value);
 
       done();
     });
@@ -43,7 +43,7 @@ describe('js2xml', function() {
       var value = 'newvalue';
 
       var element = js2xml.createElement(name, namespace);
-      element.value.should.equal(undefined);
+      should.not.exist(element.value);
 
       js2xml.setElementValue(element, value);
       element.value.should.equal(value);
