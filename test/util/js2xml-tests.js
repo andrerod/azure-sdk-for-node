@@ -74,15 +74,46 @@ describe('js2xml', function() {
   });
 
   describe('serializeDocument', function () {
-    it('should work with a child', function (done) {
+    it('should properly declare namespaces only once', function (done) {
       var name1 = 'name1';
       var name2 = 'name2';
+      var name3 = 'name3';
+      var name4 = 'name4';
+      var name5 = 'name5';
       var namespace1 = 'namespace1';
       var namespace2 = 'namespace2';
-      var value2 = 3;
+      var namespace3 = 'namespace3';
+      var value3 = 3;
+      var value5 = 5;
 
       var element1 = js2xml.createElement(name1, namespace1);
       var element2 = js2xml.createElement(name2, namespace2);
+      var element3 = js2xml.createElement(name3, namespace2);
+      var element4 = js2xml.createElement(name4, namespace2);
+      var element5 = js2xml.createElement(name5, namespace3);
+
+      js2xml.setElementValue(element3, value3);
+      js2xml.setElementValue(element5, value5);
+
+      js2xml.addChildElement(element1, element2);
+      js2xml.addChildElement(element2, element3);
+      js2xml.addChildElement(element2, element4);
+      js2xml.addChildElement(element4, element5);
+
+      var result = js2xml.serializeDocument(element1);
+
+      result.should.equal('<?xml version="1.0" encoding="utf-8" standalone="yes"?><name1 xmlns="namespace1" xmlns:a="namespace2" xmlns:b="namespace3"><a:name2><a:name3>' + value3 + '</a:name3><a:name4><b:name5>' + value5 + '</b:name5></a:name4></a:name2></name1>');
+
+      done();
+    });
+
+    it('should work with a child', function (done) {
+      var name1 = 'name1';
+      var name2 = 'name2';
+      var value2 = 3;
+
+      var element1 = js2xml.createElement(name1);
+      var element2 = js2xml.createElement(name2);
       js2xml.setElementValue(element2, value2);
       js2xml.addChildElement(element1, element2);
 
@@ -93,11 +124,9 @@ describe('js2xml', function() {
       done();
     });
 
-    it('should work with a child and attriutes', function (done) {
+    it('should work with a child and attributes', function (done) {
       var name1 = 'name1';
       var name2 = 'name2';
-      var namespace1 = 'namespace1';
-      var namespace2 = 'namespace2';
       var value2 = 3;
       var attrName1 = 'attrName1';
       var attrName2a = 'attrName2a';
@@ -106,12 +135,12 @@ describe('js2xml', function() {
       var attrValue2a = 'attrValue2a';
       var attrValue2b = 'attrValue2b';
 
-      var element1 = js2xml.createElement(name1, namespace1);
+      var element1 = js2xml.createElement(name1);
       var attr1 = js2xml.createAttribute(attrName1);
       js2xml.setAttributeValue(attr1, attrValue1);
       js2xml.addAttribute(element1, attr1);
 
-      var element2 = js2xml.createElement(name2, namespace2);
+      var element2 = js2xml.createElement(name2);
       js2xml.setElementValue(element2, value2);
 
       var attr2a = js2xml.createAttribute(attrName2a);
