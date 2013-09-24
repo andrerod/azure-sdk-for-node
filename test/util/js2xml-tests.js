@@ -51,4 +51,25 @@ describe('js2xml', function() {
       done();
     });
   });
+
+  describe('addChildElement', function () {
+    it('should work', function (done) {
+      var name1 = 'name1';
+      var name2 = 'name2';
+      var namespace1 = 'namespace1';
+      var namespace2 = 'namespace2';
+
+      var element1 = js2xml.createElement(name1, namespace1);
+      var element2 = js2xml.createElement(name2, namespace2);
+
+      element1.children.length.should.equal(0);
+
+      js2xml.addChildElement(element1, element2);
+
+      element1.children.length.should.equal(1);
+      element1.children[0].name.should.equal(name2);
+
+      done();
+    });
+  });
 });
