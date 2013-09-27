@@ -18,7 +18,9 @@ services/core/servicesettings-tests.js
 services/core/servicebussettings-tests.js
 services/core/servicemanagementsettings-tests.js
 services/core/storageservicesettings-tests.js
-services/queue/queueservice-tests.js
+services/core/filters/storagefilters-tests.js
+services/core/filters/authfilter-tests.js
+services/core/queueservice-tests.js
 services/serviceBus/internal/wraptokenmanager-tests.js
 services/serviceBus/apnsservice-tests.js
 services/serviceBus/apnsservice-registrations-tests.js
@@ -49,6 +51,7 @@ services/sqlAzure/sqlservice-tests.js
 util/date-tests.js
 util/edmtype-tests.js
 util/iso8061date-tests.js
+util/js2xml-tests.js
 util/odatahandler-tests.js
 util/util-tests.js
 util/validate-tests.js
