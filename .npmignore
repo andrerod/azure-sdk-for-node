@@ -4,6 +4,9 @@
 # Node #
 node_modules/
 
+# Sub-modules #
+lib/
+
 # Test folder #
 test/
 

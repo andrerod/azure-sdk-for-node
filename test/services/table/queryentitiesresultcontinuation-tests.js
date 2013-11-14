@@ -24,7 +24,7 @@ var tabletestutil = require('../../framework/table-test-utils');
 var azure = testutil.libRequire('azure');
 var azureutil = testutil.libRequire('util/util');
 var testutil = testutil.libRequire('util/util');
-var QueryEntitiesResultContinuation = testutil.libRequire('services/table/models/queryentitiesresultcontinuation');
+var QueryEntitiesResultContinuation = testutil.libRequire('services/table/lib/models/queryentitiesresultcontinuation');
 
 var ServiceClient = azure.ServiceClient;
 var TableQuery = azure.TableQuery;

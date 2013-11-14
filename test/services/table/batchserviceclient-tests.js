@@ -22,8 +22,8 @@ var tabletestutil = require('../../framework/table-test-utils');
 
 // Lib includes
 var azure = testutil.libRequire('azure');
-var BatchServiceClient = testutil.libRequire('services/table/batchserviceclient');
-var Constants = testutil.libRequire('util/constants');
+var BatchServiceClient = testutil.libRequire('services/table/lib/batchserviceclient');
+var Constants = azure.Constants;
 var HttpConstants = Constants.HttpConstants;
 
 var tableNames = [];

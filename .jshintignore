@@ -1,0 +1,16 @@
+lib/common/node_modules/*
+lib/services/blob/node_modules/*
+lib/services/compute/node_modules/*
+lib/services/hdinsight/node_modules/*
+lib/services/management/node_modules/*
+lib/services/network/node_modules/*
+lib/services/queue/node_modules/*
+lib/services/serviceBus/node_modules/*
+lib/services/sql/node_modules/*
+lib/services/storage/node_modules/*
+lib/services/store/node_modules/*
+lib/services/subscription/node_modules/*
+lib/services/table/node_modules/*
+lib/services/webSite/node_modules/*
+packages
+.git

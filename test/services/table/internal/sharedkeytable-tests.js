@@ -22,7 +22,7 @@ var tabletestutil = require('../../../framework/table-test-utils');
 
 // Lib includes
 var azure = testutil.libRequire('azure');
-var SharedKeyLiteTable = testutil.libRequire('services/table/internal/sharedkeylitetable');
+var SharedKeyLiteTable = testutil.libRequire('services/table/lib/internal/sharedkeylitetable');
 
 var Constants = azure.Constants;
 var HttpConstants = Constants.HttpConstants;
