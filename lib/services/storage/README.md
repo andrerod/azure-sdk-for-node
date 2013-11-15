@@ -134,5 +134,3 @@ storageManagementClient.storageAccounts.regenerateKeys({
 - Windows Azure SDK for Node.js - Storage Queue
   - GitHub repo: https://github.com/WindowsAzure/azure-sdk-for-node/tree/master/lib/services/queue
   - NPM: https://npmjs.org/package/azure-storage-queue
-
- 
