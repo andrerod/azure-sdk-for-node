@@ -379,7 +379,13 @@ describe('Notification hubs', function () {
       notificationHubService = azure.createNotificationHubService(hubName);
 
       suiteUtil.setupService(notificationHubService);
-      service.createNotificationHub(hubName, function () {
+      service.createNotificationHub(hubName, {
+          apns: {
+            ApnsCertificate: process.env.AZURE_APNS_CERTIFICATE,
+            CertificateKey: process.env.AZURE_APNS_CERTIFICATE_KEY,
+            Endpoint: 'pushtestservice2.cloudapp.net'
+          }
+        }, function () {
         done();
       });
     });
@@ -392,6 +398,46 @@ describe('Notification hubs', function () {
           should.exist(rsp);
 
           done();
+        });
+      });
+    });
+
+    it('should be able to use the registration identifier', function (done) {
+      service.getNotificationHub(hubName, function (err, hub) {
+        notificationHubService.createRegistrationId(function (err, registrationId, rsp) {
+          should.not.exist(err);
+          should.exist(registrationId);
+          should.exist(rsp);
+
+          notificationHubService.apns.createTemplateRegistration(
+            tokenId,
+            null,
+            {
+              alert: '$(alertMessage1)'
+            },
+            {
+              registrationId: registrationId
+            },
+            function (error) {
+              should.not.exist(error);
+
+              notificationHubService.getRegistration(registrationId, function (err, getRegistration) {
+                should.not.exist(err);
+                should.exist(getRegistration);
+                console.log(getRegistration);
+
+                notificationHubService.createOrUpdateRegistration(
+                  {
+                    alert: '$(alertMessage1)'
+                  },
+                  function (error, reg) {
+                    should.not.exist(err);
+                    should.exist(reg);
+
+                    done();
+                  });
+              });
+            });
         });
       });
     });
