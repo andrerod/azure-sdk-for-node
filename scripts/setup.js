@@ -9,6 +9,8 @@ var cmds = [
   { cmd: 'npm install', path: 'lib/services/management/' },
   { cmd: 'npm link ../../common/', path: 'lib/services/networkManagement/' },
   { cmd: 'npm install', path: 'lib/services/networkManagement/' },
+  { cmd: 'npm link ../../common/', path: 'lib/services/monitoring/' },
+  { cmd: 'npm install', path: 'lib/services/monitoring/' },
   { cmd: 'npm link ../../common/', path: 'lib/services/scheduler/' },
   { cmd: 'npm install', path: 'lib/services/scheduler/' },
   { cmd: 'npm link ../../common/', path: 'lib/services/schedulerManagement/' },
@@ -25,10 +27,15 @@ var cmds = [
   { cmd: 'npm install', path: 'lib/services/subscriptionManagement/' },
   { cmd: 'npm link ../../common/', path: 'lib/services/webSiteManagement/' },
   { cmd: 'npm install', path: 'lib/services/webSiteManagement/' },
+  { cmd: 'npm link ../../common/', path: 'lib/services/resourceManagement/' },
+  { cmd: 'npm install', path: 'lib/services/resourceManagement/' },
+  { cmd: 'npm link ../../common/', path: 'lib/services/gallery/' },
+  { cmd: 'npm install', path: 'lib/services/gallery/' },
   { cmd: 'npm link lib/common/' },
   { cmd: 'npm link lib/services/computeManagement/' },
   { cmd: 'npm link lib/services/management/' },
   { cmd: 'npm link lib/services/networkManagement/' },
+  { cmd: 'npm link lib/services/monitoring/' },
   { cmd: 'npm link lib/services/scheduler/' },
   { cmd: 'npm link lib/services/schedulerManagement/' },
   { cmd: 'npm link lib/services/serviceBusManagement/' },
@@ -36,7 +43,9 @@ var cmds = [
   { cmd: 'npm link lib/services/storageManagement/' },
   { cmd: 'npm link lib/services/storeManagement/' },
   { cmd: 'npm link lib/services/subscriptionManagement/' },
-  { cmd: 'npm link lib/services/webSiteManagement/' }
+  { cmd: 'npm link lib/services/webSiteManagement/' },
+  { cmd: 'npm link lib/services/resourceManagement/' },
+  { cmd: 'npm link lib/services/gallery/' }
 ];
 
 function executeCmds(cmds) {
