@@ -20,6 +20,8 @@ var should = require('should');
 var testutil = require('./util');
 
 // Lib includes
+var azure = testutil.libRequire('azure');
+var azureCommon = azure.common;
 var js2xml = testutil.libRequire('common/lib/util/js2xml');
 
 describe('js2xml', function() {
@@ -61,6 +63,27 @@ describe('js2xml', function() {
       (element === null).should.be.true;
 
       done();
+    });
+
+    it('should work with empty elements', function (done) {
+      var content = '<top><el1 /><el2></el2></top>'
+
+      var xml = azureCommon.xml2js;
+      var options = {};
+      options.trim = true;
+      options.strict = false;
+
+      xml.parseString(content, options, function (err2, responseDoc) {
+        console.log(responseDoc);
+        var topElement = js2xml.getElement(responseDoc, responseDoc, 'TOP', null);
+        console.log(topElement);
+        var el1Element = js2xml.getElement(responseDoc, topElement, 'EL1', null);
+        console.log(el1Element);
+        var el2Element = js2xml.getElement(responseDoc, topElement, 'EL2', null);
+        console.log(el2Element);
+
+        done();
+      });
     });
   });
 
